@@ -38,16 +38,20 @@ $(document).ready(function() {
     }
 
 
-    $('.feedForm').submit(function(e){
+    $('.feedForm').submit(function(e) {
       e.preventDefault();
 
-        var startDate = $('[name="date"]').val();
-        var startTime = $('[name="time"]').val();
-        var firstName = $('[name="firstName"]').val();
-        var lastName = $('[name="lastName"]').val();
+        //przerobić na bardziej feng shui
         var type = this.dataset.type;
+        var feedStartDate = $('[name="feedStartDate"]').val();
+        var feedStartTime = $('[name="feedStartTime"]').val();
+        var feedStopDate = $('[name="feedStopDate"]').val();
+        var feedStopTime = $('[name="feedStopTime"]').val();
+        var feedMilliliters = $('[name="feedMilliliters"]').val();
+        var feedComments = $('[name="feedComments"]').val();
+        
+        var transaction = db.transaction(["babyData"],'readwrite');
 
-        var transaction = db.transaction(['babyData'],'readwrite');
         transaction.oncomplete = function(event) {
             console.log('Success :)');
         };
@@ -56,22 +60,51 @@ $(document).ready(function() {
             console.log('Error :(');
         };
         var objectStore = transaction.objectStore('babyData');
-        if (firstName.length != 0) {
+        if (feedStartDate.length != 0) {
           objectStore.add({
             type: type,
-            startDate: startDate,
-            startTime: startTime,
-            firstName: firstName,
-            lastName: lastName
+            date: feedStartDate, //feedStartDate jest w tym przypadku date
+            feedStartTime: feedStartTime,
+            feedStopDate: feedStopDate,
+            feedStopTime: feedStopTime,
+            feedMilliliters: feedMilliliters,
+            feedComments: feedComments
           });
           alert('Zapisano');
         } else {
           alert('Błąd! Dane nie zostały zapisane');
         }
-
     });
 
+    $('.weightForm').submit(function(e) {
+      e.preventDefault();
 
+        //przerobić na bardziej feng shui
+        var type = this.dataset.type;
+        var weightDate = $('[name="weightDate"]').val();
+        var weightSize = $('[name="weightSize"]').val();
+
+        var transaction = db.transaction(["babyData"],'readwrite');
+
+        transaction.oncomplete = function(event) {
+            console.log('Success :)');
+        };
+
+        transaction.onerror = function(event) {
+            console.log('Error :(');
+        };
+        var objectStore = transaction.objectStore('babyData');
+        if (weightDate.length != 0) {
+          objectStore.add({
+            type: type,
+            date: weightDate,
+            weightSize: weightSize,
+          });
+          alert('Zapisano');
+        } else {
+          alert('Błąd! Dane nie zostały zapisane');
+        }
+    });
 
 
     //czyszczenie bazy danych
