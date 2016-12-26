@@ -2,44 +2,90 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>babyapp</title>
+    <title></title>
+
   </head>
   <body>
+    <button id="add" type="button" name="button">add</button>
+    <button id="get" type="button" name="button">get</button>
 
-    <form class="feedForm" data-type="feed">
-      <h2>Feed</h2>
-      <label for="feedStartDate">Start date:</label>
-      <input type="date" name="feedStartDate">
-      <label for="feedStartTime">Start time:</label>
-      <input type="time" name="feedStartTime"><br />
-      <label for="feedStopDate">Stop date:</label>
-      <input type="date" name="feedStopDate">
-      <label for="feedStopTime">Stop time:</label>
-      <input type="time" name="feedStopTime"><br />
-      <label for="feedMilliliters">Milliliters:</label>
-      <input type="number" name="feedMilliliters"><br />
-      <label for="feedComments">Comments:</label>
-      <textarea name="feedComments" rows="8" cols="80"></textarea>
-      <br /><br />
-      <input type="submit" name="feedSubmit" value="Submit">
-    </form>
-
-    <br /><br /><br />
-
-    <form class="weightForm" data-type="weight">
-      <h2>Weight</h2>
-      <label for="weightDate">Date:</label>
-      <input type="date" name="weightDate"><br />
-      <label for="weightSize">Weight:</label>
-      <input type="number" name="weightSize" min="0" max="9999"><br />
-      <br /><br />
-      <input type="submit" name="weightSubmit" value="Submit">
-    </form>
-
-    <br /><br /><br /><br /><br />
-    <input type="button" name="deleteDb" value="Delete Database">
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/idb.js"></script>
+    <a href="http://www.onlywebpro.com/2012/12/23/html5-storage-indexeddb/" target="_blank">Stary link</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB" target="_blank">MDN</a>
+    <a href="https://gist.github.com/BigstickCarpet/a0d6389a5d0e3a24814b" target="_blank">Gist BigstickCarpet/IndexedDB101.js</a>
   </body>
+  <script type="text/javascript">
+
+    // This works on all devices/browsers, and uses IndexedDBShim as a final fallback
+    var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+
+    // Open (or create) the database
+    var open = indexedDB.open("MyDatabase", 1);
+
+    // Create the schema
+    open.onupgradeneeded = function() {
+      var db = open.result;
+      var store = db.createObjectStore("MyObjectStore", {keyPath: "id", autoIncrement: true});
+      var index = store.createIndex("NameIndex", ["name.last", "name.first"]);
+    };
+
+    open.onsuccess = function() {
+      // Start a new transaction
+      var db = open.result;
+      var tx = db.transaction("MyObjectStore", "readwrite");
+      var store = tx.objectStore("MyObjectStore");
+      var index = store.index("NameIndex");
+
+      // Add some data
+      // store.put({name: {first: "John", last: "Doe"}, age: 42});
+      // store.put({name: {first: "Bob", last: "Smith"}, age: 35});
+
+      // Query the data
+      // var getJohn = store.get(12345);
+      // var getBob = index.get(["Smith", "Bob"]);
+      //
+      // getJohn.onsuccess = function() {
+      //     console.log(getJohn.result.name.first);  // => "John"
+      // };
+      //
+      // getBob.onsuccess = function() {
+      //     console.log(getBob.result.name.first);   // => "Bob"
+      // };
+
+      // Close the db when the transaction is done
+      // tx.oncomplete = function() {
+      //     db.close();
+      // };
+    }
+
+    var add = document.querySelector('#add');
+
+
+
+    function addnij(e) {
+      e.preventDefault();
+      var db = open.result;
+      var tx = db.transaction("MyObjectStore", "readwrite");
+      var store = tx.objectStore("MyObjectStore");
+      var index = store.index("NameIndex");
+
+
+      tx.oncomplete = function() {
+        console.log("Udao sie");
+      };
+
+      tx.onerror = function() {
+        console.log("Dupa blada ");
+      }
+
+      store.add({name: {first: "Teodor", last: "Przepiękny"}, age: 42});
+
+    }
+
+    add.addEventListener('click', addnij);
+
+
+
+
+
+  </script>
 </html>
