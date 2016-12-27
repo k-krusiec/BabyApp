@@ -1,0 +1,11 @@
+#Mac OSX
+*.DS_Store
+
+#Sass
+/node_modules/
+
+#Bower
+/bower_components/
+
+#src
+/_src/
