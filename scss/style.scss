@@ -1,8 +1,10 @@
 //modules
-// @import 'modules/variables';
+@import 'modules/variables';
 
-//particles
+//partials
+@import 'partials/reset';
 @import 'partials/general';
+@import 'partials/logPage';
 // @import 'partials/header';
 // @import 'partials/navi';
 // @import 'partials/banner';

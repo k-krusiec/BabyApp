@@ -2,13 +2,37 @@
 <html lang="pl">
   <head>
     <meta charset="utf-8">
+    <meta name="description" content="BabyApp">
+    <meta name="keywords" content="happiness, useful, easy, parenting, baby, clear">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Witaj w BabyApp</title>
-    <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    Witaj w BabyApp
+
+    <main class="container">
+
+      <div class="main-width">
+        <div class="logContent">
+          <img src="http://placehold.it/200x100">
+          <form class="startForm">
+            <label for="logName">Wpisz imię dziecka</label>
+            <input type="text" name="logName" placeholder="np. Tradycja ;)">
+            <label for="birthDate">Wpisz datę urodzenia</label>
+            <input type="date" name="birthDate">
+            <input type="submit" name="logBtn" value="Zapisz">
+          </form>
+          <p>lub</p>
+          <a href="#">Wgraj przykładowe dane</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+
+      <p>&copy; 2016 Karol Krusiec</p>
+
+    </footer>
+
   </body>
 </html>

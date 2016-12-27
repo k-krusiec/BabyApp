@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>babyapp</title>
+  </head>
+  <body>
+
+    <form class="feedForm" data-type="feed">
+      <h2>Feed</h2>
+      <label for="feedStartDate">Start date:</label>
+      <input type="date" name="feedStartDate">
+      <label for="feedStartTime">Start time:</label>
+      <input type="time" name="feedStartTime"><br />
+      <label for="feedStopDate">Stop date:</label>
+      <input type="date" name="feedStopDate">
+      <label for="feedStopTime">Stop time:</label>
+      <input type="time" name="feedStopTime"><br />
+      <label for="feedMilliliters">Milliliters:</label>
+      <input type="number" name="feedMilliliters"><br />
+      <label for="feedComments">Comments:</label>
+      <textarea name="feedComments" rows="8" cols="80"></textarea>
+      <br /><br />
+      <input type="submit" name="feedSubmit" value="Submit">
+    </form>
+
+    <br /><br /><br />
+
+    <form class="weightForm" data-type="weight">
+      <h2>Weight</h2>
+      <label for="weightDate">Date:</label>
+      <input type="date" name="weightDate"><br />
+      <label for="weightSize">Weight:</label>
+      <input type="number" name="weightSize" min="0" max="9999"><br />
+      <br /><br />
+      <input type="submit" name="weightSubmit" value="Submit">
+    </form>
+
+    <br /><br /><br /><br /><br />
+    <input type="button" name="deleteDb" value="Delete Database">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/idb.js"></script>
+  </body>
+</html>
