@@ -14,25 +14,27 @@
 
       <div class="main-width">
         <div class="logContent">
-          <img src="http://placehold.it/200x100">
+          <img class="logo" src="img/babyapp-logo-180x80.png" alt="logo babyapp">
           <form class="startForm">
-            <label for="logName">Wpisz imię dziecka</label>
-            <input type="text" name="logName" placeholder="np. Tradycja ;)">
-            <label for="birthDate">Wpisz datę urodzenia</label>
-            <input type="date" name="birthDate">
-            <input type="submit" name="logBtn" value="Zapisz">
+            <label class="logNameLab" for="logName">Wpisz imię dziecka</label>
+            <input class="logName" type="text" name="logName" placeholder="np. Tradycja ;)">
+            <label class="birthDateLab" for="birthDate">Wpisz datę urodzenia</label>
+            <input class="birthDate" type="date" name="birthDate">
+            <input class="startFormBtn" type="submit" name="logBtn" value="Zapisz">
+            <p class="orText">lub</p>
           </form>
-          <p>lub</p>
-          <a href="#">Wgraj przykładowe dane</a>
+
+          <a href="#" class="techLink">Wgraj przykładowe dane</a>
         </div>
       </div>
     </main>
 
     <footer>
 
-      <p>&copy; 2016 Karol Krusiec</p>
+      <p class="footText">&copy; 2016 Karol Krusiec</p>
 
     </footer>
 
+    <script type="text/javascript" src="js/logPage.js"></script>
   </body>
 </html>
