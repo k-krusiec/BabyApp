@@ -253,7 +253,7 @@
 }
 
 .feed-formbox {
-  //display: none;
+  display: none;
   padding: 10px;
   margin-top: -10px;
   margin-bottom: 10px;
@@ -267,7 +267,7 @@
   padding: 28px;
   border: 1px solid $gray;
   background: $white;
-  font-size: 14px;
+  font-size: 16px;
   &:before {
     content:'';
     position: absolute;
@@ -283,7 +283,7 @@
   &:after {
     content:'';
     position: absolute;
-    top: -16px;
+    top: -17px;
     left: 144px;
     width: 0px;
     height: 0px;
@@ -291,15 +291,6 @@
     border-width: 12px 0px 12px 10px;
     border-color: transparent transparent transparent $white;
     transform: rotate(-90deg);
-  }
-  label {
-    display: inline-block;
-    width: 100px;
-  }
-  
-  input {
-    border: none;
-    border-bottom: 1px solid $black;
   }
 
   .feed-form {
@@ -314,35 +305,120 @@
     align-items: center;
     margin-bottom: 20px;
   }
+
+  .brest-radio {
+    width: 25px;
+    height: 25px;
+    padding-top: 3px;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    &:last-of-type {
+      margin-left: 10px;
+    }
+  }
+
+  input[name="milliliters"] {
+    width: 40px;
+    margin-right: 5px;
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+
   .feed-comments {
     display: flex;
     align-items: flex-start;
+    margin-bottom: 20px;
   }
   .feed-submit {
     margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .feed-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
   }
   .feed-legend {
-    width: 20%;
+    width: 22%;
     color: $gray;
     .feed-legend-title {
-      display: block;
-      margin-bottom: 10px;
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $gray;
     }
     .brest-set {
       display: flex;
       align-items: center;
+      &:first-of-type {
+        margin-top: 10px;
+      }
     }
     .brest-ico {
       display: inline-block;
       width: 25px;
       height: 25px;
       margin: 5px 10px 0 0;
-      padding-top: 4px;
+      padding-top: 3px;
       border: 1px solid $gray;
       border-radius: 50%;
       text-align: center;
     }
   }
+}
+
+input[type=date] {
+  width: 110px;
+  &::-webkit-clear-button {
+    display: none;
+  }
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+input[type=time] {
+  &::-webkit-clear-button {
+    display: none;
+  }
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+input {
+  padding: 3px;
+  border: none;
+  border-bottom: 1px solid $black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+textarea {
+  resize: none;
+  width: 290px;
+  height: 90px;
+  padding: 3px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .calendar,
