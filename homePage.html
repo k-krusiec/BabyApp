@@ -68,12 +68,16 @@
                 <form class="feed-form">
                   <div class="feed-start">
                     <label for="feed-start-date">Start</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
                     <input type="date" name="feed-start-date" />
+                    <img class="clock" src="img/time-b.png" alt="clock">
                     <input type="time" name="feed-start-time" />
                   </div>
-                  <div class="feed-start">
+                  <div class="feed-stop">
                     <label for="feed-stop-date">Koniec</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
                     <input type="date" name="feed-stop-date" />
+                    <img class="clock" src="img/time-b.png" alt="clock">
                     <input type="time" name="feed-stop-time" />
                   </div>
                   <div class="feed-brest">
@@ -83,7 +87,7 @@
                   </div>
                   <div class="feed-ml">
                     <label for="milliliters">Wypite mleko</label>
-                    <input type="number" name="milliliters" />
+                    <input type="number" name="milliliters" min="0000" max="9999" placeholder="0000"/>
                   </div>
                   <div class="feed-comments">
                     <label for="comments">Uwagi</label>
@@ -95,9 +99,17 @@
                   </div>
                 </form>
                 <div class="feed-legend">
-                  legenda
-                  <div class="brest-radio">L</div>
-                  <div class="brest-radio">P</div>
+                  <span class="feed-legend-title">Legenda</span>
+                  <div class="brest-set">
+                    <div class="brest-ico">L</div>
+                    <span class="brest-name">LEWA pierś</span>
+                  </div>
+                  <div class="brest-set">
+                    <div class="brest-ico">P</div>
+                    <span class="brest-name">PRAWA pierś</span>
+                  </div>
+
+
                 </div>
               </div>
             </div>

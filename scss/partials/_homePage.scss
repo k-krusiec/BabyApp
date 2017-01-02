@@ -262,9 +262,11 @@
 .feed-formbox-in {
   /*główne okgno z formularzem w ramce*/
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
   border: 1px solid $gray;
   background: $white;
-  padding: 28px 0 28px 28px;
   font-size: 14px;
   &:before {
     content:'';
@@ -294,8 +296,61 @@
     display: inline-block;
     width: 100px;
   }
+  
+  input {
+    border: none;
+    border-bottom: 1px solid $black;
+  }
+
   .feed-form {
     display: flex;
     flex-direction: column;
   }
+  .feed-start,
+  .feed-stop,
+  .feed-brest,
+  .feed-ml {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .feed-comments {
+    display: flex;
+    align-items: flex-start;
+  }
+  .feed-submit {
+    margin-left: 100px;
+  }
+  .feed-legend {
+    width: 20%;
+    color: $gray;
+    .feed-legend-title {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .brest-set {
+      display: flex;
+      align-items: center;
+    }
+    .brest-ico {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 5px 10px 0 0;
+      padding-top: 4px;
+      border: 1px solid $gray;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+}
+
+.calendar,
+.clock {
+  width: 25px;
+  margin-right: 5px;
+}
+
+.clock {
+  margin-left: 15px;
 }
