@@ -1,0 +1,257 @@
+.header {
+  background: $light-gray;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  padding: 35px 0;
+}
+
+.logo {
+  padding: 0 100px 0 40px;
+}
+
+.foto {
+  margin: 0 10px;
+  border: 1px solid $gray;
+}
+
+.baby-info {
+  .baby-name {
+    padding: 0 0 5px;
+    font-size: 32px;
+  }
+  .baby-age {
+    font-size: 18px;
+  }
+}
+
+.settings {
+  margin-left: auto;
+  padding: 10px 50px 10px 40px;
+  background: url("../img/settings-dg.png") no-repeat left center transparent;
+  background-size: 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $gray;
+  &:hover {
+    background: url("../img/settings-b.png") no-repeat left center transparent;
+    background-size: 32px;
+    color: $black;
+  }
+}
+
+.breadcrumbs {
+  background: $white;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.home-page-bc {
+  margin-left: 25px;
+  color: $turquoise;
+}
+
+.right-arrow {
+  display: relative;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.container {
+  display: flex;
+  flex-flow: nowrap;
+}
+
+.navi {
+  min-width: 320px;
+  padding: 30px 10px;
+  li {
+    background: $white;
+    border-bottom: 1px solid $light-gray;
+    &:hover {
+      background: $orange;
+      color: white;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    padding: 20px 0 20px 70px;
+  }
+  .feed {
+    a {
+      background: url("../img/feed-b.png") no-repeat 17px center transparent;
+      background-size: 36px;
+      &:hover {
+        background: url("../img/feed-w.png") no-repeat 17px center transparent;
+        background-size: 36px;
+      }
+    }
+  }
+  .weight {
+    a {
+      background: url("../img/weight-b.png") no-repeat 17px center transparent;
+      background-size: 36px;
+      &:hover {
+        background: url("../img/weight-w.png") no-repeat 17px center transparent;
+        background-size: 36px;
+      }
+    }
+  }
+  .diaper {
+    a {
+      background: url("../img/diaper-b.png") no-repeat 17px center transparent;
+      background-size: 36px;
+      &:hover {
+        background: url("../img/diaper-w.png") no-repeat 17px center transparent;
+        background-size: 36px;
+      }
+    }
+  }
+  .bath {
+    a {
+      background: url("../img/bath-b.png") no-repeat 17px center transparent;
+      background-size: 36px;
+      &:hover {
+        background: url("../img/bath-w.png") no-repeat 17px center transparent;
+        background-size: 36px;
+      }
+    }
+  }
+  .doctor {
+    a {
+      background: url("../img/doctor-b.png") no-repeat 17px center transparent;
+      background-size: 36px;
+      &:hover {
+        background: url("../img/doctor-w.png") no-repeat 17px center transparent;
+        background-size: 36px;
+      }
+    }
+  }
+  .diary {
+    a {
+      background: url("../img/diary-b.png") no-repeat 17px center transparent;
+      background-size: 36px;
+      &:hover {
+        background: url("../img/diary-w.png") no-repeat 17px center transparent;
+        background-size: 36px;
+      }
+    }
+  }
+}
+
+.navi-title {
+  display: block;
+  padding: 20px 0;
+  background: $light-orange;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+}
+
+.main-content {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.row {
+  display: flex;
+  flex-flow: nowrap;
+  margin-bottom: 20px;
+}
+
+.tile {
+  width: 300px;
+  height: 100px;
+  margin: 0 10px;
+  background: $light-orange;
+  &:hover {
+    background: $orange;
+    color: $white;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: inherit;
+  }
+}
+
+.feed-opt {
+  a {
+    background: url("../img/feed-b.png") no-repeat 25px center transparent;
+    background-size: 50px;
+    &:hover {
+      background: url("../img/feed-w.png") no-repeat 25px center transparent;
+      background-size: 50px;
+    }
+  }
+}
+
+.weight-opt {
+  a {
+    background: url("../img/weight-b.png") no-repeat 25px center transparent;
+    background-size: 50px;
+    &:hover {
+      background: url("../img/weight-w.png") no-repeat 25px center transparent;
+      background-size: 50px;
+    }
+  }
+}
+
+.diaper-opt {
+  a {
+    background: url("../img/diaper-b.png") no-repeat 25px center transparent;
+    background-size: 50px;
+    &:hover {
+      background: url("../img/diaper-w.png") no-repeat 25px center transparent;
+      background-size: 50px;
+    }
+  }
+}
+
+.bath-opt {
+  a {
+    background: url("../img/bath-b.png") no-repeat 25px center transparent;
+    background-size: 50px;
+    &:hover {
+      background: url("../img/bath-w.png") no-repeat 25px center transparent;
+      background-size: 50px;
+    }
+  }
+}
+
+.doctor-opt {
+  a {
+    background: url("../img/doctor-b.png") no-repeat 25px center transparent;
+    background-size: 50px;
+    &:hover {
+      background: url("../img/doctor-w.png") no-repeat 25px center transparent;
+      background-size: 50px;
+    }
+  }
+}
+
+.diary-opt {
+  a {
+    background: url("../img/diary-b.png") no-repeat 25px center transparent;
+    background-size: 50px;
+    &:hover {
+      background: url("../img/diary-w.png") no-repeat 25px center transparent;
+      background-size: 50px;
+    }
+  }
+}
+
+.feed-form {
+  display: none;
+}

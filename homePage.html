@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="BabyApp">
+    <meta name="keywords" content="happiness, useful, easy, parenting, baby, clear">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabyApp</title>
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="main-width">
+        <div class="main-header">
+          <a href="#">
+            <img class="logo" src="img/babyapp-logo-180x80.png" alt="BabyApp logo">
+          </a>
+          <img class="foto" src="img/fake-baby-78x78.png" alt="baby">
+          <div class="baby-info">
+            <p class="baby-name">Zosia</p>
+            <p class="baby-age">9 miesięcy</p>
+          </div>
+          <a class="settings" href="#">
+            Ustawienia
+          </a>
+        </div>
+      </div>
+      <section class="breadcrumbs">
+        <div class="main-width">
+          <span class="home-page-bc">BabyApp</span>
+          <img class="right-arrow" src="img/rarrow-lg.png" alt="right arrow">
+          <span>Strona główna</span>
+        </div>
+      </section>
+    </header>
+    <main>
+      <div class="main-width">
+        <div class="container">
+          <nav class="navi">
+            <span class="navi-title">Menu</span>
+            <ul>
+              <li class="feed"><a href="#">Karmienia</a></li>
+              <li class="weight"><a href="#">Ważenia</a></li>
+              <li class="diaper"><a href="#">Zmiany pieluszek</a></li>
+              <li class="bath"><a href="#">Kąpiele</a></li>
+              <li class="doctor"><a href="#">Wizyty lekarskie</a></li>
+              <li class="diary"><a href="#">Dziennik</a></li>
+            </ul>
+          </nav>
+          <section class="main-content">
+            <div class="row">
+              <div class="tile feed-opt">
+                <a class="feed-btn" href="#">
+                  Karmienie
+                </a>
+              </div>
+              <div class="tile weight-opt">
+                <a href="#">
+                  Ważenie
+                </a>
+              </div>
+            </div>
+
+            <div class="feed-form">
+              <div class="feed-box">
+                <form>
+                  <label for="start-date">Start</label>
+                  <input type="date" name="start-date" />
+                  <input type="time" name="start-time" />
+                  <label for="stop-date">Koniec</label>
+                  <input type="date" name="stop-date" />
+                  <input type="time" name="stop-time" />
+                  <label for="piers">Pierś</label>
+                  <input type="radio" name="piers" value="left">lewa
+                  <input type="radio" name="piers" value="right">prawa
+                  <label for="milliliters">Wypite mleko</label>
+                  <input type="number" name="milliliters" />
+                  <label for="comments">Uwagi</label>
+                  <textarea name="comments" rows="8" cols="80"></textarea>
+                </form>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="tile diaper-opt">
+                <a href="#">
+                  Zmiana pieluszki
+                </a>
+              </div>
+              <div class="tile bath-opt">
+                <a href="#">
+                  Kąpiel
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="tile doctor-opt">
+                <a href="#">
+                  Wizyta lekarska
+                </a>
+              </div>
+              <div class="tile diary-opt">
+                <a href="#">
+                  Wpis w&nbsp;dzienniku
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="main-width">
+        karcio
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+  </body>
+</html>
