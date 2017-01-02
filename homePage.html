@@ -63,26 +63,44 @@
               </div>
             </div>
 
-            <div class="feed-form">
-              <div class="feed-box">
-                <form>
-                  <label for="start-date">Start</label>
-                  <input type="date" name="start-date" />
-                  <input type="time" name="start-time" />
-                  <label for="stop-date">Koniec</label>
-                  <input type="date" name="stop-date" />
-                  <input type="time" name="stop-time" />
-                  <label for="piers">Pierś</label>
-                  <input type="radio" name="piers" value="left">lewa
-                  <input type="radio" name="piers" value="right">prawa
-                  <label for="milliliters">Wypite mleko</label>
-                  <input type="number" name="milliliters" />
-                  <label for="comments">Uwagi</label>
-                  <textarea name="comments" rows="8" cols="80"></textarea>
+            <div class="feed-formbox">
+              <div class="feed-formbox-in">
+                <form class="feed-form">
+                  <div class="feed-start">
+                    <label for="feed-start-date">Start</label>
+                    <input type="date" name="feed-start-date" />
+                    <input type="time" name="feed-start-time" />
+                  </div>
+                  <div class="feed-start">
+                    <label for="feed-stop-date">Koniec</label>
+                    <input type="date" name="feed-stop-date" />
+                    <input type="time" name="feed-stop-time" />
+                  </div>
+                  <div class="feed-brest">
+                    <label for="breast">Pierś</label>
+                    <div class="brest-radio">L</div>
+                    <div class="brest-radio">P</div>
+                  </div>
+                  <div class="feed-ml">
+                    <label for="milliliters">Wypite mleko</label>
+                    <input type="number" name="milliliters" />
+                  </div>
+                  <div class="feed-comments">
+                    <label for="comments">Uwagi</label>
+                    <textarea name="comments"></textarea>
+                  </div>
+                  <div class="feed-submit">
+                    <input type="Submit" name="feed-submit" value="Zapisz">
+                    <button type="button" name="feed-cancel">Anuluj</button>
+                  </div>
                 </form>
+                <div class="feed-legend">
+                  legenda
+                  <div class="brest-radio">L</div>
+                  <div class="brest-radio">P</div>
+                </div>
               </div>
             </div>
-
 
             <div class="row">
               <div class="tile diaper-opt">

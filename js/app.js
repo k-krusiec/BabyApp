@@ -2,11 +2,11 @@ $(document).ready(function() {
 
   function showFeedForm() {
     var $feedBtn = $('.feed-btn');
-    var $feedForm = $('.feed-form');
+    var $feedForm = $('.feed-formbox');
     $feedBtn.on('click', function(e) {
       e.preventDefault();
 
-      if($feedForm.css('display') === "none") {
+      if($feedForm.css('display') === 'none') {
         $(this).css({
           'background': 'url("../img/feed-w.png") no-repeat 25px center transparent',
           'background-size': '50px',
@@ -25,6 +25,7 @@ $(document).ready(function() {
       }
 
       $feedForm.slideToggle('slow');
+      //$feedForm.addClass('animate');
     })
   }
   showFeedForm();
