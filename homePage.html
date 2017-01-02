@@ -57,12 +57,13 @@
                 </a>
               </div>
               <div class="tile weight-opt">
-                <a href="#">
+                <a class="weight-btn" href="#">
                   Ważenie
                 </a>
               </div>
             </div>
 
+            <!--Feed form-->
             <div class="feed-formbox">
               <div class="feed-formbox-in">
                 <form class="feed-form">
@@ -109,11 +110,33 @@
                     <div class="brest-ico">P</div>
                     <span class="brest-name">PRAWA pierś</span>
                   </div>
-
-
                 </div>
               </div>
             </div>
+            <!--Feed form end-->
+
+            <!--Weight form-->
+            <div class="weight-formbox">
+              <div class="weight-formbox-in">
+                <form class="weight-form">
+                  <div class="weight-start">
+                    <label for="weight-date">Kiedy</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
+                    <input type="date" name="weight-date" />
+                  </div>
+                  <div class="weight-g">
+                    <label for="grams">Waga</label>
+                    <input type="number" name="grams" min="0000" max="9999" placeholder="0000"/>
+                    <span>g</span>
+                  </div>
+                  <div class="weight-submit">
+                    <input type="submit" name="weight-submit" value="Zapisz">
+                    <button class="weight-cancel" type="button" name="weight-cancel">Anuluj</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--Weight form end-->
 
             <div class="row">
               <div class="tile diaper-opt">
