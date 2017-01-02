@@ -294,7 +294,9 @@ textarea {
 }
 
 .calendar,
-.clock {
+.clock,
+.photo,
+.video {
   width: 25px;
   margin-right: 5px;
 }
@@ -784,6 +786,9 @@ textarea {
   .doctor-form {
     display: flex;
     flex-direction: column;
+    input[type="text"] {
+      width: 250px;
+    }
   }
   .doctor-start,
   .doctor-who,
@@ -822,3 +827,100 @@ textarea {
   }
 }
 /*doctor form end*/
+
+/*diary form*/
+.diary-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.diary-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .diary-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .diary-start {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .diary-photo,
+  .diary-video {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    cursor: pointer;
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  .diary-video {
+    margin-bottom: 20px;
+  }
+
+  .diary-comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+  }
+
+  .diary-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .diary-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+}
+/*diary form end*/

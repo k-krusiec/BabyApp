@@ -14,8 +14,8 @@ $(document).ready(function() {
   var $doctorBtn = $('.doctor-btn');
   var $doctorForm = $('.doctor-formbox');
 
-  // var $diaryBtn = $('.diary-btn');
-  // var $diaryForm = $('.diary-formbox');
+  var $diaryBtn = $('.diary-btn');
+  var $diaryForm = $('.diary-formbox');
 
   var btnIconReset = {
     'background': '',
@@ -29,25 +29,21 @@ $(document).ready(function() {
   function hideForms() {
     if (($feedForm.css('display') !== 'none') || ($weightForm.css('display') !== 'none') ||
         ($diaperForm.css('display') !== 'none') || ($bathForm.css('display') !== 'none') ||
-        ($doctorForm.css('display') !== 'none')) {
-
-    // if (($feedForm.css('display') !== 'none') || ($weightForm.css('display') !== 'none') ||
-    //     ($diaperForm.css('display') !== 'none') || ($bathForm.css('display') !== 'none') ||
-    //     ($doctorForm.css('display') !== 'none') || ($diaryForm.css('display') !== 'none')) {
+        ($doctorForm.css('display') !== 'none') || ($diaryForm.css('display') !== 'none')) {
 
       $feedBtn.css(btnIconReset).parent().css(btnBgReset);
       $weightBtn.css(btnIconReset).parent().css(btnBgReset);
       $diaperBtn.css(btnIconReset).parent().css(btnBgReset);
       $bathBtn.css(btnIconReset).parent().css(btnBgReset);
       $doctorBtn.css(btnIconReset).parent().css(btnBgReset);
-      // $diaryBtn.css(btnIconReset).parent().css(btnBgReset);
+      $diaryBtn.css(btnIconReset).parent().css(btnBgReset);
 
       $feedForm.slideUp('50');
       $weightForm.slideUp('50');
       $diaperForm.slideUp('50');
       $bathForm.slideUp('50');
       $doctorForm.slideUp('50');
-      // $diaryForm.slideUp('50');
+      $diaryForm.slideUp('50');
     }
   }
 
@@ -181,6 +177,6 @@ $(document).ready(function() {
       }
     })
   }
-  //showDiaryForm();
+  showDiaryForm();
 
 })
