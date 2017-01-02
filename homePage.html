@@ -52,14 +52,14 @@
           <section class="main-content">
             <div class="row">
               <div class="tile feed-opt">
-                <a class="feed-btn" href="#">
+                <div class="feed-btn">
                   Karmienie
-                </a>
+                </div>
               </div>
               <div class="tile weight-opt">
-                <a class="weight-btn" href="#">
+                <div class="weight-btn">
                   Ważenie
-                </a>
+                </div>
               </div>
             </div>
 
@@ -140,28 +140,133 @@
 
             <div class="row">
               <div class="tile diaper-opt">
-                <a href="#">
+                <div class="diaper-btn">
                   Zmiana pieluszki
-                </a>
+                </div>
               </div>
               <div class="tile bath-opt">
-                <a href="#">
+                <div class="bath-btn">
                   Kąpiel
-                </a>
+                </div>
               </div>
             </div>
+
+            <!--diaper form-->
+            <div class="diaper-formbox">
+              <div class="diaper-formbox-in">
+                <form class="diaper-form">
+                  <div class="diaper-start">
+                    <label for="diaper-date">Kiedy</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
+                    <input type="date" name="diaper-date" />
+                    <img class="clock" src="img/time-b.png" alt="clock">
+                    <input type="time" name="diaper-time" />
+                  </div>
+                  <div class="diaper-pee">
+                    <label for="pee">Siusiu</label>
+                    <div class="pee-radio">
+                      V
+                    </div>
+                  </div>
+                  <div class="diaper-poo">
+                    <label for="poo">Kupka</label>
+                    <div class="poo-radio">1</div>
+                    <div class="poo-radio">2</div>
+                    <div class="poo-radio">3</div>
+                  </div>
+                  <div class="diaper-submit">
+                    <input type="submit" name="diaper-submit" value="Zapisz">
+                    <button class="diaper-cancel" type="button" name="diaper-cancel">Anuluj</button>
+                  </div>
+                </form>
+                <div class="diaper-legend">
+                  <span class="diaper-legend-title">Legenda</span>
+                  <div class="poo-set">
+                    <div class="poo-ico">1</div>
+                    <span class="poo-name">MAŁA kupka</span>
+                  </div>
+                  <div class="poo-set">
+                    <div class="poo-ico">2</div>
+                    <span class="poo-name">ŚREDNIA kupka</span>
+                  </div>
+                  <div class="poo-set">
+                    <div class="poo-ico">3</div>
+                    <span class="poo-name">DUŻA kupka</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--diaper form end-->
+
+            <!--bath form-->
+            <div class="bath-formbox">
+              <div class="bath-formbox-in">
+                <form class="bath-form">
+                  <div class="bath-start">
+                    <label for="bath-date">Kiedy</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
+                    <input type="date" name="bath-date" />
+                  </div>
+                  <div class="bath-comments">
+                    <label for="comments">Uwagi</label>
+                    <textarea name="comments"></textarea>
+                  </div>
+                  <div class="bath-submit">
+                    <input type="submit" name="bath-submit" value="Zapisz">
+                    <button class="bath-cancel" type="button" name="bath-cancel">Anuluj</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--bath form end-->
+
             <div class="row">
               <div class="tile doctor-opt">
-                <a href="#">
+                <div class="doctor-btn">
                   Wizyta lekarska
-                </a>
+                </div>
               </div>
               <div class="tile diary-opt">
-                <a href="#">
+                <div class="diary-btn">
                   Wpis w&nbsp;dzienniku
-                </a>
+                </div>
               </div>
             </div>
+
+            <!--doctor form-->
+            <div class="doctor-formbox">
+              <div class="doctor-formbox-in">
+                <form class="doctor-form">
+                  <div class="doctor-start">
+                    <label for="doctor-date">Kiedy</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
+                    <input type="date" name="doctor-date" />
+                    <img class="clock" src="img/time-b.png" alt="clock">
+                    <input type="time" name="doctor-time" />
+                  </div>
+                  <div class="doctor-who">
+                    <label for="doctor-name">Kto</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
+                    <input type="text" name="doctor-name" placeholder="np. Anna Kowalska" />
+                  </div>
+                  <div class="doctor-where">
+                    <label for="doctor-location">Gdzie</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar">
+                    <input type="text" name="doctor-location" placeholder="np. Warszawa, Marszałkowska 1" />
+                  </div>
+                  <div class="doctor-comments">
+                    <label for="comments">Uwagi</label>
+                    <textarea name="comments"></textarea>
+                  </div>
+                  <div class="doctor-submit">
+                    <input type="submit" name="doctor-submit" value="Zapisz">
+                    <button class="doctor-cancel" type="button" name="doctor-cancel">Anuluj</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--doctor form end-->
+
           </section>
         </div>
       </div>

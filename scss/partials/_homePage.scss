@@ -173,21 +173,21 @@
     background: $orange;
     color: $white;
   }
-  a {
+  div {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
     padding: 0 100px;
-    text-decoration: none;
     text-transform: uppercase;
     font-size: 20px;
     color: inherit;
+    cursor: pointer;
   }
 }
 
 .feed-opt {
-  a {
+  .feed-btn {
     background: url("../img/feed-b.png") no-repeat 25px center transparent;
     background-size: 50px;
     &:hover {
@@ -198,7 +198,7 @@
 }
 
 .weight-opt {
-  a {
+  .weight-btn {
     background: url("../img/weight-b.png") no-repeat 25px center transparent;
     background-size: 50px;
     &:hover {
@@ -209,7 +209,7 @@
 }
 
 .diaper-opt {
-  a {
+  .diaper-btn {
     background: url("../img/diaper-b.png") no-repeat 25px center transparent;
     background-size: 50px;
     &:hover {
@@ -220,7 +220,7 @@
 }
 
 .bath-opt {
-  a {
+  .bath-btn {
     background: url("../img/bath-b.png") no-repeat 25px center transparent;
     background-size: 50px;
     &:hover {
@@ -231,7 +231,7 @@
 }
 
 .doctor-opt {
-  a {
+  .doctor-btn {
     background: url("../img/doctor-b.png") no-repeat 25px center transparent;
     background-size: 50px;
     &:hover {
@@ -242,7 +242,7 @@
 }
 
 .diary-opt {
-  a {
+  .diary-btn {
     background: url("../img/diary-b.png") no-repeat 25px center transparent;
     background-size: 50px;
     &:hover {
@@ -250,6 +250,57 @@
       background-size: 50px;
     }
   }
+}
+
+/*form general*/
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+input {
+  padding: 3px;
+  border: none;
+  border-bottom: 1px solid $black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+input[type=date] {
+  width: 110px;
+  &::-webkit-clear-button {
+    display: none;
+  }
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+input[type=time] {
+  &::-webkit-clear-button {
+    display: none;
+  }
+}
+
+textarea {
+  resize: none;
+  width: 290px;
+  height: 90px;
+  padding: 3px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.calendar,
+.clock {
+  width: 25px;
+  margin-right: 5px;
+}
+
+.clock {
+  margin-left: 15px;
 }
 
 /*feed form*/
@@ -333,6 +384,7 @@
     align-items: flex-start;
     margin-bottom: 20px;
   }
+
   .feed-submit {
     margin-left: 100px;
     input[type="submit"] {
@@ -355,7 +407,7 @@
     }
   }
   .feed-legend {
-    width: 22%;
+    width: 25%;
     color: $gray;
     .feed-legend-title {
       display: inline-block;
@@ -468,52 +520,305 @@
 }
 /*weight form end*/
 
-input[type=date] {
-  width: 110px;
-  &::-webkit-clear-button {
-    display: none;
-  }
-  &::-webkit-inner-spin-button {
-    display: none;
-  }
+/*diaper form*/
+.diaper-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-input[type=time] {
-  &::-webkit-clear-button {
-    display: none;
-  }
-}
-
-label {
-  display: inline-block;
-  width: 100px;
-}
-
-input {
-  padding: 3px;
-  border: none;
-  border-bottom: 1px solid $black;
-  font-family: 'Source Sans Pro', sans-serif;
+.diaper-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
   font-size: 16px;
-  font-weight: 300;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .diaper-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .diaper-start,
+  .diaper-pee,
+  .diaper-poo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .pee-radio {
+    width: 25px;
+    height: 25px;
+    padding-top: 3px;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .poo-radio {
+    margin-left: 10px;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    &:first-of-type {
+      width: 25px;
+      height: 25px;
+      margin-left: 0;
+      padding-top: 3px;
+    }
+    &:nth-of-type(2) {
+      width: 35px;
+      height: 35px;
+      padding-top: 8px;
+    }
+    &:nth-of-type(3) {
+      width: 45px;
+      height: 45px;
+      padding-top: 12px;
+    }
+  }
+
+  .diaper-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .diaper-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+  .diaper-legend {
+    width: 25%;
+    color: $gray;
+    .diaper-legend-title {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $gray;
+    }
+    .poo-set {
+      display: flex;
+      align-items: center;
+      &:first-of-type {
+        margin-top: 10px;
+      }
+    }
+    .poo-ico {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 5px 10px 0 0;
+      padding-top: 3px;
+      border: 1px solid $gray;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+}
+/*diaper form end*/
+
+/*bath form*/
+.bath-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-textarea {
-  resize: none;
-  width: 290px;
-  height: 90px;
-  padding: 3px;
-  font-family: 'Source Sans Pro', sans-serif;
+.bath-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
   font-size: 16px;
-  font-weight: 300;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .bath-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .bath-start {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .bath-comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .bath-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .bath-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+}
+/*bath form end*/
+
+/*doctor form*/
+.doctor-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-.calendar,
-.clock {
-  width: 25px;
-  margin-right: 5px;
-}
+.doctor-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
 
-.clock {
-  margin-left: 15px;
+  .doctor-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .doctor-start,
+  .doctor-who,
+  .doctor-where {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .doctor-comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .doctor-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .doctor-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
 }
+/*doctor form end*/

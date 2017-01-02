@@ -5,26 +5,49 @@ $(document).ready(function() {
   var $weightBtn = $('.weight-btn');
   var $weightForm = $('.weight-formbox');
 
-  function hideForms() {
-    if (($feedForm.css('display') !== 'none') || ($weightForm.css('display') !== 'none')) {
-      $feedBtn.css({
-        'background': '',
-        'background-size': '',
-        'color': ''
-      }).parent().css({
-        'background': ''
-      });
+  var $diaperBtn = $('.diaper-btn');
+  var $diaperForm = $('.diaper-formbox');
 
-      $weightBtn.css({
-        'background': '',
-        'background-size': '',
-        'color': ''
-      }).parent().css({
-        'background': ''
-      });
+  var $bathBtn = $('.bath-btn');
+  var $bathForm = $('.bath-formbox');
+
+  var $doctorBtn = $('.doctor-btn');
+  var $doctorForm = $('.doctor-formbox');
+
+  // var $diaryBtn = $('.diary-btn');
+  // var $diaryForm = $('.diary-formbox');
+
+  var btnIconReset = {
+    'background': '',
+    'background-size': '',
+    'color': ''
+  };
+  var btnBgReset = {
+    'background': ''
+  };
+
+  function hideForms() {
+    if (($feedForm.css('display') !== 'none') || ($weightForm.css('display') !== 'none') ||
+        ($diaperForm.css('display') !== 'none') || ($bathForm.css('display') !== 'none') ||
+        ($doctorForm.css('display') !== 'none')) {
+
+    // if (($feedForm.css('display') !== 'none') || ($weightForm.css('display') !== 'none') ||
+    //     ($diaperForm.css('display') !== 'none') || ($bathForm.css('display') !== 'none') ||
+    //     ($doctorForm.css('display') !== 'none') || ($diaryForm.css('display') !== 'none')) {
+
+      $feedBtn.css(btnIconReset).parent().css(btnBgReset);
+      $weightBtn.css(btnIconReset).parent().css(btnBgReset);
+      $diaperBtn.css(btnIconReset).parent().css(btnBgReset);
+      $bathBtn.css(btnIconReset).parent().css(btnBgReset);
+      $doctorBtn.css(btnIconReset).parent().css(btnBgReset);
+      // $diaryBtn.css(btnIconReset).parent().css(btnBgReset);
 
       $feedForm.slideUp('50');
       $weightForm.slideUp('50');
+      $diaperForm.slideUp('50');
+      $bathForm.slideUp('50');
+      $doctorForm.slideUp('50');
+      // $diaryForm.slideUp('50');
     }
   }
 
@@ -34,13 +57,7 @@ $(document).ready(function() {
 
       hideForms();
       if($feedForm.css('display') !== 'none') {
-        $(this).css({
-          'background': '',
-          'background-size': '',
-          'color': ''
-        }).parent().css({
-          'background': ''
-        });
+        $(this).css(btnIconReset).parent().css(btnBgReset);
         $feedForm.slideUp('slow');
       } else {
         $(this).css({
@@ -52,9 +69,6 @@ $(document).ready(function() {
         });
         $feedForm.slideDown('slow');
       }
-
-
-      //$feedForm.addClass('animate');
     })
   }
   showFeedForm();
@@ -65,13 +79,7 @@ $(document).ready(function() {
       hideForms();
 
       if($weightForm.css('display') !== 'none') {
-        $(this).css({
-          'background': '',
-          'background-size': '',
-          'color': ''
-        }).parent().css({
-          'background': ''
-        });
+        $(this).css(btnIconReset).parent().css(btnBgReset);
         $weightForm.slideUp('slow');
       } else {
         $(this).css({
@@ -83,11 +91,96 @@ $(document).ready(function() {
         });
         $weightForm.slideDown('slow');
       }
-
-
-      //$weightForm.addClass('animate');
     })
   }
   showWeightForm();
+
+  function showDiaperForm() {
+    $diaperBtn.on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($diaperForm.css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $diaperForm.slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/diaper-w.png") no-repeat 25px center transparent',
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $diaperForm.slideDown('slow');
+      }
+    })
+  }
+  showDiaperForm();
+
+  function showBathForm() {
+    $bathBtn.on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($bathForm.css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $bathForm.slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/bath-w.png") no-repeat 25px center transparent',
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $bathForm.slideDown('slow');
+      }
+    })
+  }
+  showBathForm();
+
+  function showDoctorForm() {
+    $doctorBtn.on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($doctorForm.css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $doctorForm.slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/doctor-w.png") no-repeat 25px center transparent',
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $doctorForm.slideDown('slow');
+      }
+    })
+  }
+  showDoctorForm();
+
+  function showDiaryForm() {
+    $diaryBtn.on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($diaryForm.css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $diaryForm.slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/diary-w.png") no-repeat 25px center transparent',
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $diaryForm.slideDown('slow');
+      }
+    })
+  }
+  //showDiaryForm();
 
 })
