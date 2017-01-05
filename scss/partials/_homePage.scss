@@ -13,7 +13,7 @@
 }
 
 .foto {
-  margin: 0 10px;
+  margin: 0 20px 0 10px;
   border: 1px solid $gray;
 }
 
@@ -27,6 +27,7 @@
   }
 }
 
+/* settings widoczne tylko na desktopie*/
 .settings {
   margin-left: auto;
   padding: 10px 50px 10px 40px;
@@ -39,6 +40,35 @@
     background: url("../img/settings-b.png") no-repeat left center transparent;
     background-size: 32px;
     color: $black;
+  }
+}
+
+/*Na tablecie widoczne ham-menu*/
+.ham-menu {
+  display: none;
+}
+
+@media #{$tablet} {
+  .settings {
+    display: none;
+  }
+  .ham-menu {
+    display: block;
+    margin-left: auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: $gray;
+    cursor: pointer;
+    &:after {
+      content:'\2630';
+    }
+    .ham-menu-title {
+      margin-right: 5px;
+      text-transform: uppercase;
+    }
+    &:hover {
+      color: $black;
+    }
   }
 }
 
@@ -67,6 +97,14 @@
 .navi {
   min-width: 320px;
   padding: 30px 10px;
+  .navi-title {
+    display: block;
+    padding: 20px 0;
+    background: $light-orange;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+  }
   li {
     background: $white;
     border-bottom: 1px solid $light-gray;
@@ -144,17 +182,36 @@
   }
 }
 
-.navi-title {
-  display: block;
-  padding: 20px 0;
-  background: $light-orange;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 20px;
+.mobile-menu {
+  display: none;
+  background: $white;
+  a {
+    display: block;
+    padding: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    color: inherit;
+    &:hover {
+      background: $orange;
+      color: $white;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-flow: nowrap;
+  }
+  .navi {
+      display: none;
+  }
 }
 
 .main-content {
-  width: 100%;
   padding: 30px 0;
 }
 
@@ -305,15 +362,15 @@ textarea {
   margin-left: 15px;
 }
 
-.formbox {
+/*feed form*/
+.feed-formbox {
   display: none;
   padding: 10px;
   margin-top: -10px;
   margin-bottom: 10px;
 }
 
-.formbox-in-left,
-.formbox-in-right {
+.feed-formbox-in {
   /*główne okgno z formularzem w ramce*/
   position: relative;
   display: flex;
@@ -322,9 +379,6 @@ textarea {
   border: 1px solid $gray;
   background: $white;
   font-size: 16px;
-}
-
-.formbox-in-left{
   &:before {
     content:'';
     position: absolute;
@@ -349,211 +403,581 @@ textarea {
     border-color: transparent transparent transparent $white;
     transform: rotate(-90deg);
   }
-}
 
-.formbox-in-right {
-  &:before {
-    content:'';
-    position: absolute;
-    top: -18px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $gray;
-    transform: rotate(-90deg);
+  .feed-form {
+    display: flex;
+    flex-direction: column;
   }
-  &:after {
-    content:'';
-    position: absolute;
-    top: -17px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $white;
-    transform: rotate(-90deg);
+  .feed-start,
+  .feed-stop,
+  .feed-brest,
+  .feed-ml {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
   }
-}
 
-.form {
-  display: flex;
-  flex-direction: column;
-  //wywalić doctorForm!
-}
-
-.feed-start,
-.feed-stop,
-.feed-breast,
-.feed-ml,
-.weight-start,
-.weight-g,
-.diaper-start,
-.diaper-pee,
-.diaper-poo,
-.bath-start,
-.doctor-start,
-.doctor-who, /* :D */
-.doctor-where,
-.diary-start {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.comment-box {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.submit-box {
-  margin-left: 100px;
-  .ok-btn {
-    display: inline-block;
-    padding: 10px 52px;
-    border: none;
-    background: $orange;
-    text-transform: uppercase;
-    color: $white;
+  .brest-radio {
+    width: 25px;
+    height: 25px;
+    padding-top: 3px;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    text-align: center;
     cursor: pointer;
+    &:last-of-type {
+      margin-left: 10px;
+    }
   }
-  .cancel-btn {
-    display: inline-block;
-    margin: 10px 52px;
-    border: none;
-    background: none;
-    text-transform: lowercase;
-    color: $orange;
-    cursor: pointer;
+
+  input[name="milliliters"] {
+    width: 40px;
+    margin-right: 5px;
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
   }
-}
 
-.legend {
-  width: 25%;
-  color: $gray;
-}
-
-.legend-title {
-  display: inline-block;
-  padding-bottom: 4px;
-  border-bottom: 1px solid $gray;
-}
-
-.breast-set,
-.poo-set {
-  display: flex;
-  align-items: center;
-  &:first-of-type {
-    margin-top: 10px;
+  .feed-comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
   }
-}
 
-.breast-ico,
-.poo-ico {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin: 5px 10px 0 0;
-  padding-top: 3px;
-  border: 1px solid $gray;
-  border-radius: 50%;
-  text-align: center;
-}
-
-/*feed form*/
-.breast-radio {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
-  padding-top: 3px;
-  border: 1px solid $gray;
-  border-radius: 50%;
-  text-align: center;
-  cursor: pointer;
-  &:first-of-type {
-    margin-left: 0;
+  .feed-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .feed-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
   }
-}
-
-.milliliters {
-  width: 40px;
-  margin-right: 5px;
-  &::-webkit-inner-spin-button {
-    display: none;
+  .feed-legend {
+    width: 25%;
+    color: $gray;
+    .feed-legend-title {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $gray;
+    }
+    .brest-set {
+      display: flex;
+      align-items: center;
+      &:first-of-type {
+        margin-top: 10px;
+      }
+    }
+    .brest-ico {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 5px 10px 0 0;
+      padding-top: 3px;
+      border: 1px solid $gray;
+      border-radius: 50%;
+      text-align: center;
+    }
   }
 }
 /*feed form end*/
 
 /*weight form*/
-.grams {
-  width: 40px;
-  margin-right: 5px;
-  &::-webkit-inner-spin-button {
-    display: none;
+.weight-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.weight-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .weight-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .weight-start,
+  .weight-g {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  input[name="grams"] {
+    width: 40px;
+    margin-right: 5px;
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+
+  .weight-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .weight-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
   }
 }
 /*weight form end*/
 
 /*diaper form*/
-.pee-radio {
-  width: 25px;
-  height: 25px;
-  padding-top: 3px;
-  border: 1px solid $gray;
-  border-radius: 50%;
-  text-align: center;
+.diaper-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-.poo-radio {
-  margin-left: 10px;
+.diaper-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
   border: 1px solid $gray;
-  border-radius: 50%;
-  text-align: center;
-  cursor: pointer;
-  &:first-of-type {
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .diaper-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .diaper-start,
+  .diaper-pee,
+  .diaper-poo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .pee-radio {
     width: 25px;
     height: 25px;
-    margin-left: 0;
     padding-top: 3px;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    text-align: center;
   }
-  &:nth-of-type(2) {
-    width: 35px;
-    height: 35px;
-    padding-top: 8px;
+
+  .poo-radio {
+    margin-left: 10px;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    &:first-of-type {
+      width: 25px;
+      height: 25px;
+      margin-left: 0;
+      padding-top: 3px;
+    }
+    &:nth-of-type(2) {
+      width: 35px;
+      height: 35px;
+      padding-top: 8px;
+    }
+    &:nth-of-type(3) {
+      width: 45px;
+      height: 45px;
+      padding-top: 12px;
+    }
   }
-  &:nth-of-type(3) {
-    width: 45px;
-    height: 45px;
-    padding-top: 12px;
+
+  .diaper-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .diaper-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+  .diaper-legend {
+    width: 25%;
+    color: $gray;
+    .diaper-legend-title {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $gray;
+    }
+    .poo-set {
+      display: flex;
+      align-items: center;
+      &:first-of-type {
+        margin-top: 10px;
+      }
+    }
+    .poo-ico {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 5px 10px 0 0;
+      padding-top: 3px;
+      border: 1px solid $gray;
+      border-radius: 50%;
+      text-align: center;
+    }
   }
 }
 /*diaper form end*/
 
-/*bath form zmieściło się w stylach ogólnych*/
+/*bath form*/
+.bath-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.bath-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .bath-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .bath-start {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .bath-comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .bath-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .bath-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+}
+/*bath form end*/
 
 /*doctor form*/
-.doctor-text {
-  width: 250px;
+.doctor-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.doctor-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    left: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .doctor-form {
+    display: flex;
+    flex-direction: column;
+    input[type="text"] {
+      width: 250px;
+    }
+  }
+  .doctor-start,
+  .doctor-who,
+  .doctor-where {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .doctor-comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .doctor-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .doctor-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
 }
 /*doctor form end*/
 
 /*diary form*/
-.diary-photo,
-.diary-video {
-  display: flex;
-  align-items: center;
-  margin-left: 100px;
-  cursor: pointer;
-  &:hover {
-    color: $orange;
-  }
+.diary-formbox {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-.diary-video {
-  margin-bottom: 20px;
+.diary-formbox-in {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
+  }
+
+  .diary-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .diary-start {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .diary-photo,
+  .diary-video {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    cursor: pointer;
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  .diary-video {
+    margin-bottom: 20px;
+  }
+
+  .diary-comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+  }
+
+  .diary-submit {
+    margin-left: 100px;
+    input[type="submit"] {
+      display: inline-block;
+      padding: 10px 52px;
+      border: none;
+      background: $orange;
+      text-transform: uppercase;
+      color: $white;
+      cursor: pointer;
+    }
+    .diary-cancel {
+      display: inline-block;
+      margin: 10px 52px;
+      border: none;
+      background: none;
+      text-transform: lowercase;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
 }
 /*diary form end*/
-//934

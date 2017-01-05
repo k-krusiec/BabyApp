@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  //forms
   var $feedBtn = $('.feed-btn');
   var $feedForm = $('.feed-formbox');
 
@@ -178,5 +179,34 @@ $(document).ready(function() {
     })
   }
   showDiaryForm();
+  //forms end
+
+  //mobile-menu
+  function mobileMenuHendling() {
+    var $hamMenuBtn = $('.ham-menu');
+    var $mobileMenu = $('.mobile-menu');
+    if (matchMedia) {
+      var mq = window.matchMedia("(min-width: 960px)");
+      mq.addListener(WidthChange);
+      WidthChange(mq);
+    }
+
+    function WidthChange(mq) {
+      if (mq.matches) {
+        $mobileMenu.css({'display': 'none'});
+      }
+    }
+
+    $hamMenuBtn.on('click', function() {
+      if ($mobileMenu.css('display') !== 'none') {
+        $mobileMenu.css({'display': 'none'});
+      } else {
+        $mobileMenu.css({'display': 'block'});
+      }
+
+    })
+  }
+  mobileMenuHendling();
+  //mobile-menu end
 
 })

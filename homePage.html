@@ -13,6 +13,17 @@
 
     <header class="header">
       <div class="main-width">
+        <nav class="mobile-menu">
+          <ul>
+            <li class="mob-feed"><a href="#">Karmienia</a></li>
+            <li class="mob-weight"><a href="#">Ważenia</a></li>
+            <li class="mob-diaper"><a href="#">Zmiany pieluszek</a></li>
+            <li class="mob-bath"><a href="#">Kąpiele</a></li>
+            <li class="mob-doctor"><a href="#">Wizyty lekarskie</a></li>
+            <li class="mob-diary"><a href="#">Dziennik</a></li>
+            <li class="mob-set"><a href="#">Ustawienia</a></li>
+          </ul>
+        </nav>
         <div class="main-header">
           <a href="#">
             <img class="logo" src="img/babyapp-logo-180x80.png" alt="BabyApp logo" />
@@ -25,6 +36,9 @@
           <a class="settings" href="#">
             Ustawienia
           </a>
+          <div class="ham-menu">
+            <span class="ham-menu-title">Menu</span>
+          </div>
         </div>
       </div>
       <section class="breadcrumbs">
@@ -64,9 +78,9 @@
             </div>
 
             <!--Feed form-->
-            <div class="feed-formbox formbox">
-              <div class="formbox-in-left">
-                <form class="feed-form form">
+            <div class="feed-formbox">
+              <div class="feed-formbox-in">
+                <form class="feed-form">
                   <div class="feed-start">
                     <label for="feed-start-date">Start</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
@@ -81,34 +95,34 @@
                     <img class="clock" src="img/time-b.png" alt="clock" />
                     <input type="time" name="feed-stop-time" />
                   </div>
-                  <div class="feed-breast">
+                  <div class="feed-brest">
                     <label for="breast">Pierś</label>
-                    <div class="breast-radio">L</div>
-                    <div class="breast-radio">P</div>
+                    <div class="brest-radio">L</div>
+                    <div class="brest-radio">P</div>
                   </div>
                   <div class="feed-ml">
                     <label for="milliliters">Wypite mleko</label>
-                    <input class="milliliters" type="number" name="milliliters" min="0000" max="9999" placeholder="0000"/>
+                    <input type="number" name="milliliters" min="0000" max="9999" placeholder="0000"/>
                     <span>ml</span>
                   </div>
-                  <div class="comment-box">
+                  <div class="feed-comments">
                     <label for="comments">Uwagi</label>
                     <textarea name="comments"></textarea>
                   </div>
-                  <div class="submit-box">
-                    <input class="ok-btn" type="submit" name="feed-submit" value="Zapisz">
-                    <button class="cancel-btn" type="button" name="feed-cancel">Anuluj</button>
+                  <div class="feed-submit">
+                    <input type="submit" name="feed-submit" value="Zapisz">
+                    <button class="feed-cancel" type="button" name="feed-cancel">Anuluj</button>
                   </div>
                 </form>
-                <div class="legend">
-                  <span class="legend-title">Legenda</span>
-                  <div class="breast-set">
-                    <div class="breast-ico">L</div>
-                    <span class="breast-name">LEWA pierś</span>
+                <div class="feed-legend">
+                  <span class="feed-legend-title">Legenda</span>
+                  <div class="brest-set">
+                    <div class="brest-ico">L</div>
+                    <span class="brest-name">LEWA pierś</span>
                   </div>
-                  <div class="breast-set">
-                    <div class="breast-ico">P</div>
-                    <span class="breast-name">PRAWA pierś</span>
+                  <div class="brest-set">
+                    <div class="brest-ico">P</div>
+                    <span class="brest-name">PRAWA pierś</span>
                   </div>
                 </div>
               </div>
@@ -116,9 +130,9 @@
             <!--Feed form end-->
 
             <!--Weight form-->
-            <div class="weight-formbox formbox">
-              <div class="formbox-in-right">
-                <form class="weight-form form">
+            <div class="weight-formbox">
+              <div class="weight-formbox-in">
+                <form class="weight-form">
                   <div class="weight-start">
                     <label for="weight-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
@@ -126,12 +140,12 @@
                   </div>
                   <div class="weight-g">
                     <label for="grams">Waga</label>
-                    <input class="grams" type="number" name="grams" min="0000" max="9999" placeholder="0000" />
+                    <input type="number" name="grams" min="0000" max="9999" placeholder="0000" />
                     <span>g</span>
                   </div>
-                  <div class="submit-box">
-                    <input class="ok-btn" type="submit" name="weight-submit" value="Zapisz">
-                    <button class="cancel-btn" type="button" name="weight-cancel">Anuluj</button>
+                  <div class="weight-submit">
+                    <input type="submit" name="weight-submit" value="Zapisz">
+                    <button class="weight-cancel" type="button" name="weight-cancel">Anuluj</button>
                   </div>
                 </form>
               </div>
@@ -152,9 +166,9 @@
             </div>
 
             <!--diaper form-->
-            <div class="diaper-formbox formbox">
-              <div class="formbox-in-left">
-                <form class="diaper-form form">
+            <div class="diaper-formbox">
+              <div class="diaper-formbox-in">
+                <form class="diaper-form">
                   <div class="diaper-start">
                     <label for="diaper-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
@@ -174,13 +188,13 @@
                     <div class="poo-radio">2</div>
                     <div class="poo-radio">3</div>
                   </div>
-                  <div class="submit-box">
-                    <input class="ok-btn" type="submit" name="diaper-submit" value="Zapisz">
-                    <button class="cancel-btn" type="button" name="diaper-cancel">Anuluj</button>
+                  <div class="diaper-submit">
+                    <input type="submit" name="diaper-submit" value="Zapisz">
+                    <button class="diaper-cancel" type="button" name="diaper-cancel">Anuluj</button>
                   </div>
                 </form>
-                <div class="legend">
-                  <span class="legend-title">Legenda</span>
+                <div class="diaper-legend">
+                  <span class="diaper-legend-title">Legenda</span>
                   <div class="poo-set">
                     <div class="poo-ico">1</div>
                     <span class="poo-name">MAŁA kupka</span>
@@ -199,21 +213,21 @@
             <!--diaper form end-->
 
             <!--bath form-->
-            <div class="bath-formbox formbox">
-              <div class="formbox-in-right">
-                <form class="bath-form form">
+            <div class="bath-formbox">
+              <div class="bath-formbox-in">
+                <form class="bath-form">
                   <div class="bath-start">
                     <label for="bath-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
                     <input type="date" name="bath-date" />
                   </div>
-                  <div class="comment-box">
+                  <div class="bath-comments">
                     <label for="comments">Uwagi</label>
                     <textarea name="comments"></textarea>
                   </div>
-                  <div class="submit-box">
-                    <input class="ok-btn" type="submit" name="bath-submit" value="Zapisz">
-                    <button class="cancel-btn" type="button" name="bath-cancel">Anuluj</button>
+                  <div class="bath-submit">
+                    <input type="submit" name="bath-submit" value="Zapisz">
+                    <button class="bath-cancel" type="button" name="bath-cancel">Anuluj</button>
                   </div>
                 </form>
               </div>
@@ -234,9 +248,9 @@
             </div>
 
             <!--doctor form-->
-            <div class="doctor-formbox formbox">
-              <div class="formbox-in-left">
-                <form class="doctor-form form">
+            <div class="doctor-formbox">
+              <div class="doctor-formbox-in">
+                <form class="doctor-form">
                   <div class="doctor-start">
                     <label for="doctor-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
@@ -246,19 +260,19 @@
                   </div>
                   <div class="doctor-who">
                     <label for="doctor-name">Kto</label>
-                    <input class="doctor-text" type="text" name="doctor-name" placeholder="np. Anna Kowalska" />
+                    <input type="text" name="doctor-name" placeholder="np. Anna Kowalska" />
                   </div>
                   <div class="doctor-where">
                     <label for="doctor-location">Gdzie</label>
-                    <input class="doctor-text" type="text" name="doctor-location" placeholder="np. Warszawa, Marszałkowska 1" />
+                    <input type="text" name="doctor-location" placeholder="np. Warszawa, Marszałkowska 1" />
                   </div>
-                  <div class="comment-box">
+                  <div class="doctor-comments">
                     <label for="comments">Uwagi</label>
                     <textarea name="comments"></textarea>
                   </div>
-                  <div class="submit-box">
-                    <input class="ok-btn" type="submit" name="doctor-submit" value="Zapisz">
-                    <button class="cancel-btn" type="button" name="doctor-cancel">Anuluj</button>
+                  <div class="doctor-submit">
+                    <input type="submit" name="doctor-submit" value="Zapisz">
+                    <button class="doctor-cancel" type="button" name="doctor-cancel">Anuluj</button>
                   </div>
                 </form>
               </div>
@@ -266,15 +280,15 @@
             <!--doctor form end-->
 
             <!--diary form-->
-            <div class="diary-formbox formbox">
-              <div class="formbox-in-right">
-                <form class="form">
+            <div class="diary-formbox">
+              <div class="diary-formbox-in">
+                <form class="diary-form">
                   <div class="diary-start">
                     <label for="diary-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
                     <input type="date" name="diary-date" />
                   </div>
-                  <div class="comment-box">
+                  <div class="diary-comments">
                     <label for="comments">Opis</label>
                     <textarea name="comments"></textarea>
                   </div>
@@ -286,9 +300,9 @@
                     <img class="video" src="img/video-b.png" alt="video" />
                     <span>dodaj video</span>
                   </div>
-                  <div class="submit-box">
-                    <input class="ok-btn" type="submit" name="diary-submit" value="Zapisz">
-                    <button class="cancel-btn" type="button" name="diary-cancel">Anuluj</button>
+                  <div class="diary-submit">
+                    <input type="submit" name="diary-submit" value="Zapisz">
+                    <button class="diary-cancel" type="button" name="diary-cancel">Anuluj</button>
                   </div>
                 </form>
               </div>
