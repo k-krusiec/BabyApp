@@ -194,14 +194,17 @@ $(document).ready(function() {
     function WidthChange(mq) {
       if (mq.matches) {
         $mobileMenu.css({'display': 'none'});
+        $hamMenuBtn.removeClass('ham-close-icon').addClass('ham-icon');
       }
     }
 
     $hamMenuBtn.on('click', function() {
       if ($mobileMenu.css('display') !== 'none') {
         $mobileMenu.css({'display': 'none'});
+        $(this).removeClass('ham-close-icon').addClass('ham-icon');
       } else {
         $mobileMenu.css({'display': 'block'});
+        $(this).removeClass('ham-icon').addClass('ham-close-icon');
       }
 
     })

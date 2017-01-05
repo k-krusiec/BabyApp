@@ -12,6 +12,13 @@
   padding: 0 100px 0 40px;
 }
 
+@media #{$tablet} {
+  /*media queries dla headera*/
+  .logo {
+    padding: 0 40px;
+  }
+}
+
 .foto {
   margin: 0 20px 0 10px;
   border: 1px solid $gray;
@@ -24,6 +31,31 @@
   }
   .baby-age {
     font-size: 18px;
+  }
+}
+
+@media #{$phone} {
+  /*media queries dla headera*/
+  .main-header {
+    padding: 10px 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .foto {
+    margin: 0 10px;
+  }
+
+  .baby-info {
+    .baby-name {
+      padding: 0 0 5px;
+      font-size: 20px;
+    }
+    .baby-age {
+      font-size: 14px;
+    }
   }
 }
 
@@ -46,29 +78,48 @@
 /*Na tablecie widoczne ham-menu*/
 .ham-menu {
   display: none;
+  margin-left: auto;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: $gray;
+  cursor: pointer;
+  .ham-menu-title {
+    margin-right: 5px;
+    text-transform: uppercase;
+  }
+  &:hover {
+    color: $black;
+  }
+}
+
+.ham-icon:after {
+  content:'\2630';
+}
+
+.ham-close-icon:after {
+  content:'\d7';
+  position: relative;
+  top: 3px;
+  font-size: 32px;
 }
 
 @media #{$tablet} {
   .settings {
     display: none;
   }
+
   .ham-menu {
     display: block;
-    margin-left: auto;
-    padding: 10px 20px;
-    font-size: 20px;
-    color: $gray;
-    cursor: pointer;
-    &:after {
-      content:'\2630';
-    }
-    .ham-menu-title {
-      margin-right: 5px;
-      text-transform: uppercase;
-    }
-    &:hover {
-      color: $black;
-    }
+  }
+}
+
+@media #{$phone} {
+  .settings {
+    display: none;
+  }
+
+  .ham-menu {
+    display: block;
   }
 }
 
@@ -198,13 +249,26 @@
       color: $white;
     }
   }
+  li {
+    border-bottom: 1px solid $light-gray;
+  }
+  .mob-set {
+    border: none;
+  }
 }
 
 @media #{$tablet} {
   .container {
-    display: flex;
     justify-content: center;
-    flex-flow: nowrap;
+  }
+  .navi {
+      display: none;
+  }
+}
+
+@media #{$phone} {
+  .container {
+    justify-content: center;
   }
   .navi {
       display: none;
