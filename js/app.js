@@ -27,6 +27,34 @@ $(document).ready(function() {
     'background': ''
   };
 
+  var tileImgPos = {
+    'desktop': 'no-repeat 25px center transparent',
+    'phone': 'no-repeat center 25px transparent'
+  }
+
+
+
+  function deviceSize() {
+    var tileImgPosVal;
+    if (matchMedia) {
+      var mqPhone = window.matchMedia("(min-width: 640px)");
+      mqPhone.addListener(WidthChange);
+      WidthChange(mqPhone);
+    }
+
+    function WidthChange(mqPhone) {
+      //składam formsy po wykryciu odpowiedniej wielkości ekranu,
+      //bo ikony nie chcą się ładnie przestawiać
+      hideForms();
+      if (mqPhone.matches) {
+        tileImgPosVal = tileImgPos.desktop;
+      } else {
+        tileImgPosVal = tileImgPos.phone;
+      }
+    }
+    return tileImgPosVal;
+  }
+
   function hideForms() {
     if (($feedForm.css('display') !== 'none') || ($weightForm.css('display') !== 'none') ||
         ($diaperForm.css('display') !== 'none') || ($bathForm.css('display') !== 'none') ||
@@ -58,7 +86,7 @@ $(document).ready(function() {
         $feedForm.slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/feed-w.png") no-repeat 25px center transparent',
+          'background': 'url("../img/feed-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -80,7 +108,7 @@ $(document).ready(function() {
         $weightForm.slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/weight-w.png") no-repeat 25px center transparent',
+          'background': 'url("../img/weight-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -102,7 +130,7 @@ $(document).ready(function() {
         $diaperForm.slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/diaper-w.png") no-repeat 25px center transparent',
+          'background': 'url("../img/diaper-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -124,7 +152,7 @@ $(document).ready(function() {
         $bathForm.slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/bath-w.png") no-repeat 25px center transparent',
+          'background': 'url("../img/bath-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -146,7 +174,7 @@ $(document).ready(function() {
         $doctorForm.slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/doctor-w.png") no-repeat 25px center transparent',
+          'background': 'url("../img/doctor-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -168,7 +196,7 @@ $(document).ready(function() {
         $diaryForm.slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/diary-w.png") no-repeat 25px center transparent',
+          'background': 'url("../img/diary-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -186,13 +214,13 @@ $(document).ready(function() {
     var $hamMenuBtn = $('.ham-menu');
     var $mobileMenu = $('.mobile-menu');
     if (matchMedia) {
-      var mq = window.matchMedia("(min-width: 960px)");
-      mq.addListener(WidthChange);
-      WidthChange(mq);
+      var mqTab = window.matchMedia("(min-width: 960px)");
+      mqTab.addListener(WidthChange);
+      WidthChange(mqTab);
     }
 
-    function WidthChange(mq) {
-      if (mq.matches) {
+    function WidthChange(mqTab) {
+      if (mqTab.matches) {
         $mobileMenu.css({'display': 'none'});
         $hamMenuBtn.removeClass('ham-close-icon').addClass('ham-icon');
       }
