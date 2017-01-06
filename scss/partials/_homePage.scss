@@ -24,14 +24,13 @@
   border: 1px solid $gray;
 }
 
-.baby-info {
-  .baby-name {
-    padding: 0 0 5px;
-    font-size: 32px;
-  }
-  .baby-age {
-    font-size: 18px;
-  }
+.baby-name {
+  padding: 0 0 5px;
+  font-size: 32px;
+}
+
+.baby-age {
+  font-size: 18px;
 }
 
 @media #{$phone} {
@@ -48,14 +47,13 @@
     margin: 0 10px;
   }
 
-  .baby-info {
-    .baby-name {
-      padding: 0 0 5px;
-      font-size: 20px;
-    }
-    .baby-age {
-      font-size: 14px;
-    }
+  .baby-name {
+    padding: 0 0 5px;
+    font-size: 20px;
+  }
+
+  .baby-age {
+    font-size: 14px;
   }
 }
 
@@ -145,9 +143,11 @@
   .breadcrumbs {
     padding: 12px 10px 10px;
   }
+
   .home-page-bc {
     margin-left: 0;
   }
+
   .right-arrow {
     width: 20px;
   }
@@ -565,7 +565,7 @@ textarea {
 
   textarea {
     resize: none;
-    width: 290px;
+    width: 200px;
     height: 90px;
     padding: 3px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -584,18 +584,15 @@ textarea {
   .clock {
     margin-left: 15px;
   }
-
 }
 
-/*feed form*/
-.feed-formbox {
+.formbox {
   display: none;
   padding: 10px;
-  margin-top: -10px;
-  margin-bottom: 10px;
+  margin: -10px 0 10px 0;
 }
 
-.feed-formbox-in {
+.formbox-in-left {
   /*główne okgno z formularzem w ramce*/
   position: relative;
   display: flex;
@@ -628,607 +625,243 @@ textarea {
     border-color: transparent transparent transparent $white;
     transform: rotate(-90deg);
   }
+}
 
-  .feed-form {
-    display: flex;
-    flex-direction: column;
+.formbox-in-right {
+  /*główne okgno z formularzem w ramce*/
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid $gray;
+  background: $white;
+  font-size: 16px;
+  &:before {
+    content:'';
+    position: absolute;
+    top: -18px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $gray;
+    transform: rotate(-90deg);
   }
-  .feed-start,
-  .feed-stop,
-  .feed-brest,
-  .feed-ml {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  &:after {
+    content:'';
+    position: absolute;
+    top: -17px;
+    right: 144px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px 0px 12px 10px;
+    border-color: transparent transparent transparent $white;
+    transform: rotate(-90deg);
   }
+}
 
-  .brest-radio {
-    width: 25px;
-    height: 25px;
-    padding-top: 3px;
-    border: 1px solid $gray;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    &:last-of-type {
-      margin-left: 10px;
-    }
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+}
 
-  input[name="milliliters"] {
-    width: 40px;
-    margin-right: 5px;
-    &::-webkit-inner-spin-button {
-      display: none;
-    }
-  }
+.feed-start,
+.feed-stop,
+.feed-brest,
+.feed-ml,
+.weight-start,
+.weight-g,
+.diaper-start,
+.diaper-pee,
+.diaper-poo,
+.bath-start,
+.doctor-start,
+.doctor-who,
+.doctor-where,
+.diary-start {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .feed-comments {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
+.databox {
+  display: flex;
+  align-items: center;
+}
 
-  .feed-submit {
-    margin-left: 100px;
-    input[type="submit"] {
-      display: inline-block;
-      padding: 10px 52px;
-      border: none;
-      background: $orange;
-      text-transform: uppercase;
-      color: $white;
-      cursor: pointer;
-    }
-    .feed-cancel {
-      display: inline-block;
-      margin: 10px 52px;
-      border: none;
-      background: none;
-      text-transform: lowercase;
-      color: $orange;
-      cursor: pointer;
-    }
+.commentbox {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.submitbox {
+  margin-left: 100px;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 10px 52px;
+  border: none;
+  background: $orange;
+  text-transform: uppercase;
+  color: $white;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  display: inline-block;
+  margin: 10px 52px;
+  border: none;
+  background: none;
+  text-transform: lowercase;
+  color: $orange;
+  cursor: pointer;
+}
+
+.legendbox {
+  width: 25%;
+  color: $gray;
+}
+
+.legend-title {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $gray;
+}
+
+.legend-set {
+  display: flex;
+  align-items: center;
+  &:first-of-type {
+    margin-top: 10px;
   }
-  .feed-legend {
-    width: 25%;
-    color: $gray;
-    .feed-legend-title {
-      display: inline-block;
-      padding-bottom: 4px;
-      border-bottom: 1px solid $gray;
-    }
-    .brest-set {
-      display: flex;
-      align-items: center;
-      &:first-of-type {
-        margin-top: 10px;
-      }
-    }
-    .brest-ico {
-      display: inline-block;
-      width: 25px;
-      height: 25px;
-      margin: 5px 10px 0 0;
-      padding-top: 3px;
-      border: 1px solid $gray;
-      border-radius: 50%;
-      text-align: center;
-    }
+}
+
+.legend-ico {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 5px 10px 0 0;
+  padding-top: 3px;
+  border: 1px solid $gray;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/*feed form*/
+.brest-radio {
+  width: 25px;
+  height: 25px;
+  padding-top: 3px;
+  border: 1px solid $gray;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  &:last-of-type {
+    margin-left: 10px;
+  }
+}
+
+.milliliters {
+  width: 40px;
+  margin-right: 5px;
+  &::-webkit-inner-spin-button {
+    display: none;
   }
 }
 /*feed form end*/
 
 /*weight form*/
-.weight-formbox {
-  display: none;
-  padding: 10px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-
-.weight-formbox-in {
-  /*główne okgno z formularzem w ramce*/
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 28px;
-  border: 1px solid $gray;
-  background: $white;
-  font-size: 16px;
-  &:before {
-    content:'';
-    position: absolute;
-    top: -18px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $gray;
-    transform: rotate(-90deg);
-  }
-  &:after {
-    content:'';
-    position: absolute;
-    top: -17px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $white;
-    transform: rotate(-90deg);
-  }
-
-  .weight-form {
-    display: flex;
-    flex-direction: column;
-  }
-  .weight-start,
-  .weight-g {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  input[name="grams"] {
-    width: 40px;
-    margin-right: 5px;
-    &::-webkit-inner-spin-button {
-      display: none;
-    }
-  }
-
-  .weight-submit {
-    margin-left: 100px;
-    input[type="submit"] {
-      display: inline-block;
-      padding: 10px 52px;
-      border: none;
-      background: $orange;
-      text-transform: uppercase;
-      color: $white;
-      cursor: pointer;
-    }
-    .weight-cancel {
-      display: inline-block;
-      margin: 10px 52px;
-      border: none;
-      background: none;
-      text-transform: lowercase;
-      color: $orange;
-      cursor: pointer;
-    }
+.grams {
+  width: 40px;
+  margin-right: 5px;
+  &::-webkit-inner-spin-button {
+    display: none;
   }
 }
 /*weight form end*/
 
 /*diaper form*/
-.diaper-formbox {
-  display: none;
-  padding: 10px;
-  margin-top: -10px;
-  margin-bottom: 10px;
+.pee-radio {
+  width: 25px;
+  height: 25px;
+  padding-top: 3px;
+  border: 1px solid $gray;
+  border-radius: 50%;
+  text-align: center;
 }
 
-.diaper-formbox-in {
-  /*główne okgno z formularzem w ramce*/
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 28px;
+.poo-radio {
+  margin-left: 10px;
   border: 1px solid $gray;
-  background: $white;
-  font-size: 16px;
-  &:before {
-    content:'';
-    position: absolute;
-    top: -18px;
-    left: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $gray;
-    transform: rotate(-90deg);
-  }
-  &:after {
-    content:'';
-    position: absolute;
-    top: -17px;
-    left: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $white;
-    transform: rotate(-90deg);
-  }
-
-  .diaper-form {
-    display: flex;
-    flex-direction: column;
-  }
-  .diaper-start,
-  .diaper-pee,
-  .diaper-poo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .pee-radio {
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  &:first-of-type {
     width: 25px;
     height: 25px;
+    margin-left: 0;
     padding-top: 3px;
-    border: 1px solid $gray;
-    border-radius: 50%;
-    text-align: center;
   }
-
-  .poo-radio {
-    margin-left: 10px;
-    border: 1px solid $gray;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    &:first-of-type {
-      width: 25px;
-      height: 25px;
-      margin-left: 0;
-      padding-top: 3px;
-    }
-    &:nth-of-type(2) {
-      width: 35px;
-      height: 35px;
-      padding-top: 8px;
-    }
-    &:nth-of-type(3) {
-      width: 45px;
-      height: 45px;
-      padding-top: 12px;
-    }
+  &:nth-of-type(2) {
+    width: 35px;
+    height: 35px;
+    padding-top: 8px;
   }
-
-  .diaper-submit {
-    margin-left: 100px;
-    input[type="submit"] {
-      display: inline-block;
-      padding: 10px 52px;
-      border: none;
-      background: $orange;
-      text-transform: uppercase;
-      color: $white;
-      cursor: pointer;
-    }
-    .diaper-cancel {
-      display: inline-block;
-      margin: 10px 52px;
-      border: none;
-      background: none;
-      text-transform: lowercase;
-      color: $orange;
-      cursor: pointer;
-    }
-  }
-  .diaper-legend {
-    width: 25%;
-    color: $gray;
-    .diaper-legend-title {
-      display: inline-block;
-      padding-bottom: 4px;
-      border-bottom: 1px solid $gray;
-    }
-    .poo-set {
-      display: flex;
-      align-items: center;
-      &:first-of-type {
-        margin-top: 10px;
-      }
-    }
-    .poo-ico {
-      display: inline-block;
-      width: 25px;
-      height: 25px;
-      margin: 5px 10px 0 0;
-      padding-top: 3px;
-      border: 1px solid $gray;
-      border-radius: 50%;
-      text-align: center;
-    }
+  &:nth-of-type(3) {
+    width: 45px;
+    height: 45px;
+    padding-top: 12px;
   }
 }
 /*diaper form end*/
 
-/*bath form*/
-.bath-formbox {
-  display: none;
-  padding: 10px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-
-.bath-formbox-in {
-  /*główne okgno z formularzem w ramce*/
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 28px;
-  border: 1px solid $gray;
-  background: $white;
-  font-size: 16px;
-  &:before {
-    content:'';
-    position: absolute;
-    top: -18px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $gray;
-    transform: rotate(-90deg);
-  }
-  &:after {
-    content:'';
-    position: absolute;
-    top: -17px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $white;
-    transform: rotate(-90deg);
-  }
-
-  .bath-form {
-    display: flex;
-    flex-direction: column;
-  }
-  .bath-start {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .bath-comments {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-
-  .bath-submit {
-    margin-left: 100px;
-    input[type="submit"] {
-      display: inline-block;
-      padding: 10px 52px;
-      border: none;
-      background: $orange;
-      text-transform: uppercase;
-      color: $white;
-      cursor: pointer;
-    }
-    .bath-cancel {
-      display: inline-block;
-      margin: 10px 52px;
-      border: none;
-      background: none;
-      text-transform: lowercase;
-      color: $orange;
-      cursor: pointer;
-    }
-  }
-}
-/*bath form end*/
-
 /*doctor form*/
-.doctor-formbox {
-  display: none;
-  padding: 10px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-
-.doctor-formbox-in {
-  /*główne okgno z formularzem w ramce*/
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 28px;
-  border: 1px solid $gray;
-  background: $white;
-  font-size: 16px;
-  &:before {
-    content:'';
-    position: absolute;
-    top: -18px;
-    left: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $gray;
-    transform: rotate(-90deg);
-  }
-  &:after {
-    content:'';
-    position: absolute;
-    top: -17px;
-    left: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $white;
-    transform: rotate(-90deg);
-  }
-
-  .doctor-form {
-    display: flex;
-    flex-direction: column;
-    input[type="text"] {
-      width: 250px;
-    }
-  }
-  .doctor-start,
-  .doctor-who,
-  .doctor-where {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .doctor-comments {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-
-  .doctor-submit {
-    margin-left: 100px;
-    input[type="submit"] {
-      display: inline-block;
-      padding: 10px 52px;
-      border: none;
-      background: $orange;
-      text-transform: uppercase;
-      color: $white;
-      cursor: pointer;
-    }
-    .doctor-cancel {
-      display: inline-block;
-      margin: 10px 52px;
-      border: none;
-      background: none;
-      text-transform: lowercase;
-      color: $orange;
-      cursor: pointer;
-    }
-  }
+input[name="doctor-name"],
+input[name="doctor-location"] {
+  width: 250px;
 }
 /*doctor form end*/
 
 /*diary form*/
-.diary-formbox {
-  display: none;
-  padding: 10px;
-  margin-top: -10px;
-  margin-bottom: 10px;
+.diary-photo,
+.diary-video {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  cursor: pointer;
+  &:hover {
+    color: $orange;
+  }
 }
 
-.diary-formbox-in {
-  /*główne okgno z formularzem w ramce*/
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 28px;
-  border: 1px solid $gray;
-  background: $white;
-  font-size: 16px;
-  &:before {
-    content:'';
-    position: absolute;
-    top: -18px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $gray;
-    transform: rotate(-90deg);
-  }
-  &:after {
-    content:'';
-    position: absolute;
-    top: -17px;
-    right: 144px;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 12px 0px 12px 10px;
-    border-color: transparent transparent transparent $white;
-    transform: rotate(-90deg);
-  }
-
-  .diary-form {
-    display: flex;
-    flex-direction: column;
-  }
-  .diary-start {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .diary-photo,
-  .diary-video {
-    display: flex;
-    align-items: center;
-    margin-left: 100px;
-    cursor: pointer;
-    &:hover {
-      color: $orange;
-    }
-  }
-
-  .diary-video {
-    margin-bottom: 20px;
-  }
-
-  .diary-comments {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 5px;
-  }
-
-  .diary-submit {
-    margin-left: 100px;
-    input[type="submit"] {
-      display: inline-block;
-      padding: 10px 52px;
-      border: none;
-      background: $orange;
-      text-transform: uppercase;
-      color: $white;
-      cursor: pointer;
-    }
-    .diary-cancel {
-      display: inline-block;
-      margin: 10px 52px;
-      border: none;
-      background: none;
-      text-transform: lowercase;
-      color: $orange;
-      cursor: pointer;
-    }
-  }
+.diary-video {
+  margin-bottom: 20px;
 }
 /*diary form end*/
 
 @media #{$phone} {
-  .feed-formbox,
-  .weight-formbox,
-  .diaper-formbox,
-  .bath-formbox,
-  .doctor-formbox,
-  .diary-formbox {
-    padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 0;
+  .formbox {
+    margin: 10px 0;
   }
 
-  .feed-formbox-in,
-  .diaper-formbox-in,
-  .doctor-formbox-in {
+  .formbox-in-left {
     /*główne okgno z formularzem w ramce*/
-    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid $gray;
+    background: $white;
+    font-size: 16px;
     &:before {
       content:'';
       position: absolute;
       top: -18px;
-      left: 144px;
+      left: 65px;
       width: 0px;
       height: 0px;
       border-style: solid;
@@ -1240,7 +873,7 @@ textarea {
       content:'';
       position: absolute;
       top: -17px;
-      left: 144px;
+      left: 65px;
       width: 0px;
       height: 0px;
       border-style: solid;
@@ -1250,16 +883,20 @@ textarea {
     }
   }
 
-  .weight-formbox-in,
-  .bath-formbox-in,
-  .diary-formbox-in {
+  .formbox-in-right {
     /*główne okgno z formularzem w ramce*/
-    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid $gray;
+    background: $white;
+    font-size: 16px;
     &:before {
       content:'';
       position: absolute;
       top: -18px;
-      right: 144px;
+      right: 65px;
       width: 0px;
       height: 0px;
       border-style: solid;
@@ -1271,7 +908,7 @@ textarea {
       content:'';
       position: absolute;
       top: -17px;
-      right: 144px;
+      right: 65px;
       width: 0px;
       height: 0px;
       border-style: solid;
@@ -1281,30 +918,36 @@ textarea {
     }
   }
 
-  .feed-formbox-in .feed-legend,
-  .diaper-formbox-in .diaper-legend {
+  .feed-start,
+  .feed-stop,
+  .feed-brest,
+  .feed-ml,
+  .weight-start,
+  .weight-g,
+  .diaper-start,
+  .diaper-pee,
+  .diaper-poo,
+  .bath-start,
+  .doctor-start,
+  .doctor-who,
+  .doctor-where,
+  .diary-start {
+    flex-wrap: wrap;
+    width: 260px;
+    .databox:last-child {
+      margin: 10px 0 0 45px;
+    }
+  }
+
+  .submitbox {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+  }
+
+
+
+  .legendbox {
     display: none;
-  }
-
-  .diary-submit {
-    margin-left: 100px;
-    input[type="submit"] {
-      display: inline-block;
-      padding: 10px 52px;
-      border: none;
-      background: $orange;
-      text-transform: uppercase;
-      color: $white;
-      cursor: pointer;
-    }
-    .diary-cancel {
-      display: inline-block;
-      margin: 10px 52px;
-      border: none;
-      background: none;
-      text-transform: lowercase;
-      color: $orange;
-      cursor: pointer;
-    }
   }
 }
