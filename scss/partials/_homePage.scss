@@ -1,3 +1,7 @@
+main {
+  flex: 1;
+}
+
 .header {
   background: $light-gray;
 }
@@ -827,6 +831,10 @@ input[name="doctor-location"] {
 /*doctor form end*/
 
 /*diary form*/
+.diary-ta {
+  margin-bottom: 0;
+}
+
 .diary-photo,
 .diary-video {
   display: flex;
@@ -939,15 +947,36 @@ input[name="doctor-location"] {
     }
   }
 
+  input[name="doctor-name"],
+  input[name="doctor-location"] {
+    width: 200px;
+  }
+
+  .diary-photo,
+  .diary-video {
+    margin-left: 60px;
+  }
+
   .submitbox {
     display: flex;
     flex-flow: column;
     margin: 0 auto;
   }
 
-
-
   .legendbox {
     display: none;
   }
+}
+
+footer {
+  background: $gray;
+}
+
+.footText {
+  padding: 30px 0;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $light-gray;
 }

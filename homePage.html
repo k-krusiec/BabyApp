@@ -93,7 +93,7 @@
                     </div>
                   </div>
                   <div class="feed-stop">
-                    <label for="feed-stop-date">Koniec</label>
+                      <label for="feed-stop-date">Koniec</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
                       <input type="date" name="feed-stop-date" />
@@ -179,10 +179,14 @@
                 <form class="form">
                   <div class="diaper-start">
                     <label for="diaper-date">Kiedy</label>
-                    <img class="calendar" src="img/date-b.png" alt="calendar" />
-                    <input type="date" name="diaper-date" />
-                    <img class="clock" src="img/time-b.png" alt="clock" />
-                    <input type="time" name="diaper-time" />
+                    <div class="databox">
+                      <img class="calendar" src="img/date-b.png" alt="calendar" />
+                      <input type="date" name="diaper-date" />
+                    </div>
+                    <div class="databox">
+                      <img class="clock" src="img/time-b.png" alt="clock" />
+                      <input type="time" name="diaper-time" />
+                    </div>
                   </div>
                   <div class="diaper-pee">
                     <label for="pee">Siusiu</label>
@@ -261,10 +265,14 @@
                 <form class="form">
                   <div class="doctor-start">
                     <label for="doctor-date">Kiedy</label>
-                    <img class="calendar" src="img/date-b.png" alt="calendar" />
-                    <input type="date" name="doctor-date" />
-                    <img class="clock" src="img/time-b.png" alt="clock" />
-                    <input type="time" name="doctor-time" />
+                    <div class="databox">
+                      <img class="calendar" src="img/date-b.png" alt="calendar" />
+                      <input type="date" name="doctor-date" />
+                    </div>
+                    <div class="databox">
+                      <img class="clock" src="img/time-b.png" alt="clock" />
+                      <input type="time" name="doctor-time" />
+                    </div>
                   </div>
                   <div class="doctor-who">
                     <label for="doctor-name">Kto</label>
@@ -296,7 +304,7 @@
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
                     <input type="date" name="diary-date" />
                   </div>
-                  <div class="commentbox">
+                  <div class="commentbox diary-ta">
                     <label for="comments">Opis</label>
                     <textarea name="comments"></textarea>
                   </div>
@@ -323,7 +331,7 @@
     </main>
     <footer>
       <div class="main-width">
-        karcio
+        <p class="footText">&copy; 2016 Karol Krusiec</p>
       </div>
     </footer>
 
