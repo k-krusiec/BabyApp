@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.clear();
   }
 
-  function setBirthDate() {
+  function setCurrentDate() {
     var date = document.querySelector('.birthDate');
     date.valueAsDate = new Date();
   }
@@ -53,14 +53,22 @@ document.addEventListener('DOMContentLoaded', function() {
           'name': babyName.value.charAt(0).toUpperCase() + babyName.value.slice(1).toLowerCase(),
           'birth': babyBirth.value
         }
-        localStorage.setItem('myStorage', JSON.stringify(babyInfo));
+        localStorage.setItem('babyInfo', JSON.stringify(babyInfo));
         location.href = "../homePage.html";
       }
     })
   }
 
+  function loadDefaultData() {
+    var techLink = document.querySelector('.techLink');
+    techLink.addEventListener('click', function() {
+      clearLocalStorage();
+    })
+  }
+
   clearLocalStorage();
-  setBirthDate();
+  setCurrentDate();
   saveBabyData();
+  loadDefaultData();
 
 })
