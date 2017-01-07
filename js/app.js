@@ -1,23 +1,12 @@
 $(document).ready(function() {
-  //forms
-  var $feedBtn = $('.feed-btn');
-  var $feedForm = $('.feed-formbox');
 
-  var $weightBtn = $('.weight-btn');
-  var $weightForm = $('.weight-formbox');
+  var $body = $('body');
+  var $optionBtns = $body.find('.option-btn');
+  var $formPanels = $body.find('.formbox');
+  var $breastRadios = $body.find('.breast-radio');
+  var $pooRadios = $body.find('.poo-radio');
 
-  var $diaperBtn = $('.diaper-btn');
-  var $diaperForm = $('.diaper-formbox');
-
-  var $bathBtn = $('.bath-btn');
-  var $bathForm = $('.bath-formbox');
-
-  var $doctorBtn = $('.doctor-btn');
-  var $doctorForm = $('.doctor-formbox');
-
-  var $diaryBtn = $('.diary-btn');
-  var $diaryForm = $('.diary-formbox');
-
+  var $cancelBtns = $body.find('.cancel-btn');
   var btnIconReset = {
     'background': '',
     'background-size': '',
@@ -26,188 +15,12 @@ $(document).ready(function() {
   var btnBgReset = {
     'background': ''
   };
-
   var tileImgPos = {
     'desktop': 'no-repeat 25px center transparent',
     'phone': 'no-repeat center 25px transparent'
   }
-
-
-
-  function deviceSize() {
-    var tileImgPosVal;
-    if (matchMedia) {
-      var mqPhone = window.matchMedia("(min-width: 640px)");
-      mqPhone.addListener(WidthChange);
-      WidthChange(mqPhone);
-    }
-
-    function WidthChange(mqPhone) {
-      //składam formsy po wykryciu odpowiedniej wielkości ekranu,
-      //bo ikony nie chcą się ładnie przestawiać
-      hideForms();
-      if (mqPhone.matches) {
-        tileImgPosVal = tileImgPos.desktop;
-      } else {
-        tileImgPosVal = tileImgPos.phone;
-      }
-    }
-    return tileImgPosVal;
-  }
-
-  function hideForms() {
-    if (($feedForm.css('display') !== 'none') || ($weightForm.css('display') !== 'none') ||
-        ($diaperForm.css('display') !== 'none') || ($bathForm.css('display') !== 'none') ||
-        ($doctorForm.css('display') !== 'none') || ($diaryForm.css('display') !== 'none')) {
-
-      $feedBtn.css(btnIconReset).parent().css(btnBgReset);
-      $weightBtn.css(btnIconReset).parent().css(btnBgReset);
-      $diaperBtn.css(btnIconReset).parent().css(btnBgReset);
-      $bathBtn.css(btnIconReset).parent().css(btnBgReset);
-      $doctorBtn.css(btnIconReset).parent().css(btnBgReset);
-      $diaryBtn.css(btnIconReset).parent().css(btnBgReset);
-
-      $feedForm.slideUp('50');
-      $weightForm.slideUp('50');
-      $diaperForm.slideUp('50');
-      $bathForm.slideUp('50');
-      $doctorForm.slideUp('50');
-      $diaryForm.slideUp('50');
-    }
-  }
-
-  function showFeedForm() {
-    $feedBtn.on('click', function(e) {
-      e.preventDefault();
-
-      hideForms();
-      if($feedForm.css('display') !== 'none') {
-        $(this).css(btnIconReset).parent().css(btnBgReset);
-        $feedForm.slideUp('slow');
-      } else {
-        $(this).css({
-          'background': 'url("../img/feed-w.png") ' + deviceSize(),
-          'background-size': '50px',
-          'color': 'white'
-        }).parent().css({
-          'background': '#ff8965'
-        });
-        $feedForm.slideDown('slow');
-      }
-    })
-  }
-  showFeedForm();
-
-  function showWeightForm() {
-    $weightBtn.on('click', function(e) {
-      e.preventDefault();
-      hideForms();
-
-      if($weightForm.css('display') !== 'none') {
-        $(this).css(btnIconReset).parent().css(btnBgReset);
-        $weightForm.slideUp('slow');
-      } else {
-        $(this).css({
-          'background': 'url("../img/weight-w.png") ' + deviceSize(),
-          'background-size': '50px',
-          'color': 'white'
-        }).parent().css({
-          'background': '#ff8965'
-        });
-        $weightForm.slideDown('slow');
-      }
-    })
-  }
-  showWeightForm();
-
-  function showDiaperForm() {
-    $diaperBtn.on('click', function(e) {
-      e.preventDefault();
-
-      hideForms();
-      if($diaperForm.css('display') !== 'none') {
-        $(this).css(btnIconReset).parent().css(btnBgReset);
-        $diaperForm.slideUp('slow');
-      } else {
-        $(this).css({
-          'background': 'url("../img/diaper-w.png") ' + deviceSize(),
-          'background-size': '50px',
-          'color': 'white'
-        }).parent().css({
-          'background': '#ff8965'
-        });
-        $diaperForm.slideDown('slow');
-      }
-    })
-  }
-  showDiaperForm();
-
-  function showBathForm() {
-    $bathBtn.on('click', function(e) {
-      e.preventDefault();
-
-      hideForms();
-      if($bathForm.css('display') !== 'none') {
-        $(this).css(btnIconReset).parent().css(btnBgReset);
-        $bathForm.slideUp('slow');
-      } else {
-        $(this).css({
-          'background': 'url("../img/bath-w.png") ' + deviceSize(),
-          'background-size': '50px',
-          'color': 'white'
-        }).parent().css({
-          'background': '#ff8965'
-        });
-        $bathForm.slideDown('slow');
-      }
-    })
-  }
-  showBathForm();
-
-  function showDoctorForm() {
-    $doctorBtn.on('click', function(e) {
-      e.preventDefault();
-
-      hideForms();
-      if($doctorForm.css('display') !== 'none') {
-        $(this).css(btnIconReset).parent().css(btnBgReset);
-        $doctorForm.slideUp('slow');
-      } else {
-        $(this).css({
-          'background': 'url("../img/doctor-w.png") ' + deviceSize(),
-          'background-size': '50px',
-          'color': 'white'
-        }).parent().css({
-          'background': '#ff8965'
-        });
-        $doctorForm.slideDown('slow');
-      }
-    })
-  }
-  showDoctorForm();
-
-  function showDiaryForm() {
-    $diaryBtn.on('click', function(e) {
-      e.preventDefault();
-
-      hideForms();
-      if($diaryForm.css('display') !== 'none') {
-        $(this).css(btnIconReset).parent().css(btnBgReset);
-        $diaryForm.slideUp('slow');
-      } else {
-        $(this).css({
-          'background': 'url("../img/diary-w.png") ' + deviceSize(),
-          'background-size': '50px',
-          'color': 'white'
-        }).parent().css({
-          'background': '#ff8965'
-        });
-        $diaryForm.slideDown('slow');
-      }
-    })
-  }
-  showDiaryForm();
-  //forms end
+  var breastSide;
+  var pooSize;
 
   //mobile-menu
   function mobileMenuHendling() {
@@ -234,10 +47,215 @@ $(document).ready(function() {
         $mobileMenu.css({'display': 'block'});
         $(this).removeClass('ham-icon').addClass('ham-close-icon');
       }
-
     })
   }
   mobileMenuHendling();
   //mobile-menu end
+
+  function deviceSize() {
+    var tileImgPosVal;
+    if (matchMedia) {
+      var mqPhone = window.matchMedia("(min-width: 640px)");
+      mqPhone.addListener(WidthChange);
+      WidthChange(mqPhone);
+    }
+
+    function WidthChange(mqPhone) {
+      //składam formsy po wykryciu odpowiedniej wielkości ekranu,
+      //bo ikony nie chcą się ładnie przestawiać
+      hideForms();
+      if (mqPhone.matches) {
+        tileImgPosVal = tileImgPos.desktop;
+      } else {
+        tileImgPosVal = tileImgPos.phone;
+      }
+    }
+    return tileImgPosVal;
+  }
+
+  function hideForms() {
+    $optionBtns.each(function() {
+      $(this).css(btnIconReset).parent().css(btnBgReset);
+    });
+
+    $formPanels.each(function() {
+      $(this).slideUp('50');
+    })
+  }
+
+  function showFeedForm() {
+    $optionBtns.eq(0).on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($formPanels.eq(0).css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $formPanels.eq(0).slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/feed-w.png") ' + deviceSize(),
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $formPanels.eq(0).slideDown('slow');
+      }
+    })
+  }
+  showFeedForm();
+
+  function showWeightForm() {
+    $optionBtns.eq(1).on('click', function(e) {
+      e.preventDefault();
+      hideForms();
+
+      if($formPanels.eq(1).css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $formPanels.eq(1).slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/weight-w.png") ' + deviceSize(),
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $formPanels.eq(1).slideDown('slow');
+      }
+    })
+  }
+  showWeightForm();
+
+  function showDiaperForm() {
+    $optionBtns.eq(2).on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($formPanels.eq(2).css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $formPanels.eq(2).slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/diaper-w.png") ' + deviceSize(),
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $formPanels.eq(2).slideDown('slow');
+      }
+    })
+  }
+  showDiaperForm();
+
+  function showBathForm() {
+    $optionBtns.eq(3).on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($formPanels.eq(3).css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $formPanels.eq(3).slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/bath-w.png") ' + deviceSize(),
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $formPanels.eq(3).slideDown('slow');
+      }
+    })
+  }
+  showBathForm();
+
+  function showDoctorForm() {
+    $optionBtns.eq(4).on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($formPanels.eq(4).css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $formPanels.eq(4).slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/doctor-w.png") ' + deviceSize(),
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $formPanels.eq(4).slideDown('slow');
+      }
+    })
+  }
+  showDoctorForm();
+
+  function showDiaryForm() {
+    $optionBtns.eq(5).on('click', function(e) {
+      e.preventDefault();
+
+      hideForms();
+      if($formPanels.eq(5).css('display') !== 'none') {
+        $(this).css(btnIconReset).parent().css(btnBgReset);
+        $formPanels.eq(5).slideUp('slow');
+      } else {
+        $(this).css({
+          'background': 'url("../img/diary-w.png") ' + deviceSize(),
+          'background-size': '50px',
+          'color': 'white'
+        }).parent().css({
+          'background': '#ff8965'
+        });
+        $formPanels.eq(5).slideDown('slow');
+      }
+    })
+  }
+  showDiaryForm();
+  //forms end
+
+  //obsługa fake radiobuttonów
+  function breastRadioChecker() {
+    $breastRadios.on('click', function() {
+      if(!($(this).hasClass('breast-checked'))) {
+        $breastRadios.each(function() {
+          $(this).removeClass('breast-checked');
+        })
+        $(this).addClass('breast-checked');
+        breastSide = $(this).data('side');
+      } else {
+        $(this).removeClass('breast-checked');
+        breastSide = '';
+      }
+    })
+  }
+  breastRadioChecker();
+
+  function pooRadioChecker() {
+    $pooRadios.on('click', function() {
+      if(!($(this).hasClass('poo-checked'))) {
+        $pooRadios.each(function() {
+          $(this).removeClass('poo-checked');
+        })
+        $(this).addClass('poo-checked');
+        pooSize = $(this).data('size');
+      } else {
+        $(this).removeClass('poo-checked');
+        pooSize = '';
+      }
+    })
+  }
+  pooRadioChecker();
+  //obsługa fake radiobuttonów end
+
+  function cancelForm() {
+    $cancelBtns.on('click', function() {
+      hideForms();
+    })
+  }
+  cancelForm();
+
 
 })

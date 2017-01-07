@@ -12,7 +12,7 @@ main {
   padding: 35px 0;
 }
 
-.logo {
+.hp-logo {
   padding: 0 100px 0 40px;
 }
 
@@ -43,7 +43,7 @@ main {
     padding: 10px 0;
   }
 
-  .logo {
+  .hp-logo {
     display: none;
   }
 
@@ -498,7 +498,7 @@ input {
   font-weight: 300;
 }
 
-input[type=date] {
+.hp-date {
   width: 110px;
   &::-webkit-clear-button {
     display: none;
@@ -551,7 +551,7 @@ textarea {
     font-weight: 300;
   }
 
-  input[type=date] {
+  .hp-date {
     width: 110px;
     &::-webkit-clear-button {
       display: none;
@@ -673,7 +673,7 @@ textarea {
 
 .feed-start,
 .feed-stop,
-.feed-brest,
+.feed-breast,
 .feed-ml,
 .weight-start,
 .weight-g,
@@ -756,17 +756,29 @@ textarea {
 }
 
 /*feed form*/
-.brest-radio {
+
+.required {
+  font-weight: 700;
+}
+
+.breast-radio {
   width: 25px;
   height: 25px;
   padding-top: 3px;
-  border: 1px solid $gray;
+  border: 1px solid $black;
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
   &:last-of-type {
     margin-left: 10px;
   }
+}
+
+/*klasa dla js radio odchooy*/
+.breast-checked {
+  background: url("../img/check-2x-b.png") no-repeat center center transparent;
+  background-size: 18px;
+  color: transparent;
 }
 
 .milliliters {
@@ -793,14 +805,14 @@ textarea {
   width: 25px;
   height: 25px;
   padding-top: 3px;
-  border: 1px solid $gray;
+  border: 1px solid $black;
   border-radius: 50%;
   text-align: center;
 }
 
 .poo-radio {
   margin-left: 10px;
-  border: 1px solid $gray;
+  border: 1px solid $black;
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
@@ -821,6 +833,14 @@ textarea {
     padding-top: 12px;
   }
 }
+
+/*klasa dla js radio odchooy*/
+.pee-checked,
+.poo-checked {
+  background: url("../img/check-2x-b.png") no-repeat center center transparent;
+  background-size: 18px;
+  color: transparent;
+}
 /*diaper form end*/
 
 /*doctor form*/
@@ -840,10 +860,8 @@ input[name="doctor-location"] {
   display: flex;
   align-items: center;
   margin-left: 100px;
+  color: $turquoise;
   cursor: pointer;
-  &:hover {
-    color: $orange;
-  }
 }
 
 .diary-video {
@@ -928,7 +946,7 @@ input[name="doctor-location"] {
 
   .feed-start,
   .feed-stop,
-  .feed-brest,
+  .feed-breast,
   .feed-ml,
   .weight-start,
   .weight-g,
@@ -980,3 +998,6 @@ footer {
   text-align: center;
   color: $light-gray;
 }
+
+
+//----------------

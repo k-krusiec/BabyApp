@@ -1,86 +1,61 @@
-/*--General--*/
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&subset=latin-ext');
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
-  text-align: center;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: $light-orange;
-  background-image: url(../img/babyapp-bg-40x40.png);
-}
-
-.main-width {
-  max-width: 1200px;
+.log-page-main-width {
+  width: 600px;
+  max-width: 100%;
   margin: 0 auto;
+  text-align: center;
 }
 
-.container {
-  flex: 1;
+.log-content {
   margin-top: 100px;
+  padding: 20px;
+  background: #fff;
+  -webkit-box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
+  -moz-box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
+  box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
 }
 
-@media (max-width: 600px) {
-  .container {
-    flex: 1;
+@media #{$phone} {
+  .log-content {
     margin-top: 0;
   }
 }
 
-
-/*--Login Page--*/
-
-.logContent {
-  background: #fff;
-  margin: 0 auto;
-  width: 700px;
-  max-width: 90%;
-  -webkit-box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
-  -moz-box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
-  box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
-  .logo {
-    padding: 70px 0 30px;
-    width: 80%;
-    max-width: 180px;
-  }
+.log-logo {
+  width: 180px;
+  padding: 50px 0 20px;
 }
 
 .startForm {
-  margin: auto;
-  width: 50%;
-  border-bottom: 1px solid $light-gray;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px solid $light-gray;
 }
 
-.logNameLab, .birthDateLab, {
+.logNameLab,
+.birthDateLab {
   display: block;
-  text-align: center;
+  width: 100%;
   font-size: 12px;
   font-weight: 400;
+  color: $black;
+}
+
+.birthDateLab {
+  margin-top: 30px;
 }
 
 .logName, .birthDate {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
   border-bottom: 1px solid $light-gray;
   font-family: 'Source Sans Pro', sans-serif;
-  display: block;
-  margin: 5px auto 20px;
-  padding: 10px 0;
-  text-align: center;
-  border-top: none;
-  border-right: none;
-  border-left: none;
   font-size: 18px;
   font-weight: 300;
+  text-align: center;
   &::-webkit-input-placeholder {
     color: $gray;
   }
@@ -91,11 +66,9 @@ body {
 }
 
 .birthDate {
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
-  min-width: 40%;
   &::-webkit-clear-button {
-    display:none;
+    display: none;
   }
   &::-webkit-inner-spin-button {
     display: none;
@@ -103,18 +76,17 @@ body {
 }
 
 .startFormBtn {
-  display: block;
-  background: $orange;
-  max-width: 100%;
+  display: inline-block;
   padding: 15px 40px;
   margin: 30px auto;
+  background: $orange;
   border: none;
   font-weight: 700;
-  color: $white;
   font-size: 16px;
+  text-decoration: none;
   text-transform: uppercase;
+  color: $white;
 }
-
 
 .orText {
   position: absolute;
@@ -130,20 +102,14 @@ body {
 
 .techLink {
   display: inline-block;
-  margin: 30px 0 70px;
+  margin: 30px 0 50px;
   text-decoration: none;
   font-weight: 300;
   color: $orange;
 }
 
-footer {
-  background: $gray;
-}
-
-.footText {
-  text-transform: uppercase;
-  padding: 30px 0;
-  color: $light-gray;
-  font-weight: 300;
-  font-size: 16px;
+.log-validation-box {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: red;
 }

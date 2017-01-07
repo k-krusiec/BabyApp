@@ -26,7 +26,7 @@
         </nav>
         <div class="main-header">
           <a href="#">
-            <img class="logo" src="img/babyapp-logo-180x80.png" alt="BabyApp logo" />
+            <img class="hp-logo" src="img/babyapp-logo-180x80.png" alt="BabyApp logo" />
           </a>
           <img class="foto" src="img/fake-baby-78x78.png" alt="baby" />
           <div class="baby-info">
@@ -44,7 +44,7 @@
       <section class="breadcrumbs">
         <div class="main-width">
           <span class="home-page-bc">BabyApp</span>
-          <img class="right-arrow" src="img/rarrow-lg.png" alt="right arrow" />
+          <img class="right-arrow" src="img/rarrow-dg.png" alt="right arrow" />
           <span>Strona główna</span>
         </div>
       </section>
@@ -66,12 +66,12 @@
           <section class="main-content">
             <div class="row">
               <div class="tile feed-opt">
-                <div class="feed-btn">
+                <div class="feed-btn option-btn">
                   <span>Karmienie</span>
                 </div>
               </div>
               <div class="tile weight-opt">
-                <div class="weight-btn">
+                <div class="weight-btn option-btn">
                   <span>Ważenie</span>
                 </div>
               </div>
@@ -82,10 +82,10 @@
               <div class="formbox-in-left">
                 <form class="form">
                   <div class="feed-start">
-                    <label for="feed-start-date">Start</label>
+                    <label class="required" for="feed-start-date">Start</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input type="date" name="feed-start-date" />
+                      <input class="hp-date" type="date" name="feed-start-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
@@ -96,17 +96,17 @@
                       <label for="feed-stop-date">Koniec</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input type="date" name="feed-stop-date" />
+                      <input class="hp-date" type="date" name="feed-stop-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
                       <input type="time" name="feed-stop-time" />
                     </div>
                   </div>
-                  <div class="feed-brest">
+                  <div class="feed-breast">
                     <label for="breast">Pierś</label>
-                    <div class="brest-radio">L</div>
-                    <div class="brest-radio">P</div>
+                    <div class="breast-radio" data-side="l">L</div>
+                    <div class="breast-radio" data-side="r">P</div>
                   </div>
                   <div class="feed-ml">
                     <label for="milliliters">Wypite mleko</label>
@@ -115,7 +115,7 @@
                   </div>
                   <div class="commentbox">
                     <label for="comments">Uwagi</label>
-                    <textarea name="comments"></textarea>
+                    <textarea class="feed-comments" name="comments"></textarea>
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="feed-submit" value="Zapisz">
@@ -126,11 +126,11 @@
                   <span class="legend-title">Legenda</span>
                   <div class="legend-set">
                     <div class="legend-ico">L</div>
-                    <span class="brest-name">LEWA pierś</span>
+                    <span class="breast-name">LEWA pierś</span>
                   </div>
                   <div class="legend-set">
                     <div class="legend-ico">P</div>
-                    <span class="brest-name">PRAWA pierś</span>
+                    <span class="breast-name">PRAWA pierś</span>
                   </div>
                 </div>
               </div>
@@ -142,12 +142,12 @@
               <div class="formbox-in-right">
                 <form class="form">
                   <div class="weight-start">
-                    <label for="weight-date">Kiedy</label>
+                    <label class="required" for="weight-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
-                    <input type="date" name="weight-date" />
+                    <input class="hp-date" type="date" name="weight-date" />
                   </div>
                   <div class="weight-g">
-                    <label for="grams">Waga</label>
+                    <label class="required" for="grams">Waga</label>
                     <input class="grams" type="number" name="grams" min="0000" max="9999" placeholder="0000" />
                     <span>g</span>
                   </div>
@@ -162,12 +162,12 @@
 
             <div class="row">
               <div class="tile diaper-opt">
-                <div class="diaper-btn">
+                <div class="diaper-btn option-btn">
                   <span>Zmiana pieluszki</span>
                 </div>
               </div>
               <div class="tile bath-opt">
-                <div class="bath-btn">
+                <div class="bath-btn option-btn">
                   <span>Kąpiel</span>
                 </div>
               </div>
@@ -178,10 +178,10 @@
               <div class="formbox-in-left">
                 <form class="form">
                   <div class="diaper-start">
-                    <label for="diaper-date">Kiedy</label>
+                    <label class="required" for="diaper-date">Kiedy</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input type="date" name="diaper-date" />
+                      <input class="hp-date" type="date" name="diaper-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
@@ -190,15 +190,13 @@
                   </div>
                   <div class="diaper-pee">
                     <label for="pee">Siusiu</label>
-                    <div class="pee-radio">
-                      V
-                    </div>
+                    <div class="pee-radio pee-checked"></div>
                   </div>
                   <div class="diaper-poo">
                     <label for="poo">Kupka</label>
-                    <div class="poo-radio">1</div>
-                    <div class="poo-radio">2</div>
-                    <div class="poo-radio">3</div>
+                    <div class="poo-radio" data-size="1">1</div>
+                    <div class="poo-radio" data-size="2">2</div>
+                    <div class="poo-radio" data-size="3">3</div>
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="diaper-submit" value="Zapisz">
@@ -229,9 +227,9 @@
               <div class="formbox-in-right">
                 <form class="form">
                   <div class="bath-start">
-                    <label for="bath-date">Kiedy</label>
+                    <label class="required" for="bath-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
-                    <input type="date" name="bath-date" />
+                    <input class="hp-date" type="date" name="bath-date" />
                   </div>
                   <div class="commentbox">
                     <label for="comments">Uwagi</label>
@@ -248,12 +246,12 @@
 
             <div class="row">
               <div class="tile doctor-opt">
-                <div class="doctor-btn">
+                <div class="doctor-btn option-btn">
                   <span>Wizyta lekarska</span>
                 </div>
               </div>
               <div class="tile diary-opt">
-                <div class="diary-btn">
+                <div class="diary-btn option-btn">
                   <span>Wpis w&nbsp;dzienniku</span>
                 </div>
               </div>
@@ -264,10 +262,10 @@
               <div class="formbox-in-left">
                 <form class="form">
                   <div class="doctor-start">
-                    <label for="doctor-date">Kiedy</label>
+                    <label class="required" for="doctor-date">Kiedy</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input type="date" name="doctor-date" />
+                      <input class="hp-date" type="date" name="doctor-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
@@ -275,7 +273,7 @@
                     </div>
                   </div>
                   <div class="doctor-who">
-                    <label for="doctor-name">Kto</label>
+                    <label class="required" for="doctor-name">Kto</label>
                     <input type="text" name="doctor-name" placeholder="np. Anna Kowalska" />
                   </div>
                   <div class="doctor-where">
@@ -300,20 +298,20 @@
               <div class="formbox-in-right">
                 <form class="form">
                   <div class="diary-start">
-                    <label for="diary-date">Kiedy</label>
+                    <label class="required" for="diary-date">Kiedy</label>
                     <img class="calendar" src="img/date-b.png" alt="calendar" />
-                    <input type="date" name="diary-date" />
+                    <input class="hp-date" type="date" name="diary-date" />
                   </div>
                   <div class="commentbox diary-ta">
-                    <label for="comments">Opis</label>
+                    <label class="required" for="comments">Opis</label>
                     <textarea name="comments"></textarea>
                   </div>
                   <div class="diary-photo">
-                    <img class="photo" src="img/photo-b.png" alt="photo" />
+                    <img class="photo" src="img/photo-t.png" alt="photo" />
                     <span>dodaj zdięcie</span>
                   </div>
                   <div class="diary-video">
-                    <img class="video" src="img/video-b.png" alt="video" />
+                    <img class="video" src="img/video-t.png" alt="video" />
                     <span>dodaj video</span>
                   </div>
                   <div class="submitbox">
