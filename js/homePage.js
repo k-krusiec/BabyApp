@@ -72,7 +72,13 @@ $(document).ready(function() {
     $babyName.text(babyInfo.name);
     $babyAge.text(ageText);
   }
-  localStorageHandling();
+  function checkIfLocalStorageExists() {
+    if (localStorage.length) {
+      localStorageHandling();
+    }
+  }
+
+  checkIfLocalStorageExists();
 
   //mobile-menu
   function mobileMenuHendling() {
