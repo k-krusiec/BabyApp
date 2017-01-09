@@ -1,0 +1,16 @@
+.opt-lists {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.feed-list {
+  display: flex;
+  flex-flow: nowrap;
+  padding: 30px;
+  background: $white;
+}
+
+.feed-list-title {
+  font-weight: 300;
+  font-size: 32px;
+}
