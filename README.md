@@ -38,6 +38,7 @@ Po tym uruchomi się przeglądarka z uruchomionym adresem localhot:3000 z projek
 * Podstrony z listami - dla statycznych danych
 * Zbieranie danych z formularzy (indexedDB)
 * Wyświetlanie dynamicznych danych na listach
+* Przerobienie obrazków z png na svg lub webfonts
 
 ## Technologie
 * HTML5
