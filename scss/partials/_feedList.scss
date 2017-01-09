@@ -10,7 +10,36 @@
   background: $white;
 }
 
+.feed-listbox {
+  width: 100%;
+  min-height: 400px;
+  margin-right: 25px;
+}
+
 .feed-list-title {
+  margin-bottom: 10px;
   font-weight: 300;
   font-size: 32px;
+}
+
+.feed-list-date {
+  padding: 10px;
+  background: $light-gray;
+}
+
+.feed-list-row {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: 1px solid $light-gray;
+}
+
+
+
+
+
+
+
+.legend-lists {
+  margin-top: 40px;
 }
