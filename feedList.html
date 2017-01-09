@@ -66,55 +66,96 @@
             </ul>
           </nav>
           <section class="main-content opt-lists">
-            <div class="feed-list">
-              <div class="feed-listbox">
-                <p class="feed-list-title">Karmienia - lista</p>
-                <p class="feed-list-date">26.12.2016</p>
-                <ul>
-                  <li class="feed-list-row">
-                    <div class="feed-hourbox">
-                      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
-                      <span class="feed-hour">12:00</span>
+            <div class="list">
+              <div class="listbox">
+                <p class="list-title">Karmienia - lista</p>
+
+                <!-- tabela z nagłówkiem -->
+                  <p class="list-date">26.12.2016</p>
+                  <!-- tabela tylko z danymi -->
+                  <div class="list-table">
+                    <div class="list-row">
+                      <div class="feed-hourbox">
+                        <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+                        <span>12:00</span>
+                      </div>
+                      <div class="feed-timebox">
+                        <span>ponad godzinę</span>
+                      </div>
+                      <div class="feed-breastbox">
+                        <div class="feed-breast-icon">
+                          P
+                        </div>
+                      </div>
+                      <div class="feed-bottlebox">
+                        <span class="feed-bottle">100ml</span>
+                      </div>
                     </div>
-                    <span class="feed-time">10 minut</span>
-                    <div class="feed-breast-icon">
-                      P
+                    <div class="feed-commentbox">
+                      <span>na leżąco</span>
                     </div>
-                  </li>
-                  <li class="feed-list-row">
-                    <div class="feed-hourbox">
-                      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
-                      <span class="feed-hour">10:00</span>
+                  </div>
+                  <!-- tabela tylko z danymi -->
+
+                  <!-- tabela tylko z danymi -->
+                  <div class="list-table">
+                    <div class="list-row">
+                      <div class="feed-hourbox">
+                        <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+                        <span>09:00</span>
+                      </div>
+                      <div class="feed-timebox">
+                        <span>30 minut</span>
+                      </div>
+                      <div class="feed-breastbox">
+                      </div>
+                      <div class="feed-bottlebox">
+                        <span class="feed-bottle">90ml</span>
+                      </div>
                     </div>
-                    <span class="feed-time">10 minut</span>
-                    <div class="feed-breast-icon">
-                      P
+                    <div class="feed-commentbox">
                     </div>
-                    <span class="feed-comment">na leżąco</span>
-                  </li>
-                  <li class="feed-list-row">
-                    <div class="feed-hourbox">
-                      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
-                      <span class="feed-hour">09:00</span>
+                  </div>
+                  <!-- tabela tylko z danymi -->
+                  <!-- tabela z nagłówkiem -->
+
+                  <!-- tabela z nagłówkiem -->
+                    <p class="list-date">25.12.2016</p>
+                    <!-- tabela tylko z danymi -->
+                    <div class="list-table">
+                      <div class="list-row">
+                        <div class="feed-hourbox">
+                          <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+                          <span>10:00</span>
+                        </div>
+                        <div class="feed-timebox">
+                        </div>
+                        <div class="feed-breastbox">
+                          <div class="feed-breast-icon">
+                            P
+                          </div>
+                        </div>
+                        <div class="feed-bottlebox">
+                        </div>
+                      </div>
+                      <div class="feed-commentbox">
+                        <span>na leżąco</span>
+                      </div>
                     </div>
-                    <span class="feed-time">10 minut</span>
-                    <div class="feed-breast-icon">
-                      P
-                    </div>
-                    <span class="feed-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-                  </li>
-                </ul>
+                    <!-- tabela tylko z danymi -->
+                    <!-- tabela z nagłówkiem -->
+
               </div>
               <div class="legendbox legend-lists">
-                <span class="legend-title">Legenda</span>
-                <div class="legend-set">
-                  <div class="legend-ico">L</div>
-                  <span class="breast-name">LEWA pierś</span>
-                </div>
-                <div class="legend-set">
-                  <div class="legend-ico">P</div>
-                  <span class="breast-name">PRAWA pierś</span>
-                </div>
+              <span class="legend-title">Legenda</span>
+              <div class="legend-set">
+                <div class="legend-ico">L</div>
+                <span class="breast-name">LEWA pierś</span>
+              </div>
+              <div class="legend-set">
+                <div class="legend-ico">P</div>
+                <span class="breast-name">PRAWA pierś</span>
+              </div>
               </div>
             </div>
           </section>
@@ -132,3 +173,98 @@
 
   </body>
 </html>
+
+
+<!--
+
+
+<div class="list-date-container">
+  <p class="list-date">26.12.2016</p>
+  <div class="list-row">
+    <div class="feed-hourbox">
+      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+      <span class="feed-hour">12:00</span>
+    </div>
+    <span class="feed-time">ponad godzinę</span>
+    <div class="feed-breast-container">
+      <div class="feed-breast-icon">
+        P
+      </div>
+    </div>
+    <span class="feed-bottle-ml">100ml</span>
+  </div>
+  <div class="feed-comment">na leżąco</div>
+</div>
+
+<div class="list-date-container">
+  <div class="list-row">
+    <div class="feed-hourbox">
+      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+      <span class="feed-hour">09:00</span>
+    </div>
+    <span class="feed-time">10 minut</span>
+    <div class="feed-breast-container">
+      <div class="feed-breast-icon">
+        L
+      </div>
+    </div>
+    <span class="feed-bottle-ml">100ml</span>
+  </div>
+  <div class="feed-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+</div>
+
+<div class="list-date-container">
+  <p class="list-date">25.12.2016</p>
+  <div class="list-row">
+    <div class="feed-hourbox">
+      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+      <span class="feed-hour">12:00</span>
+    </div>
+    <span class="feed-time">ponad godzinę</span>
+    <div class="feed-breast-container">
+      <div class="feed-breast-icon">
+        P
+      </div>
+    </div>
+    <span class="feed-bottle-ml">100ml</span>
+  </div>
+  <div class="feed-comment">na leżąco</div>
+</div>
+
+<div class="list-date-container">
+  <div class="list-row">
+    <div class="feed-hourbox">
+      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+      <span class="feed-hour">09:00</span>
+    </div>
+    <span class="feed-time">10 minut</span>
+    <div class="feed-breast-container">
+      <div class="feed-breast-icon">
+        L
+      </div>
+    </div>
+    <span class="feed-bottle-ml">100ml</span>
+  </div>
+</div>
+
+<div class="list-date-container">
+  <div class="list-row">
+    <div class="feed-hourbox">
+      <img class="clock clock-list" src="img/time-b.png" alt="clock" />
+      <span class="feed-hour">06:00</span>
+    </div>
+    <span class="feed-time">38 minut</span>
+    <div class="feed-breast-container">
+      <div class="feed-breast-icon">
+        L
+      </div>
+    </div>
+    <span class="feed-bottle-ml">90ml</span>
+  </div>
+</div>
+
+</div>
+
+
+
+-->
