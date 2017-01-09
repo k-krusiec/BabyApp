@@ -1,0 +1,37 @@
+.weight-databox {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 50%;
+  span {
+    font-weight: 400;
+  }
+}
+
+.weight-differencebox {
+  width: 50%;
+  margin-right: 10px;
+  text-align: right;
+  span {
+    display: block;
+    padding: 4px 0;
+  }
+}
+
+.weight-neutral {
+  color: $black;
+}
+
+.weight-red {
+  color: red;
+}
+
+.weight-green {
+  color: green;
+}
+
+@media #{$phone} {
+  .weight-databox {
+    margin-right: 10px;
+  }
+}
