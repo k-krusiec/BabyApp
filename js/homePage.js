@@ -151,7 +151,7 @@ $(document).ready(function() {
         $formPanels.eq(0).slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/feed-w.png") ' + deviceSize(),
+          'background': 'url("./img/feed-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -173,7 +173,7 @@ $(document).ready(function() {
         $formPanels.eq(1).slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/weight-w.png") ' + deviceSize(),
+          'background': 'url("./img/weight-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -195,7 +195,7 @@ $(document).ready(function() {
         $formPanels.eq(2).slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/diaper-w.png") ' + deviceSize(),
+          'background': 'url("./img/diaper-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -217,7 +217,7 @@ $(document).ready(function() {
         $formPanels.eq(3).slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/bath-w.png") ' + deviceSize(),
+          'background': 'url("./img/bath-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -239,7 +239,7 @@ $(document).ready(function() {
         $formPanels.eq(4).slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/doctor-w.png") ' + deviceSize(),
+          'background': 'url("./img/doctor-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
@@ -261,7 +261,7 @@ $(document).ready(function() {
         $formPanels.eq(5).slideUp('slow');
       } else {
         $(this).css({
-          'background': 'url("../img/diary-w.png") ' + deviceSize(),
+          'background': 'url("./img/diary-w.png") ' + deviceSize(),
           'background-size': '50px',
           'color': 'white'
         }).parent().css({
