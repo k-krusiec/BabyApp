@@ -1,4 +1,7 @@
 # BabyApp
+
+![alt text](https://github.com/k-krusiec/babyapp/blob/develop/img/babyapp-logo-180x80.png "BabyApp Logo")
+
 ## O projekcie
 BabyApp to aplikacja dla rodziców, którzy chcą monitorować rozwój swojego nowo narodzonego dziecka.
 
