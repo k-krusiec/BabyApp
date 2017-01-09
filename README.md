@@ -17,22 +17,22 @@ Aplikację można obejrzeć pod adresem: <dev.krusiec.com/kruchypf/babyApp>
 ## Instalacja
 Do projektu zostały przygotowane pliki package.json i gulpfile.js.
 Aby zainstalować stronę lokalnie należy
-1. zainstalować node_modules:
+* zainstalować node_modules:
 ```
 nmp install
 ```
-2. skompilować SASS:
+* skompilować SASS:
 ```
 gulp
 ```
 Po tym uruchomi się przeglądarka z uruchomionym adresem localhot:3000 z projektem BabyApp
 
 ## Wersja
-1.0.0
+#### 1.0.0
 * Logowanie (localStorage)
 * Strona główna + formularze
 
-### Kolejne kroki:
+#### Kolejne kroki:
 * Podstrony z listami - dla statycznych danych
 * Zbieranie danych z formularzy (indexedDB)
 * Wyświetlanie dynamicznych danych na listach
