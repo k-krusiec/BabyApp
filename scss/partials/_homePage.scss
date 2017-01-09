@@ -192,6 +192,16 @@ main {
     color: inherit;
     padding: 20px 0 20px 70px;
   }
+  .home {
+    a {
+      background: url("../img/home1-b.png") no-repeat 17px center transparent;
+      background-size: 36px;
+      &:hover {
+        background: url("../img/home1-w.png") no-repeat 17px center transparent;
+        background-size: 36px;
+      }
+    }
+  }
   .feed {
     a {
       background: url("../img/feed-b.png") no-repeat 17px center transparent;
