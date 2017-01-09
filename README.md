@@ -1,5 +1,6 @@
 # BabyApp
 
+
 ![alt text](https://github.com/k-krusiec/babyapp/blob/develop/img/babyapp-logo-180x80.png "BabyApp Logo")
 
 ## O projekcie
