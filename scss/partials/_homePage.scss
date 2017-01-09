@@ -135,6 +135,10 @@ main {
 .home-page-bc {
   margin-left: 25px;
   color: $turquoise;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .right-arrow {
@@ -499,7 +503,7 @@ input {
 }
 
 .hp-date {
-  width: 110px;
+  width: 120px;
   &::-webkit-clear-button {
     display: none;
   }
@@ -552,7 +556,6 @@ textarea {
   }
 
   .hp-date {
-    width: 110px;
     &::-webkit-clear-button {
       display: none;
     }
@@ -727,6 +730,7 @@ textarea {
 
 .legendbox {
   width: 25%;
+  font-size: 14px;
   color: $gray;
 }
 
@@ -749,14 +753,13 @@ textarea {
   width: 25px;
   height: 25px;
   margin: 5px 10px 0 0;
-  padding-top: 3px;
+  padding-top: 4px;
   border: 1px solid $gray;
   border-radius: 50%;
   text-align: center;
 }
 
 /*feed form*/
-
 .required {
   font-weight: 700;
 }
@@ -846,7 +849,7 @@ textarea {
 /*doctor form*/
 input[name="doctor-name"],
 input[name="doctor-location"] {
-  width: 250px;
+  width: 260px;
 }
 /*doctor form end*/
 
