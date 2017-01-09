@@ -3,11 +3,24 @@
   margin-left: 10px;
 }
 
+@media #{$tablet} {
+  .opt-lists {
+    margin-right: 10px;
+  }
+}
+
 .feed-list {
   display: flex;
   flex-flow: nowrap;
   padding: 30px;
   background: $white;
+}
+
+@media #{$phone} {
+  .opt-lists {
+    padding: 0;
+    margin-right: 10px;
+  }
 }
 
 .feed-listbox {
@@ -22,6 +35,26 @@
   font-size: 32px;
 }
 
+@media #{$phone} {
+  .feed-list {
+    display: flex;
+    flex-flow: nowrap;
+    padding: 0;
+    background: none;
+  }
+
+  .feed-listbox {
+    margin-right: 0;
+  }
+
+  .feed-list-title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
 .feed-list-date {
   padding: 10px;
   background: $light-gray;
@@ -29,16 +62,61 @@
 
 .feed-list-row {
   display: flex;
-  flex-direction: row;
+  align-items: flex-start;
   padding: 10px;
   border-bottom: 1px solid $light-gray;
+  background: $white;
 }
 
+.feed-hourbox {
+  display: flex;
+  align-items: center;
+  min-width: 90px;
+}
 
+.clock-list {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px 0 0;
+}
 
+.feed-hour {
+  font-weight: 700;
+}
 
+.feed-time {
+  min-width: 80px;
+  margin-top: 5px;
+}
 
+.feed-breast-icon {
+  min-width: 25px;
+  height: 25px;
+  margin: 1px 20px 0 0;
+  padding-top: 3px;
+  border: 1px solid $black;
+  border-radius: 50%;
+  text-align: center;
+}
 
+.feed-comment {
+  margin-top: 5px;
+}
+
+@media #{$phone} {
+  .clock-list {
+    margin: 0 5px 0 0;
+  }
+  .feed-hourbox {
+    min-width: 75px;
+  }
+  .feed-time {
+    min-width: 65px;
+  }
+  .feed-breast-icon {
+    margin: 1px 10px 0 0;
+  }
+}
 
 .legend-lists {
   margin-top: 40px;
