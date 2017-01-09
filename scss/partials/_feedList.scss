@@ -41,11 +41,10 @@
   width: 20%;
   margin-right: 10px;
   text-align: right;
-}
-
-.feed-bottle {
-  display: block;
-  padding: 4px 0;
+  span {
+    display: block;
+    padding: 4px 0;
+  }
 }
 
 .feed-commentbox {
