@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
           'birth': babyBirth.value
         }
         localStorage.setItem('babyInfo', JSON.stringify(babyInfo));
-        location.href = "../homePage.html";
+        location.href = "homePage.html";
       }
     })
   }
