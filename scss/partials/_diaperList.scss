@@ -1,0 +1,55 @@
+.diaper-hourbox {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 40%;
+  span {
+    font-weight: 700;
+  }
+}
+
+.clock-list {
+  width: 26px;
+  height: 26px;
+  margin-left: 0;
+}
+
+.diaper-peebox {
+  width: 40%;
+  span {
+    display: block;
+    padding: 4px 0;
+  }
+}
+
+.diaper-poobox {
+  width: 20%;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.diaper-poo-icon {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  padding-top: 4px;
+  border: 1px solid $black;
+  border-radius: 50%;
+  text-align: center;
+}
+
+@media #{$phone} {
+  .clock-list {
+    margin: 0 5px 0 0;
+  }
+  .diaper-hourbox {
+    margin-right: 10px;
+  }
+}
+
+.legend-lists {
+  margin: 40px 0 0 25px;
+  .legend-ico {
+    min-width: 25px;
+  }
+}
