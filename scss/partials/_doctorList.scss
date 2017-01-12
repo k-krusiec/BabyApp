@@ -1,0 +1,43 @@
+.was-or-not {
+  display: flex;
+  align-items: center;
+}
+
+.doc-visit {
+  display: flex;
+  align-items: center;
+}
+
+.deletebox {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-left: 10px;
+  border-left: 1px solid $black;
+}
+
+.doctor-datebox,
+.doctor-hourbox  {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  span {
+    font-weight: 700;
+  }
+}
+
+.doctor-infobox {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  span:nth-child(1) {
+    font-weight: 700;
+  }
+  span {
+    padding: 2px 0;
+  }
+}
+
+.canceled {
+  color: $gray;
+}
