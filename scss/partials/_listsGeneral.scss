@@ -74,13 +74,13 @@
 .row-orient {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 10px;
   border-bottom: 1px solid $light-gray;
 }
 
 @media #{$phone} {
   .row-orient {
-    flex-wrap: wrap;
     background: $white;
   }
 }
