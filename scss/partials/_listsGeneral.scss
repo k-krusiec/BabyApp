@@ -84,3 +84,22 @@
     background: $white;
   }
 }
+
+.clock-list,
+.calendar-list {
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+}
+
+.was-or-not {
+  width: 40px;
+}
+
+.success-list,
+.fail-list,
+.was-list {
+  width: 32px;
+  height: 32px;
+  margin-top: 1px;
+}
