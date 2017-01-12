@@ -1,16 +1,32 @@
-.weight-databox {
+.weight-datebox {
   display: flex;
   align-items: center;
-  padding-left: 10px;
-  width: 50%;
+  margin-right: 30px;
+  //width: 60%;
+  span {
+    font-weight: 700;
+  }
+}
+
+.calendar-list {
+  width: 26px;
+  height: 26px;
+}
+
+.weight-infobox {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  //padding-left: 10px;
+  //width: 20%;
   span {
     font-weight: 400;
   }
 }
 
 .weight-differencebox {
-  width: 50%;
-  margin-right: 10px;
+  //width: 20%;
+  //margin-right: 10px;
   text-align: right;
   span {
     display: block;

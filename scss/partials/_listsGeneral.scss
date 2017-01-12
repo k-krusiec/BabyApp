@@ -70,3 +70,17 @@
   display: flex;
   flex-flow: row;
 }
+
+.row-orient {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: 1px solid $light-gray;
+}
+
+@media #{$phone} {
+  .row-orient {
+    flex-wrap: wrap;
+    background: $white;
+  }
+}
