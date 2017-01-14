@@ -1,0 +1,19 @@
+.border-error {
+  border-bottom: 1px solid red;
+}
+
+.error-comment {
+  display: block;
+  margin: 5px 0 5px 100px;
+  color: red;
+}
+
+.for-date {
+  margin: -15px 0 20px 100px;
+}
+
+@media #{$phone} {
+  .error-comment {
+    margin-left: 60px;
+  }
+}

@@ -7,18 +7,28 @@ $(document).ready(function() {
   var $breastRadios = $body.find('.breast-radio');
   var $pooRadios = $body.find('.poo-radio');
   var $cancelBtns = $body.find('.cancel-btn');
+
   var btnIconReset = {
     'background': '',
     'background-size': '',
     'color': ''
   };
+
   var btnBgReset = {
     'background': ''
   };
+
   var tileImgPos = {
     'desktop': 'no-repeat 25px center transparent',
     'phone': 'no-repeat center 25px transparent'
   }
+
+  var errorText = {
+    'req': 'Uzupełnij to pole',
+    'long': 'Możesz wpisać max 500 znaków',
+    'notAvailable': 'Ta opcja nie jest dostępna'
+  }
+
   var breastSide;
   var pooSize;
 
@@ -129,16 +139,6 @@ $(document).ready(function() {
       }
     }
     return tileImgPosVal;
-  }
-
-  function hideForms() {
-    $optionBtns.each(function() {
-      $(this).css(btnIconReset).parent().css(btnBgReset);
-    });
-
-    $formPanels.each(function() {
-      $(this).slideUp('50');
-    })
   }
 
   function showFeedForm() {
@@ -308,12 +308,128 @@ $(document).ready(function() {
   pooRadioChecker();
   //obsługa fake radiobuttonów end
 
+
+  /* walidacja diary*/
+  function diaryValidator() {
+    var $form = $body.find('.diary-form');
+    var $date = $form.find('.diary-date');
+    var $comment = $form.find('.diary-comment');
+    var $photo = $form.find('.diary-photo');
+    var $video = $form.find('.diary-video');
+    var date;
+    var comment;
+    var errorDiv;
+
+    $photo.on('click', function(e) {
+      e.preventDefault();
+      errorDiv = $('<div>').addClass('error-comment not-available');
+      errorDiv.text(errorText.notAvailable);
+      $photo.after(errorDiv);
+      setTimeout(function(){
+        $('.not-available').remove();
+      }, 1500);
+    })
+
+    $video.on('click', function(e) {
+      e.preventDefault();
+      errorDiv = $('<div>').addClass('error-comment not-available').css({marginBottom: '15px'});
+      errorDiv.text(errorText.notAvailable);
+      $video.css({marginBottom: '0px'}).after(errorDiv);
+      setTimeout(function(){
+        $video.css({marginBottom: '20px'})
+        $('.not-available').remove();
+      }, 1500);
+    })
+
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      if (dateValid() && commentValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
+
+    function dateValid() {
+      var valid = false;
+      clearErrors();
+      date = $date.val();
+      if(!date) {
+        errorDiv = $('<div>').addClass('error-comment for-date');
+        $date.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.diary-start').after(errorDiv);
+      } else {
+        $date.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function commentValid() {
+      var valid = false
+      clearErrors();
+      comment = $comment.val();
+      if(!comment) {
+        errorDiv = $('<div>').addClass('error-comment');
+        $comment.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.commentbox').after(errorDiv);
+      } else if (comment.length > 500) {
+        $comment.addClass('border-error');
+        errorDiv.text(errorText.long);
+        $('.commentbox').after(errorDiv);
+      } else {
+        $comment.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+  }
+
+  diaryValidator();
+  /* walidacja diary*/
+
+  /* funkcje czyszczące i zamykające */
+
+  function clearForms() {
+    var $date = $body.find('input[type=date]');
+    var $textAreas = $body.find('textarea');
+
+    setTimeout(function(){
+      clearErrors();
+      $date.val('');
+      $textAreas.val('');
+    }, 1000);
+  }
+
+  function clearErrors() {
+    $('.border-error').removeClass('border-error');
+    $('.error-comment').remove();
+  }
+
+  function hideForms() {
+    $optionBtns.each(function() {
+      $(this).css(btnIconReset).parent().css(btnBgReset);
+    });
+
+    $formPanels.each(function() {
+      $(this).slideUp('50');
+    })
+
+    clearErrors();
+  }
+
   function cancelForm() {
     $cancelBtns.on('click', function() {
       hideForms();
     })
   }
   cancelForm();
+
+  /* funkcje czyszczące i zamykające */
 
 
 })
