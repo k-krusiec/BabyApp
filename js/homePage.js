@@ -29,8 +29,7 @@ $(document).ready(function() {
     'notAvailable': 'Ta opcja nie jest dostępna',
     'notANum': 'To pole musi zawierać tylko cyfry',
     'negNum': 'Wartość nie może być ujemna',
-    'toBigNum': 'Wartość nie może być większa niż 99999',
-    'longNum': 'Możesz wpisać max 5 znaków'
+    'toBigNum': 'Wartość nie może być większa niż 99999'
   }
 
   var breastSide;
@@ -353,6 +352,14 @@ $(document).ready(function() {
       if(!grams) {
         $grams.addClass('border-error');
         errorDiv.text(errorText.req);
+        $('.weight-g').after(errorDiv);
+      } else if (grams < 0) {
+        $grams.addClass('border-error');
+        errorDiv.text(errorText.negNum);
+        $('.weight-g').after(errorDiv);
+      } else if (grams > 99999) {
+        $grams.addClass('border-error');
+        errorDiv.text(errorText.toBigNum);
         $('.weight-g').after(errorDiv);
       } else {
         $grams.removeClass('border-error');
