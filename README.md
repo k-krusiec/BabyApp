@@ -31,14 +31,15 @@ Po tym uruchomi się przeglądarka z uruchomionym adresem localhot:3000 z projek
 
 ## Wersja
 #### 1.0.0
-* Logowanie (localStorage)
+* Logowanie (localStorage) (nie działa na Safari :()
 * Strona główna + formularze
+* Podstrony z listami - dla statycznych danych
 
 #### Kolejne kroki:
-* Podstrony z listami - dla statycznych danych
 * Zbieranie danych z formularzy (indexedDB)
 * Wyświetlanie dynamicznych danych na listach
 * Przerobienie obrazków z png na svg lub webfonts
+* Ogarnięcie wysokości viewportu (nie przewidziałem rozdzielczości mniejszych niż hd)
 
 ## Technologie
 * HTML5
