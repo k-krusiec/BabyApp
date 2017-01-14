@@ -263,29 +263,29 @@
             <!--doctor form-->
             <div class="doctor-formbox formbox">
               <div class="formbox-in-left">
-                <form class="form">
+                <form class="form doctor-form">
                   <div class="doctor-start">
                     <label class="required" for="doctor-date">Kiedy</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input class="hp-date" type="date" name="doctor-date" />
+                      <input class="hp-date doctor-date" type="date" name="doctor-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
-                      <input type="time" name="doctor-time" />
+                      <input class="doctor-time" type="time" name="doctor-time" />
                     </div>
                   </div>
                   <div class="doctor-who">
                     <label class="required" for="doctor-name">Kto</label>
-                    <input type="text" name="doctor-name" placeholder="np. Anna Kowalska" />
+                    <input class="doctor-name" type="text" name="doctor-name" placeholder="np. Anna Kowalska" />
                   </div>
                   <div class="doctor-where">
                     <label for="doctor-location">Gdzie</label>
-                    <input type="text" name="doctor-location" placeholder="np. Warszawa, Marszałkowska 1" />
+                    <input class="doctor-location" type="text" name="doctor-location" placeholder="np. Warszawa, Marszałkowska 1" />
                   </div>
                   <div class="commentbox">
                     <label for="comments">Uwagi</label>
-                    <textarea name="comments"></textarea>
+                    <textarea class="doctor-comment" name="comments"></textarea>
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="doctor-submit" value="Zapisz">

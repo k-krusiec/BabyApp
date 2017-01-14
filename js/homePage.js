@@ -27,9 +27,10 @@ $(document).ready(function() {
     'req': 'Uzupełnij to pole',
     'longComment': 'Możesz wpisać max 500 znaków',
     'notAvailable': 'Ta opcja nie jest dostępna',
-    'notANum': 'To pole musi zawierać tylko cyfry',
+    'notANum': 'To pole musi zawierać tylko cyfry', // wywala htmlowy komentarz
     'negNum': 'Wartość nie może być ujemna',
-    'toBigNum': 'Wartość nie może być większa niż 99999'
+    'toBigNum': 'Wartość nie może być większa niż 99999',
+    'longText': 'Możesz wpisać max 50 znaków'
   }
 
   var breastSide;
@@ -449,8 +450,121 @@ $(document).ready(function() {
 
   /* walidacja doctorForm*/
   function doctorValidator() {
-    //zrobić walidację
+    var $form = $body.find('.doctor-form');
+    var $date = $form.find('.doctor-date');
+    var $time = $form.find('.doctor-time');
+    var $name = $form.find('.doctor-name');
+    var $location = $form.find('.doctor-location');
+    var $comment = $form.find('.doctor-comment');
+    var date;
+    var time;
+    var name;
+    var location;
+    var comment;
+    var errorDiv;
+
+    function dateValid() {
+      var valid = false;
+      clearErrors();
+      date = $date.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if(!date) {
+        $date.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.doctor-start').after(errorDiv);
+      } else {
+        $date.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function timeValid() {
+      var valid = false;
+      clearErrors();
+      time = $time.val();
+      errorDiv = $('<div>').addClass('error-comment max-l-margin');
+
+      if(!time) {
+        $time.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.doctor-start').after(errorDiv);
+      } else {
+        $time.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function nameValid() {
+      var valid = false;
+      clearErrors();
+      name = $name.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if(!name) {
+        $name.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.doctor-who').after(errorDiv);
+      } else if (name.length > 50) {
+        $name.addClass('border-error');
+        errorDiv.text(errorText.longText);
+        $('.doctor-who').after(errorDiv);
+      } else {
+        $name.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function locationValid() {
+      var valid = false;
+      clearErrors();
+      location = $location.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if (location.length > 50) {
+        $location.addClass('border-error');
+        errorDiv.text(errorText.longText);
+        $('.doctor-where').after(errorDiv);
+      } else {
+        $location.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function commentValid() {
+      var valid = false
+      clearErrors();
+      comment = $comment.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin last-form-item');
+
+      if(comment.length > 500) {
+        $comment.addClass('border-error');
+        errorDiv.text(errorText.long);
+        $('.commentbox').after(errorDiv);
+      } else {
+        $comment.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      if (dateValid() && timeValid() && nameValid() && locationValid() && commentValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
   }
+
+  doctorValidator();
   /* walidacja doctorForm*/
 
 
@@ -546,13 +660,17 @@ $(document).ready(function() {
 
   function clearForms() {
     var $date = $body.find('input[type=date]');
+    var $time = $body.find('input[type=time]');
     var $number = $body.find('input[type=number]');
+    var $text = $body.find('input[type=text]');
     var $textAreas = $body.find('textarea');
 
     setTimeout(function(){
       clearErrors();
       $date.val('');
+      $time.val('');
       $number.val('');
+      $text.val('');
       $textAreas.val('');
     }, 1000);
   }
