@@ -308,8 +308,92 @@ $(document).ready(function() {
   pooRadioChecker();
   //obsługa fake radiobuttonów end
 
+  /* walidacja feedForm*/
+  function feedValidator() {
+    //zrobić walidację
+  }
+  /* walidacja feedForm*/
 
-  /* walidacja diary*/
+  /* walidacja weightForm*/
+  function weightValidator() {
+    //zrobić walidację
+  }
+  /* walidacja weightForm*/
+
+  /* walidacja diaperForm*/
+  function diaperValidator() {
+    //zrobić walidację
+  }
+  /* walidacja diaperForm*/
+
+  /* walidacja bathForm*/
+  function bathValidator() {
+    var $form = $body.find('.bath-form');
+    var $date = $form.find('.bath-date');
+    var $comment = $form.find('.bath-comment');
+    var date;
+    var comment;
+    var errorDiv;
+
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      if (dateValid() && commentValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
+
+    function dateValid() {
+      var valid = false;
+      clearErrors();
+      date = $date.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if(!date) {
+        $date.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.bath-start').after(errorDiv);
+      } else {
+        $date.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function commentValid() {
+      var valid = false
+      clearErrors();
+      comment = $comment.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin last-form-item');
+
+      if(comment.length > 500) {
+        $comment.addClass('border-error');
+        errorDiv.text(errorText.long);
+        $('.commentbox').after(errorDiv);
+      } else {
+        $comment.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+  }
+
+  bathValidator();
+  /* walidacja bathForm*/
+
+  /* walidacja doctorForm*/
+  function doctorValidator() {
+    //zrobić walidację
+  }
+  /* walidacja doctorForm*/
+
+
+
+
+  /* walidacja diaryForm*/
   function diaryValidator() {
     var $form = $body.find('.diary-form');
     var $date = $form.find('.diary-date');
@@ -332,7 +416,7 @@ $(document).ready(function() {
 
     $video.on('click', function(e) {
       e.preventDefault();
-      errorDiv = $('<div>').addClass('error-comment not-available').css({marginBottom: '15px'});
+      errorDiv = $('<div>').addClass('error-comment not-available last-form-item');
       errorDiv.text(errorText.notAvailable);
       $video.css({marginBottom: '0px'}).after(errorDiv);
       setTimeout(function(){
@@ -356,8 +440,9 @@ $(document).ready(function() {
       var valid = false;
       clearErrors();
       date = $date.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
       if(!date) {
-        errorDiv = $('<div>').addClass('error-comment for-date');
         $date.addClass('border-error');
         errorDiv.text(errorText.req);
         $('.diary-start').after(errorDiv);
@@ -372,8 +457,9 @@ $(document).ready(function() {
       var valid = false
       clearErrors();
       comment = $comment.val();
+      errorDiv = $('<div>').addClass('error-comment');
+
       if(!comment) {
-        errorDiv = $('<div>').addClass('error-comment');
         $comment.addClass('border-error');
         errorDiv.text(errorText.req);
         $('.commentbox').after(errorDiv);
@@ -390,7 +476,7 @@ $(document).ready(function() {
   }
 
   diaryValidator();
-  /* walidacja diary*/
+  /* walidacja diaryForm*/
 
   /* funkcje czyszczące i zamykające */
 
