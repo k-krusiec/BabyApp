@@ -25,8 +25,12 @@ $(document).ready(function() {
 
   var errorText = {
     'req': 'Uzupełnij to pole',
-    'long': 'Możesz wpisać max 500 znaków',
-    'notAvailable': 'Ta opcja nie jest dostępna'
+    'longComment': 'Możesz wpisać max 500 znaków',
+    'notAvailable': 'Ta opcja nie jest dostępna',
+    'notANum': 'To pole musi zawierać tylko cyfry',
+    'negNum': 'Wartość nie może być ujemna',
+    'toBigNum': 'Wartość nie może być większa niż 99999',
+    'longNum': 'Możesz wpisać max 5 znaków'
   }
 
   var breastSide;
@@ -316,8 +320,60 @@ $(document).ready(function() {
 
   /* walidacja weightForm*/
   function weightValidator() {
-    //zrobić walidację
+    var $form = $body.find('.weight-form');
+    var $date = $form.find('.weight-date');
+    var $grams = $form.find('.grams');
+    var date;
+    var grams;
+    var errorDiv;
+
+    function dateValid() {
+      var valid = false;
+      clearErrors();
+      date = $date.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if(!date) {
+        $date.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.weight-start').after(errorDiv);
+      } else {
+        $date.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function gramsValid() {
+      var valid = false
+      clearErrors();
+      grams = $grams.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if(!grams) {
+        $grams.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.weight-g').after(errorDiv);
+      } else {
+        $grams.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      if (dateValid() && gramsValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
   }
+
+  weightValidator();
   /* walidacja weightForm*/
 
   /* walidacja diaperForm*/
@@ -334,17 +390,6 @@ $(document).ready(function() {
     var date;
     var comment;
     var errorDiv;
-
-    $form.on('submit', function(e) {
-      e.preventDefault();
-      if (dateValid() && commentValid()) {
-        hideForms();
-        clearForms();
-
-        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
-        //formularz powinien się zapisać do bazy
-      }
-    })
 
     function dateValid() {
       var valid = false;
@@ -379,6 +424,17 @@ $(document).ready(function() {
       }
       return valid;
     }
+
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      if (dateValid() && commentValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
   }
 
   bathValidator();
@@ -403,38 +459,6 @@ $(document).ready(function() {
     var date;
     var comment;
     var errorDiv;
-
-    $photo.on('click', function(e) {
-      e.preventDefault();
-      errorDiv = $('<div>').addClass('error-comment not-available');
-      errorDiv.text(errorText.notAvailable);
-      $photo.after(errorDiv);
-      setTimeout(function(){
-        $('.not-available').remove();
-      }, 1500);
-    })
-
-    $video.on('click', function(e) {
-      e.preventDefault();
-      errorDiv = $('<div>').addClass('error-comment not-available last-form-item');
-      errorDiv.text(errorText.notAvailable);
-      $video.css({marginBottom: '0px'}).after(errorDiv);
-      setTimeout(function(){
-        $video.css({marginBottom: '20px'})
-        $('.not-available').remove();
-      }, 1500);
-    })
-
-    $form.on('submit', function(e) {
-      e.preventDefault();
-      if (dateValid() && commentValid()) {
-        hideForms();
-        clearForms();
-
-        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
-        //formularz powinien się zapisać do bazy
-      }
-    })
 
     function dateValid() {
       var valid = false;
@@ -473,6 +497,39 @@ $(document).ready(function() {
       }
       return valid;
     }
+
+    $photo.on('click', function(e) {
+      e.preventDefault();
+      errorDiv = $('<div>').addClass('error-comment not-available');
+      errorDiv.text(errorText.notAvailable);
+      $photo.after(errorDiv);
+      setTimeout(function(){
+        $('.not-available').remove();
+      }, 1500);
+    })
+
+    $video.on('click', function(e) {
+      e.preventDefault();
+      errorDiv = $('<div>').addClass('error-comment not-available last-form-item');
+      errorDiv.text(errorText.notAvailable);
+      $video.css({marginBottom: '0px'}).after(errorDiv);
+      setTimeout(function(){
+        $video.css({marginBottom: '20px'})
+        $('.not-available').remove();
+      }, 1500);
+    })
+
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      if (dateValid() && commentValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
+
   }
 
   diaryValidator();
@@ -482,11 +539,13 @@ $(document).ready(function() {
 
   function clearForms() {
     var $date = $body.find('input[type=date]');
+    var $number = $body.find('input[type=number]');
     var $textAreas = $body.find('textarea');
 
     setTimeout(function(){
       clearErrors();
       $date.val('');
+      $number.val('');
       $textAreas.val('');
     }, 1000);
   }
