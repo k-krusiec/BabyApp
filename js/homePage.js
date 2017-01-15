@@ -424,7 +424,7 @@ $(document).ready(function() {
 
       if(comment.length > 500) {
         $comment.addClass('border-error');
-        errorDiv.text(errorText.long);
+        errorDiv.text(errorText.longComment);
         $('.commentbox').after(errorDiv);
       } else {
         $comment.removeClass('border-error');
@@ -543,7 +543,7 @@ $(document).ready(function() {
 
       if(comment.length > 500) {
         $comment.addClass('border-error');
-        errorDiv.text(errorText.long);
+        errorDiv.text(errorText.longComment);
         $('.commentbox').after(errorDiv);
       } else {
         $comment.removeClass('border-error');
@@ -566,9 +566,6 @@ $(document).ready(function() {
 
   doctorValidator();
   /* walidacja doctorForm*/
-
-
-
 
   /* walidacja diaryForm*/
   function diaryValidator() {
@@ -610,7 +607,7 @@ $(document).ready(function() {
         $('.commentbox').after(errorDiv);
       } else if (comment.length > 500) {
         $comment.addClass('border-error');
-        errorDiv.text(errorText.long);
+        errorDiv.text(errorText.longComment);
         $('.commentbox').after(errorDiv);
       } else {
         $comment.removeClass('border-error');
@@ -657,7 +654,6 @@ $(document).ready(function() {
   /* walidacja diaryForm*/
 
   /* funkcje czyszczące i zamykające */
-
   function clearForms() {
     var $date = $body.find('input[type=date]');
     var $time = $body.find('input[type=time]');
@@ -698,7 +694,6 @@ $(document).ready(function() {
     })
   }
   cancelForm();
-
   /* funkcje czyszczące i zamykające */
 
 
