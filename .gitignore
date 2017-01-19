@@ -2,10 +2,10 @@
 *.DS_Store
 
 #Sass
-public/node_modules/
+/node_modules/
 
 #Bower
-public/bower_components/
+/bower_components/
 
 #src
 /_src/
