@@ -1,0 +1,106 @@
+.opt-lists {
+  width: 100%;
+  margin-left: 10px;
+}
+
+@media #{$tablet} {
+  .opt-lists {
+    margin-right: 10px;
+  }
+}
+
+@media #{$phone} {
+  .opt-lists {
+    padding: 0;
+    margin-right: 10px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-flow: nowrap;
+  padding: 30px;
+  background: $white;
+}
+
+.listbox {
+  width: 100%;
+  min-height: 400px;
+}
+
+.list-title {
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 32px;
+}
+
+@media #{$phone} {
+  .list {
+    display: flex;
+    flex-flow: nowrap;
+    padding: 0;
+    background: none;
+  }
+
+  .listbox {
+    margin: 10px 0 0 0;
+  }
+
+  .list-title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+.list-date {
+  padding: 10px;
+  background: $light-gray;
+  font-weight: 700;
+}
+
+.list-table {
+  padding: 7px 0;
+  background: $white;
+  border-bottom: 1px solid $light-gray;
+}
+
+.list-row {
+  display: flex;
+  flex-flow: row;
+}
+
+.row-orient {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-bottom: 1px solid $light-gray;
+}
+
+@media #{$phone} {
+  .row-orient {
+    background: $white;
+  }
+}
+
+.clock-list,
+.calendar-list {
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.was-or-not {
+  width: 40px;
+}
+
+.success-list,
+.fail-list,
+.was-list {
+  width: 32px;
+  height: 32px;
+  margin-top: 1px;
+}

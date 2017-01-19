@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="BabyApp">
+    <meta name="keywords" content="happiness, useful, easy, parenting, baby, clear">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witaj w BabyApp</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <main>
+      <div class="log-page-main-width">
+        <div class="log-content">
+          <img class="log-logo" src="img/babyapp-logo-180x80.png" alt="logo babyapp">
+          <!-- formularz wysyłany linkiem, ze względu na brak backendu -->
+          <!--<form class="startForm" action="homePage.html">-->
+          <form class="startForm">
+            <label class="logNameLab" for="logName">Wpisz imię dziecka</label>
+            <input class="logName" type="text" name="logName" placeholder="np. Tradycja ;)">
+            <div class="log-validation-box"></div>
+            <label class="birthDateLab" for="birthDate">Wpisz datę urodzenia</label>
+            <input class="birthDate" type="date" name="birthDate">
+            <div class="log-validation-box"></div>
+            <!-- przekierowanie na homePage zrobione z JS, ze względu na brak backendu -->
+            <input class="startFormBtn" type="submit" name="logBtn" value="Zapisz">
+            <p class="orText">lub</p>
+          </form>
+
+          <a href="homePage.html" class="techLink">Wgraj przykładowe dane</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+
+      <p class="footText">&copy; 2016 Karol Krusiec</p>
+
+    </footer>
+
+    <script type="text/javascript" src="js/logPage.js"></script>
+  </body>
+</html>

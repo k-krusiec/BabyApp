@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="BabyApp" />
+    <meta name="keywords" content="happiness, useful, easy, parenting, baby, clear" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BabyApp</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="main-width">
+        <nav class="mobile-menu">
+          <ul>
+            <li class="mob-home"><a href="homePage.html">Strona główna</a></li>
+            <li class="mob-feed"><a href="feedList.html">Karmienia</a></li>
+            <li class="mob-weight"><a href="weightList.html">Ważenia</a></li>
+            <li class="mob-diaper"><a href="diaperList.html">Zmiany pieluszek</a></li>
+            <li class="mob-bath"><a href="bathList.html">Kąpiele</a></li>
+            <li class="mob-doctor"><a href="doctorList.html">Wizyty lekarskie</a></li>
+            <li class="mob-diary"><a href="diaryList.html">Dziennik</a></li>
+            <li class="mob-set"><a href="settings.html">Ustawienia</a></li>
+          </ul>
+        </nav>
+        <div class="main-header">
+          <a href="#">
+            <img class="hp-logo" src="img/babyapp-logo-180x80.png" alt="BabyApp logo" />
+          </a>
+          <img class="foto" src="img/fake-baby-78x78.png" alt="baby" />
+          <div class="baby-info">
+            <p class="baby-name">Imię</p>
+            <p class="baby-age">Wiek</p>
+          </div>
+          <a class="settings" href="settings.html">
+            Ustawienia
+          </a>
+          <div class="ham-menu ham-icon">
+            <span class="ham-menu-title">Menu</span>
+          </div>
+        </div>
+      </div>
+      <section class="breadcrumbs">
+        <div class="main-width">
+          <span class="home-page-bc"><a href="homePage.html">BabyApp</a></span>
+          <img class="right-arrow" src="img/rarrow-dg.png" alt="right arrow" />
+          <span>Strona główna</span>
+        </div>
+      </section>
+    </header>
+    <main>
+      <div class="main-width">
+        <div class="container">
+          <nav class="navi">
+            <span class="navi-title">Menu</span>
+            <ul>
+              <li class="home"><a href="homePage.html">Strona główna</a></li>
+              <li class="feed"><a href="feedList.html">Karmienia</a></li>
+              <li class="weight"><a href="weightList.html">Ważenia</a></li>
+              <li class="diaper"><a href="diaperList.html">Zmiany pieluszek</a></li>
+              <li class="bath"><a href="bathList.html">Kąpiele</a></li>
+              <li class="doctor"><a href="doctorList.html">Wizyty lekarskie</a></li>
+              <li class="diary"><a href="diaryList.html">Dziennik</a></li>
+            </ul>
+          </nav>
+          <section class="main-content">
+            <div class="row">
+              <div class="tile feed-opt">
+                <div class="feed-btn option-btn">
+                  <span>Karmienie</span>
+                </div>
+              </div>
+              <div class="tile weight-opt">
+                <div class="weight-btn option-btn">
+                  <span>Ważenie</span>
+                </div>
+              </div>
+            </div>
+
+            <!--Feed form-->
+            <div class="feed-formbox formbox">
+              <div class="formbox-in-left">
+                <form class="form">
+                  <div class="feed-start">
+                    <label class="required" for="feed-start-date">Start</label>
+                    <div class="databox">
+                      <img class="calendar" src="img/date-b.png" alt="calendar" />
+                      <input class="hp-date" type="date" name="feed-start-date" />
+                    </div>
+                    <div class="databox">
+                      <img class="clock" src="img/time-b.png" alt="clock" />
+                      <input type="time" name="feed-start-time" />
+                    </div>
+                  </div>
+                  <div class="feed-stop">
+                      <label for="feed-stop-date">Koniec</label>
+                    <div class="databox">
+                      <img class="calendar" src="img/date-b.png" alt="calendar" />
+                      <input class="hp-date" type="date" name="feed-stop-date" />
+                    </div>
+                    <div class="databox">
+                      <img class="clock" src="img/time-b.png" alt="clock" />
+                      <input type="time" name="feed-stop-time" />
+                    </div>
+                  </div>
+                  <div class="feed-breast">
+                    <label for="breast">Pierś</label>
+                    <div class="breast-radio" data-side="l">L</div>
+                    <div class="breast-radio" data-side="r">P</div>
+                  </div>
+                  <div class="feed-ml">
+                    <label for="milliliters">Wypite mleko</label>
+                    <input class="milliliters" type="number" name="milliliters" min="0000" max="9999" placeholder="0000"/>
+                    <span>ml</span>
+                  </div>
+                  <div class="commentbox">
+                    <label for="comments">Uwagi</label>
+                    <textarea class="feed-comments" name="comments"></textarea>
+                  </div>
+                  <div class="submitbox">
+                    <input class="submit-btn" type="submit" name="feed-submit" value="Zapisz">
+                    <button class="cancel-btn" type="button" name="feed-cancel">Anuluj</button>
+                  </div>
+                </form>
+                <div class="legendbox">
+                  <span class="legend-title">Legenda</span>
+                  <div class="legend-set">
+                    <div class="legend-ico">L</div>
+                    <span class="breast-name">LEWA pierś</span>
+                  </div>
+                  <div class="legend-set">
+                    <div class="legend-ico">P</div>
+                    <span class="breast-name">PRAWA pierś</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Feed form end-->
+
+            <!--Weight form-->
+            <div class="weight-formbox formbox">
+              <div class="formbox-in-right">
+                <form class="form weight-form">
+                  <div class="weight-start">
+                    <label class="required" for="weight-date">Kiedy</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar" />
+                    <input class="hp-date weight-date" type="date" name="weight-date" />
+                  </div>
+                  <div class="weight-g">
+                    <label class="required" for="grams">Waga</label>
+                    <!--<input class="grams" type="number" name="grams" min="00000" max="99999" placeholder="00000" />-->
+                    <input class="grams" type="number" name="grams" placeholder="00000" />
+                    <span>g</span>
+                  </div>
+                  <div class="submitbox">
+                    <input class="submit-btn" type="submit" name="weight-submit" value="Zapisz">
+                    <button class="cancel-btn" type="button" name="weight-cancel">Anuluj</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--Weight form end-->
+
+            <div class="row">
+              <div class="tile diaper-opt">
+                <div class="diaper-btn option-btn">
+                  <span>Zmiana pieluszki</span>
+                </div>
+              </div>
+              <div class="tile bath-opt">
+                <div class="bath-btn option-btn">
+                  <span>Kąpiel</span>
+                </div>
+              </div>
+            </div>
+
+            <!--diaper form-->
+            <div class="diaper-formbox formbox">
+              <div class="formbox-in-left">
+                <form class="form">
+                  <div class="diaper-start">
+                    <label class="required" for="diaper-date">Kiedy</label>
+                    <div class="databox">
+                      <img class="calendar" src="img/date-b.png" alt="calendar" />
+                      <input class="hp-date" type="date" name="diaper-date" />
+                    </div>
+                    <div class="databox">
+                      <img class="clock" src="img/time-b.png" alt="clock" />
+                      <input type="time" name="diaper-time" />
+                    </div>
+                  </div>
+                  <div class="diaper-pee">
+                    <label for="pee">Siusiu</label>
+                    <div class="pee-radio pee-checked"></div>
+                  </div>
+                  <div class="diaper-poo">
+                    <label for="poo">Kupka</label>
+                    <div class="poo-radio" data-size="1">1</div>
+                    <div class="poo-radio" data-size="2">2</div>
+                    <div class="poo-radio" data-size="3">3</div>
+                  </div>
+                  <div class="submitbox">
+                    <input class="submit-btn" type="submit" name="diaper-submit" value="Zapisz">
+                    <button class="cancel-btn" type="button" name="diaper-cancel">Anuluj</button>
+                  </div>
+                </form>
+                <div class="legendbox">
+                  <span class="legend-title">Legenda</span>
+                  <div class="legend-set">
+                    <div class="legend-ico">1</div>
+                    <span class="poo-name">MAŁA kupka</span>
+                  </div>
+                  <div class="legend-set">
+                    <div class="legend-ico">2</div>
+                    <span class="poo-name">ŚREDNIA kupka</span>
+                  </div>
+                  <div class="legend-set">
+                    <div class="legend-ico">3</div>
+                    <span class="poo-name">DUŻA kupka</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--diaper form end-->
+
+            <!--bath form-->
+            <div class="bath-formbox formbox">
+              <div class="formbox-in-right">
+                <form class="form bath-form">
+                  <div class="bath-start">
+                    <label class="required" for="bath-date">Kiedy</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar" />
+                    <input class="hp-date bath-date" type="date" name="bath-date" />
+                  </div>
+                  <div class="commentbox">
+                    <label for="comments">Uwagi</label>
+                    <textarea class="bath-comment" name="comments"></textarea>
+                  </div>
+                  <div class="submitbox">
+                    <input class="submit-btn" type="submit" name="bath-submit" value="Zapisz">
+                    <button class="cancel-btn" type="button" name="bath-cancel">Anuluj</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--bath form end-->
+
+            <div class="row">
+              <div class="tile doctor-opt">
+                <div class="doctor-btn option-btn">
+                  <span>Wizyta lekarska</span>
+                </div>
+              </div>
+              <div class="tile diary-opt">
+                <div class="diary-btn option-btn">
+                  <span>Wpis w&nbsp;dzienniku</span>
+                </div>
+              </div>
+            </div>
+
+            <!--doctor form-->
+            <div class="doctor-formbox formbox">
+              <div class="formbox-in-left">
+                <form class="form doctor-form">
+                  <div class="doctor-start">
+                    <label class="required" for="doctor-date">Kiedy</label>
+                    <div class="databox">
+                      <img class="calendar" src="img/date-b.png" alt="calendar" />
+                      <input class="hp-date doctor-date" type="date" name="doctor-date" />
+                    </div>
+                    <div class="databox">
+                      <img class="clock" src="img/time-b.png" alt="clock" />
+                      <input class="doctor-time" type="time" name="doctor-time" />
+                    </div>
+                  </div>
+                  <div class="doctor-who">
+                    <label class="required" for="doctor-name">Kto</label>
+                    <input class="doctor-name" type="text" name="doctor-name" placeholder="np. Anna Kowalska" />
+                  </div>
+                  <div class="doctor-where">
+                    <label for="doctor-location">Gdzie</label>
+                    <input class="doctor-location" type="text" name="doctor-location" placeholder="np. Warszawa, Marszałkowska 1" />
+                  </div>
+                  <div class="commentbox">
+                    <label for="comments">Uwagi</label>
+                    <textarea class="doctor-comment" name="comments"></textarea>
+                  </div>
+                  <div class="submitbox">
+                    <input class="submit-btn" type="submit" name="doctor-submit" value="Zapisz">
+                    <button class="cancel-btn" type="button" name="doctor-cancel">Anuluj</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--doctor form end-->
+
+            <!--diary form-->
+            <div class="diary-formbox formbox">
+              <div class="formbox-in-right">
+                <form class="form diary-form">
+                  <div class="diary-start">
+                    <label class="required" for="diary-date">Kiedy</label>
+                    <img class="calendar" src="img/date-b.png" alt="calendar" />
+                    <input class="hp-date diary-date" type="date" name="diary-date" />
+                  </div>
+                  <div class="commentbox diary-ta">
+                    <label class="required" for="comments">Opis</label>
+                    <textarea class="diary-comment" name="comments"></textarea>
+                  </div>
+                  <div class="diary-photo">
+                    <img class="photo" src="img/photo-t.png" alt="photo" />
+                    <span>dodaj zdięcie</span>
+                  </div>
+                  <div class="diary-video">
+                    <img class="video" src="img/video-t.png" alt="video" />
+                    <span>dodaj video</span>
+                  </div>
+                  <div class="submitbox">
+                    <input class="submit-btn" type="submit" name="diary-submit" value="Zapisz">
+                    <button class="cancel-btn" type="button" name="diary-cancel">Anuluj</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--diary form end-->
+
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="main-width">
+        <p class="footText">&copy; 2016 Karol Krusiec</p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/homePage.js"></script>
+
+  </body>
+</html>
