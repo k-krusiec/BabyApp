@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&subset=latin-ext');
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: orange;
+  background-image: url("../img/babyapp-bg-40x40.png");
+}
+
+.reglog-width {
+  max-width: 600px;
+  margin: 10px auto 0;
+  padding: 20px;
+  background: white;
+  -webkit-box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
+  -moz-box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
+  box-shadow: 10px 30px 75px 0px rgba(204,204,204,0.75);
+  text-align: center;
+}
+
+.reglog-logo {
+  width: 180px;
+  padding: 20px 0 15px;
+}
+
+form {
+  position: relative;
+}
+
+.form-inputs {
+  margin: 0 auto;
+  width: 65%;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.reset-pass-form {
+	border-bottom: none;
+}
+
+.reglog-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.header-link {
+  display: inline-block;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #ff8965;
+}
+
+.labinput-row,
+.logIn-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.reset-pass label {
+	margin-right: 10px;
+}
+
+.lcol {
+	padding-right: 10px;
+	text-align: left;
+}
+
+.lcol-register {
+	width: 120px;
+	/*text-align: right;*/
+}
+
+.rcol {
+	flex: 1;
+}
+
+.labinput-row input,
+.logIn-row input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #e3e3e3;
+  font-size: 0.9rem;
+}
+
+.bg-success, .bg-danger {
+	margin: 1px 0;
+  padding: 5px;
+	line-height: 16px;
+  font-size: 0.8rem;
+	text-align: left;
+}
+
+.bg-success {
+	border: 1px solid green;
+	background: rgba(0, 255, 0, 0.1);
+  color: green;
+}
+
+.bg-danger {
+	border: 1px solid red;
+	background: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+.babyInfoForm {
+  margin: 15px 0 10px;
+  padding: 5px 0;
+  border-top: 1px solid #e3e3e3;
+}
+
+.logFormBtn {
+  display: inline-block;
+  padding: 15px 40px;
+  margin-bottom: 30px;
+  background: #ff8965;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+
+.btn-custom-margin {
+  margin-top: 20px;
+}
+
+.orText {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 15px;
+  background: white;
+  color: #757575;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.reglog-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 20px 30px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #ff8965;
+}
+
+@media only screen and (max-width: 640px) {
+  .reglog-width {
+    margin: 0 auto;
+    padding: 10px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .form-inputs {
+    width: 100%;
+  }
+
+	.labinput-row,
+	.logIn-row {
+	  display: flex;
+	  justify-content: center;
+    flex-direction: column;
+	  padding: 5px 10px;
+	}
+
+  .labinput-row label {
+    margin: 0 0 3px 0;
+    text-align: center;
+  }
+
+  .labinput-row input {
+    width: 80%;
+    padding: 5px;
+    text-align: center;
+  }
+
+	.lcol,
+	.rcol {
+		width: 100%;
+	}
+
+	.lcol {
+		margin-bottom: 2px;
+		text-align: center;
+	}
+}
