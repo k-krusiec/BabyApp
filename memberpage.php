@@ -32,71 +32,13 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
+$breadcrumbs = 'Strona główna';
 
 //include header template
 require('layout/header.php');
+require('layout/menu.php');
 ?>
 
-  </head>
-  <body>
-
-    <header class="header">
-      <div class="main-width">
-        <nav class="mobile-menu">
-          <ul>
-            <li class="mob-home"><a href="homePage.html">Strona główna</a></li>
-            <li class="mob-feed"><a href="feedList.html">Karmienia</a></li>
-            <li class="mob-weight"><a href="weightList.html">Ważenia</a></li>
-            <li class="mob-diaper"><a href="diaperList.html">Zmiany pieluszek</a></li>
-            <li class="mob-bath"><a href="bathList.html">Kąpiele</a></li>
-            <li class="mob-doctor"><a href="doctorList.html">Wizyty lekarskie</a></li>
-            <li class="mob-diary"><a href="diaryList.html">Dziennik</a></li>
-            <li class="mob-set"><a href="settings.html">Ustawienia</a></li>
-          </ul>
-        </nav>
-        <div class="main-header">
-          <a href="#">
-            <img class="hp-logo" src="img/babyapp-logo-180x80.png" alt="BabyApp logo" />
-          </a>
-          <img class="foto" src="img/fake-baby-78x78.png" alt="baby" />
-          <div class="baby-info">
-            <p class="baby-name">Imię</p>
-            <p class="baby-age">Wiek</p>
-          </div>
-          <a class="settings" href="settings.html">
-            Ustawienia
-          </a>
-					<a href="logout.php">
-						wyloguj
-					</a>
-          <div class="ham-menu ham-icon">
-            <span class="ham-menu-title">Menu</span>
-          </div>
-        </div>
-      </div>
-      <section class="breadcrumbs">
-        <div class="main-width">
-          <span class="home-page-bc"><a href="homePage.html">BabyApp</a></span>
-          <img class="right-arrow" src="img/rarrow-dg.png" alt="right arrow" />
-          <span>Strona główna</span>
-        </div>
-      </section>
-    </header>
-    <main>
-      <div class="main-width">
-        <div class="container">
-          <nav class="navi">
-            <span class="navi-title">Menu</span>
-            <ul>
-              <li class="home"><a href="homePage.html">Strona główna</a></li>
-              <li class="feed"><a href="feedList.html">Karmienia</a></li>
-              <li class="weight"><a href="weightList.html">Ważenia</a></li>
-              <li class="diaper"><a href="diaperList.html">Zmiany pieluszek</a></li>
-              <li class="bath"><a href="bathList.html">Kąpiele</a></li>
-              <li class="doctor"><a href="doctorList.html">Wizyty lekarskie</a></li>
-              <li class="diary"><a href="diaryList.html">Dziennik</a></li>
-            </ul>
-          </nav>
           <section class="main-content">
             <div class="row">
               <div class="tile feed-opt">
@@ -362,17 +304,7 @@ require('layout/header.php');
         </div>
       </div>
     </main>
-    <footer>
-      <div class="main-width">
-        <p class="footText">&copy; 2016 Karol Krusiec</p>
-      </div>
-    </footer>
 
-    <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/homePage.js"></script>
-
-  </body>
-</html>
 
 
 
