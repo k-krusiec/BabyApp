@@ -61,27 +61,27 @@ require('layout/menu.php');
             <!--Feed form-->
             <div class="feed-formbox formbox">
               <div class="formbox-in-left">
-                <form method="POST" class="form">
+                <form method="POST" class="form feed-form">
                   <div class="feed-start">
                     <label class="required" for="feed-start-date">Start</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input class="hp-date" type="date" name="feed-start-date" />
+                      <input class="hp-date feed-start-date" type="date" name="feed-start-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
-                      <input type="time" name="feed-start-time" />
+                      <input class="feed-start-time" type="time" name="feed-start-time" />
                     </div>
                   </div>
                   <div class="feed-stop">
                       <label for="feed-stop-date">Koniec</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input class="hp-date" type="date" name="feed-stop-date" />
+                      <input class="hp-date feed-stop-date" type="date" name="feed-stop-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
-                      <input type="time" name="feed-stop-time" />
+                      <input class="feed-stop-time" type="time" name="feed-stop-time" />
                     </div>
                   </div>
                   <div class="feed-breast">
@@ -102,12 +102,13 @@ require('layout/menu.php');
                   </div>
                   <div class="feed-ml">
                     <label for="milliliters">Wypite mleko</label>
-                    <input class="milliliters" type="number" name="milliliters" min="0000" max="9999" placeholder="0000"/>
+                    <!--<input class="milliliters" type="number" name="milliliters" min="0000" max="9999" placeholder="0000"/>-->
+                    <input class="milliliters" type="number" name="milliliters" placeholder="0000"/>
                     <span>ml</span>
                   </div>
                   <div class="commentbox">
                     <label for="comments">Uwagi</label>
-                    <textarea class="feed-comments" name="comments"></textarea>
+                    <textarea class="feed-comment" name="comments"></textarea>
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="feed-submit" value="Zapisz">

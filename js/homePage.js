@@ -371,8 +371,105 @@ $(document).ready(function() {
 
   /* walidacja feedForm*/
   function feedValidator() {
-    //zrobić walidację
+    var $form = $body.find('.feed-form');
+    var $startDate = $form.find('.feed-start-date');
+    var $startTime = $form.find('.feed-start-time');
+    var $stopDate = $form.find('.feed-stop-date');
+    var $stopTime = $form.find('.feed-stop-time');
+    var $milliliters = $form.find('.milliliters');
+    var $comment = $form.find('.feed-comment');
+    var startDate;
+    var startTime;
+    var stopDate;
+    var stopTime;
+    var milliliters;
+    var comment;
+    var errorDiv;
+
+    function dateValid() {
+      var valid = false;
+      clearErrors();
+      startDate = $startDate.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if(!startDate) {
+        $startDate.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.feed-start').after(errorDiv);
+      } else {
+        $startDate.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function timeValid() {
+      var valid = false;
+      clearErrors();
+      startTime = $startTime.val();
+      errorDiv = $('<div>').addClass('error-comment max-l-margin');
+
+      if(!startTime) {
+        $startTime.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.feed-start').after(errorDiv);
+      } else {
+        $startTime.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function mililitresValid() {
+      var valid = false
+      clearErrors();
+      milliliters = $milliliters.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if (milliliters < 0) {
+        $milliliters.addClass('border-error');
+        errorDiv.text(errorText.negNum);
+        $('.feed-ml').after(errorDiv);
+      } else if (milliliters > 9999) {
+        $milliliters.addClass('border-error');
+        errorDiv.text(errorText.toBigNum);
+        $('.feed-ml').after(errorDiv);
+      } else {
+        $milliliters.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function commentValid() {
+      var valid = false
+      clearErrors();
+      comment = $comment.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin last-form-item');
+
+      if(comment.length > 500) {
+        $comment.addClass('border-error');
+        errorDiv.text(errorText.longComment);
+        $('.commentbox').after(errorDiv);
+      } else {
+        $comment.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    $form.on('submit', function() {
+      if (dateValid() && timeValid() && mililitresValid() && commentValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
   }
+
+  feedValidator();
   /* walidacja feedForm*/
 
   /* walidacja weightForm*/
