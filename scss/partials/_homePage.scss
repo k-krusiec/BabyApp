@@ -65,13 +65,13 @@ main {
 .settings {
   margin-left: auto;
   padding: 10px 50px 10px 40px;
-  background: url("../img/settings-dg.png") no-repeat left center transparent;
+  background: url("../img/logout1-dg.png") no-repeat left center transparent;
   background-size: 32px;
   text-decoration: none;
   text-transform: uppercase;
   color: $gray;
   &:hover {
-    background: url("../img/settings-b.png") no-repeat left center transparent;
+    background: url("../img/logout1-b.png") no-repeat left center transparent;
     background-size: 32px;
     color: $black;
   }
