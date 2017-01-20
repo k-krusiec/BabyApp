@@ -191,7 +191,7 @@ require('layout/menu.php');
                   <div class="diaper-poo">
                     <label for="poo">Kupka</label>
 
-										<div class="breast-rbcl">
+										<div class="poo-rbcl">
 								  		<input type="radio" value="1" id="poo-chk1" class="poo-rb" name="poo-rbcl"/>
 									  	<label for="poo-chk1"></label>
 											<span class="poo-rbcl-text">1</span>
@@ -200,13 +200,13 @@ require('layout/menu.php');
 										<div class="poo-rbcl rbcl-margin">
 								  		<input type="radio" value="2" id="poo-chk2" class="poo-rb" name="poo-rbcl" />
 									  	<label for="poo-chk2"></label>
-											<span class="poo-rbcl-text">2</span>
+											<span class="poo-rbcl-text poorbcl2">2</span>
 								  	</div>
 
 										<div class="poo-rbcl rbcl-margin">
 								  		<input type="radio" value="3" id="poo-chk3" class="poo-rb" name="poo-rbcl" />
 									  	<label for="poo-chk3"></label>
-											<span class="poo-rbcl-text">3</span>
+											<span class="poo-rbcl-text poorbcl3">3</span>
 								  	</div>
 
                   </div>
