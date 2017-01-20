@@ -443,8 +443,60 @@ $(document).ready(function() {
 
   /* walidacja diaperForm*/
   function diaperValidator() {
-    //zrobić walidację
+    var $form = $body.find('.diaper-form');
+    var $date = $form.find('.diaper-date');
+    var $time = $form.find('.diaper-time');
+    var date;
+    var time;
+    var errorDiv;
+
+    function dateValid() {
+      var valid = false;
+      clearErrors();
+      date = $date.val();
+      errorDiv = $('<div>').addClass('error-comment neg-t-margin');
+
+      if(!date) {
+        $date.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.diaper-start').after(errorDiv);
+      } else {
+        $date.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    function timeValid() {
+      var valid = false;
+      clearErrors();
+      time = $time.val();
+      errorDiv = $('<div>').addClass('error-comment max-l-margin');
+
+      if(!time) {
+        $time.addClass('border-error');
+        errorDiv.text(errorText.req);
+        $('.diaper-start').after(errorDiv);
+      } else {
+        $time.removeClass('border-error');
+        valid = true;
+      }
+      return valid;
+    }
+
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      if (dateValid() && timeValid()) {
+        hideForms();
+        clearForms();
+
+        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
+        //formularz powinien się zapisać do bazy
+      }
+    })
   }
+
+  diaperValidator();
   /* walidacja diaperForm*/
 
   /* walidacja bathForm*/

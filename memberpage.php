@@ -16,9 +16,6 @@ $breastSide = $_POST['breast-rbcl'];
 $feedMilliliters = $_POST['milliliters'];
 $feedComments = $_POST['comments'];
 
-
-
-
 try {
 	if(isset($_POST["feed-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
 
@@ -172,16 +169,16 @@ require('layout/menu.php');
             <!--diaper form-->
             <div class="diaper-formbox formbox">
               <div class="formbox-in-left">
-                <form method="POST" class="form">
+                <form method="POST" class="form diaper-form">
                   <div class="diaper-start">
                     <label class="required" for="diaper-date">Kiedy</label>
                     <div class="databox">
                       <img class="calendar" src="img/date-b.png" alt="calendar" />
-                      <input class="hp-date" type="date" name="diaper-date" />
+                      <input class="hp-date diaper-date" type="date" name="diaper-date" />
                     </div>
                     <div class="databox">
                       <img class="clock" src="img/time-b.png" alt="clock" />
-                      <input type="time" name="diaper-time" />
+                      <input class="diaper-time" type="time" name="diaper-time" />
                     </div>
                   </div>
                   <div class="diaper-pee">
