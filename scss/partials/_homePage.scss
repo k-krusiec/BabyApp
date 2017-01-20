@@ -774,20 +774,16 @@ textarea {
   font-weight: 700;
 }
 
-/*.breast-radio {
-  width: 25px;
-  height: 25px;
-  padding-top: 3px;
-  border: 1px solid $black;
-  border-radius: 50%;
-  text-align: center;
-  cursor: pointer;
-  &:last-of-type {
-    margin-left: 10px;
-  }
-}*/
+/*fake radiobuttons*/
+.breast-rbcl-text,
+.poo-rbcl-text {
+  position: relative;
+  top: 3px;
+  left: 7px;
+}
 
-.breast-rbcl {
+.breast-rbcl,
+.poo-rbcl {
 	width: 25px;
 	height: 25px;
 	background: none;
@@ -795,15 +791,11 @@ textarea {
 
 	border-radius: 100%;
 	position: relative;
+  z-index: 5;
 }
 
-.breast-rbcl-text {
-  position: absolute;
-  top: 3px;
-  left: 7px;
-}
-
-.breast-rbcl label {
+.breast-rbcl label,
+.poo-rbcl label {
 	display: block;
 	width: 23px;
 	height: 23px;
@@ -813,15 +805,16 @@ textarea {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	z-index: 1;
+	z-index: 10;
 
 }
 
-input[type=checkbox] {
+input[type=radio] {
   display: none;
 }
 
-.breast-rbcl input[type=checkbox]:checked + label {
+.breast-rbcl input[type=radio]:checked + label,
+.poo-rbcl input[type=radio]:checked + label {
   background: url("../img/check-2x-b.png") no-repeat center center transparent;
   background-size: 18px;
 }
@@ -830,13 +823,11 @@ input[type=checkbox] {
   margin-left: 10px;
 }
 
-
-/*klasa dla js radio odchooy*/
-.breast-checked {
-  background: url("../img/check-2x-b.png") no-repeat center center transparent;
-  background-size: 18px;
-  color: transparent;
+.rbcl-text-hide {
+  display: none;
 }
+
+/*fake radiobuttons*/
 
 .milliliters {
   width: 40px;
@@ -867,33 +858,7 @@ input[type=checkbox] {
   text-align: center;
 }
 
-.poo-radio {
-  margin-left: 10px;
-  border: 1px solid $black;
-  border-radius: 50%;
-  text-align: center;
-  cursor: pointer;
-  &:first-of-type {
-    width: 25px;
-    height: 25px;
-    margin-left: 0;
-    padding-top: 3px;
-  }
-  &:nth-of-type(2) {
-    width: 35px;
-    height: 35px;
-    padding-top: 8px;
-  }
-  &:nth-of-type(3) {
-    width: 45px;
-    height: 45px;
-    padding-top: 12px;
-  }
-}
-
-/*klasa dla js radio odchooy*/
-.pee-checked,
-.poo-checked {
+.pee-checked {
   background: url("../img/check-2x-b.png") no-repeat center center transparent;
   background-size: 18px;
   color: transparent;
