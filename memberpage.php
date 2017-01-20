@@ -89,22 +89,19 @@ require('layout/menu.php');
                   </div>
                   <div class="feed-breast">
                     <label for="breast">Pierś</label>
-										<!-- <input class="styled-checkbox" id="rb1" type="checkbox" name="breast-radio" value="l"><label for="rb1">L</label>
-										<input class="styled-checkbox" id="rb2" type="checkbox" name="breast-radio" value="r"><label for="rb2">R</label> -->
+
 										<div class="breast-rbcl">
-								  		<input type="checkbox" value="L" id="breast-chk1" class="breast-rb" name="breast-rbcl"/>
+								  		<input type="radio" value="L" id="breast-chk1" class="breast-rb" name="breast-rbcl"/>
 									  	<label for="breast-chk1"></label>
 											<span class="breast-rbcl-text">L</span>
 								  	</div>
 
 										<div class="breast-rbcl rbcl-margin">
-								  		<input type="checkbox" value="R" id="breast-chk2" class="breast-rb" name="breast-rbcl" />
+								  		<input type="radio" value="P" id="breast-chk2" class="breast-rb" name="breast-rbcl" />
 									  	<label for="breast-chk2"></label>
-											<span class="breast-rbcl-text">R</span>
+											<span class="breast-rbcl-text">P</span>
 								  	</div>
 
-                    <!-- <div class="breast-radio" type="radio" name="breast-radio" data-side="l" value="l">L</div>
-                    <div class="breast-radio" type="radio" name="breast-radio" data-side="r" value="r">P</div> -->
                   </div>
                   <div class="feed-ml">
                     <label for="milliliters">Wypite mleko</label>
@@ -193,12 +190,25 @@ require('layout/menu.php');
                   </div>
                   <div class="diaper-poo">
                     <label for="poo">Kupka</label>
-										<input type="radio" name="breast-radio" value="1"> 1
-										<input type="radio" name="breast-radio" value="2"> 2
-										<input type="radio" name="breast-radio" value="3"> 3
-                    <!-- <div class="poo-radio" data-size="1">1</div>
-                    <div class="poo-radio" data-size="2">2</div>
-                    <div class="poo-radio" data-size="3">3</div> -->
+
+										<div class="breast-rbcl">
+								  		<input type="radio" value="1" id="poo-chk1" class="poo-rb" name="poo-rbcl"/>
+									  	<label for="poo-chk1"></label>
+											<span class="poo-rbcl-text">1</span>
+								  	</div>
+
+										<div class="poo-rbcl rbcl-margin">
+								  		<input type="radio" value="2" id="poo-chk2" class="poo-rb" name="poo-rbcl" />
+									  	<label for="poo-chk2"></label>
+											<span class="poo-rbcl-text">2</span>
+								  	</div>
+
+										<div class="poo-rbcl rbcl-margin">
+								  		<input type="radio" value="3" id="poo-chk3" class="poo-rb" name="poo-rbcl" />
+									  	<label for="poo-chk3"></label>
+											<span class="poo-rbcl-text">3</span>
+								  	</div>
+
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="diaper-submit" value="Zapisz">

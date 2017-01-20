@@ -280,57 +280,92 @@ $(document).ready(function() {
   //forms end
 
   //obsługa fake radiobuttonów
-  // function breastRadioChecker() {
-  //   $breastRadios.on('click', function() {
-  //     if(!($(this).hasClass('breast-checked'))) {
-  //       $breastRadios.each(function() {
-  //         $(this).removeClass('breast-checked');
-  //         $(this).removeAttr('checked');
-  //       })
-  //       $(this).addClass('breast-checked');
-  //       $(this).attr('checked', 'true');
-  //       breastSide = $(this).data('side');
-  //
-  //     } else {
-  //       $(this).removeClass('breast-checked');
-  //       $(this).removeAttr('checked');
-  //       breastSide = '';
-  //     }
-  //     console.log(breastSide);
-  //   })
-  // }
-  // breastRadioChecker();
+  function breastRadioTextHider() {
+    //Ta funkcja musi być przed breast radio checkerem
+    //inaczej nie chce hasać!!!
+    var rb1 = document.querySelector('#breast-chk1');
+    var rb2 = document.querySelector('#breast-chk2');
+    var rbTexts = document.querySelectorAll('.breast-rbcl-text');
+
+    rb1.addEventListener('click', function() {
+      rbTexts[0].classList.add('rbcl-text-hide');
+      rbTexts[1].classList.remove('rbcl-text-hide');
+    })
+    rb2.addEventListener('click', function() {
+      rbTexts[0].classList.remove('rbcl-text-hide');
+      rbTexts[1].classList.add('rbcl-text-hide');
+    })
+  }
+
+  breastRadioTextHider();
 
   function breastRadioChecker() {
-    var selectBreast = null;
-    $('.breast-rb').click(function() {
-      selectBreast = this.id;
-      $('.breast-rb').each(function() {
-        if (this.id == selectBreast) {
-          this.checked = true;
-        } else {
+    var breastRadios = document.querySelectorAll('.breast-rb');
+    var selected;
+
+    for(var i = 0; i < breastRadios.length; i++) {
+      breastRadios[i].onclick = function() {
+
+        if(selected == this) {
           this.checked = false;
-        };
-      });
-    });
+          this.parentNode.lastElementChild.classList.remove('rbcl-text-hide')
+          selected = null;
+        } else {
+          this.parentNode.lastElementChild.classList.add('rbcl-text-hide')
+          selected = this;
+        }
+      };
+    }
   }
 
   breastRadioChecker();
 
-  function pooRadioChecker() {
-    $pooRadios.on('click', function() {
-      if(!($(this).hasClass('poo-checked'))) {
-        $pooRadios.each(function() {
-          $(this).removeClass('poo-checked');
-        })
-        $(this).addClass('poo-checked');
-        pooSize = $(this).data('size');
-      } else {
-        $(this).removeClass('poo-checked');
-        pooSize = '';
-      }
+  function pooRadioTextHider() {
+    //Ta funkcja musi być przed poo radio checkerem
+    //inaczej nie chce hasać!!!
+    var rb1 = document.querySelector('#poo-chk1');
+    var rb2 = document.querySelector('#poo-chk2');
+    var rb3 = document.querySelector('#poo-chk3');
+    var rbTexts = document.querySelectorAll('.poo-rbcl-text');
+
+    rb1.addEventListener('click', function() {
+      rbTexts[0].classList.add('rbcl-text-hide');
+      rbTexts[1].classList.remove('rbcl-text-hide');
+      rbTexts[2].classList.remove('rbcl-text-hide');
+    })
+    rb2.addEventListener('click', function() {
+      rbTexts[0].classList.remove('rbcl-text-hide');
+      rbTexts[1].classList.add('rbcl-text-hide');
+      rbTexts[2].classList.remove('rbcl-text-hide');
+    })
+    rb3.addEventListener('click', function() {
+      rbTexts[0].classList.remove('rbcl-text-hide');
+      rbTexts[1].classList.remove('rbcl-text-hide');
+      rbTexts[2].classList.add('rbcl-text-hide');
     })
   }
+
+  pooRadioTextHider();
+
+  function pooRadioChecker() {
+    var pooRadios = document.querySelectorAll('.poo-rb');
+    var selected;
+
+    for(var i = 0; i < pooRadios.length; i++) {
+      pooRadios[i].onclick = function() {
+
+        if(selected == this) {
+          this.checked = false;
+          this.parentNode.lastElementChild.classList.remove('rbcl-text-hide')
+          selected = null;
+        } else {
+          this.parentNode.lastElementChild.classList.add('rbcl-text-hide')
+          selected = this;
+        }
+      };
+    }
+  }
+
   pooRadioChecker();
   //obsługa fake radiobuttonów end
 
