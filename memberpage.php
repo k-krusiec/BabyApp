@@ -5,34 +5,42 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
 
 //define page title
 $title = 'BabyApp';
+$breadcrumbs = 'Strona główna';
+
 $me =  $_SESSION['username'];
 $feedStartDate = $_POST['feed-start-date'];
 $feedStartTime = $_POST['feed-start-time'];
 $feedStopDate = $_POST['feed-stop-date'];
 $feedStopTime = $_POST['feed-stop-time'];
+$breastSide = $_POST['breast-rbcl'];
 $feedMilliliters = $_POST['milliliters'];
 $feedComments = $_POST['comments'];
+
+
 
 
 try {
 	if(isset($_POST["feed-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
 
-		$stmt = $db->prepare("INSERT INTO feed (username, startdate, starttime, stopdate, stoptime, milk, comment) VALUES (:username, :startdate, :starttime, :stopdate, :stoptime, :milliliters, :comment)");
+		$stmt = $db->prepare("INSERT INTO feed (username, startdate, starttime, stopdate, stoptime, breast, milk, comment) VALUES (:username, :startdate, :starttime, :stopdate, :stoptime, :breast, :milliliters, :comment)");
 		$stmt->bindParam(':username', $me);
 		$stmt->bindParam(':startdate', $feedStartDate);
 		$stmt->bindParam(':starttime', $feedStartTime);
 		$stmt->bindParam(':stopdate', $feedStopDate);
 		$stmt->bindParam(':stoptime', $feedStopTime);
+		$stmt->bindParam(':breast', $breastSide);
 		$stmt->bindParam(':milliliters', $feedMilliliters);
 		$stmt->bindParam(':comment', $feedComments);
 		$stmt->execute();
+
+		unset($_POST);
+		unset($_REQUEST);
+		header('Location: memberpage.php');
 
 	}
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
-
-$breadcrumbs = 'Strona główna';
 
 //include header template
 require('layout/header.php');
@@ -81,8 +89,22 @@ require('layout/menu.php');
                   </div>
                   <div class="feed-breast">
                     <label for="breast">Pierś</label>
-                    <div class="breast-radio" data-side="l">L</div>
-                    <div class="breast-radio" data-side="r">P</div>
+										<!-- <input class="styled-checkbox" id="rb1" type="checkbox" name="breast-radio" value="l"><label for="rb1">L</label>
+										<input class="styled-checkbox" id="rb2" type="checkbox" name="breast-radio" value="r"><label for="rb2">R</label> -->
+										<div class="breast-rbcl">
+								  		<input type="checkbox" value="L" id="breast-chk1" class="breast-rb" name="breast-rbcl"/>
+									  	<label for="breast-chk1"></label>
+											<span class="breast-rbcl-text">L</span>
+								  	</div>
+
+										<div class="breast-rbcl rbcl-margin">
+								  		<input type="checkbox" value="R" id="breast-chk2" class="breast-rb" name="breast-rbcl" />
+									  	<label for="breast-chk2"></label>
+											<span class="breast-rbcl-text">R</span>
+								  	</div>
+
+                    <!-- <div class="breast-radio" type="radio" name="breast-radio" data-side="l" value="l">L</div>
+                    <div class="breast-radio" type="radio" name="breast-radio" data-side="r" value="r">P</div> -->
                   </div>
                   <div class="feed-ml">
                     <label for="milliliters">Wypite mleko</label>
@@ -171,9 +193,12 @@ require('layout/menu.php');
                   </div>
                   <div class="diaper-poo">
                     <label for="poo">Kupka</label>
-                    <div class="poo-radio" data-size="1">1</div>
+										<input type="radio" name="breast-radio" value="1"> 1
+										<input type="radio" name="breast-radio" value="2"> 2
+										<input type="radio" name="breast-radio" value="3"> 3
+                    <!-- <div class="poo-radio" data-size="1">1</div>
                     <div class="poo-radio" data-size="2">2</div>
-                    <div class="poo-radio" data-size="3">3</div>
+                    <div class="poo-radio" data-size="3">3</div> -->
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="diaper-submit" value="Zapisz">

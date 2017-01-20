@@ -774,7 +774,7 @@ textarea {
   font-weight: 700;
 }
 
-.breast-radio {
+/*.breast-radio {
   width: 25px;
   height: 25px;
   padding-top: 3px;
@@ -785,7 +785,51 @@ textarea {
   &:last-of-type {
     margin-left: 10px;
   }
+}*/
+
+.breast-rbcl {
+	width: 25px;
+	height: 25px;
+	background: none;
+  border: 1px solid black;
+
+	border-radius: 100%;
+	position: relative;
 }
+
+.breast-rbcl-text {
+  position: absolute;
+  top: 3px;
+  left: 7px;
+}
+
+.breast-rbcl label {
+	display: block;
+	width: 23px;
+	height: 23px;
+	border-radius: 100px;
+
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.breast-rbcl input[type=checkbox]:checked + label {
+  background: url("../img/check-2x-b.png") no-repeat center center transparent;
+  background-size: 18px;
+}
+
+.rbcl-margin {
+  margin-left: 10px;
+}
+
 
 /*klasa dla js radio odchooy*/
 .breast-checked {

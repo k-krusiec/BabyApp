@@ -4,7 +4,8 @@ $(document).ready(function() {
 
   var $optionBtns = $body.find('.option-btn');
   var $formPanels = $body.find('.formbox');
-  var $breastRadios = $body.find('.breast-radio');
+  //var $breastRadios = $body.find('.breast-radio');
+  var $breastRadios = $body.find('.breast-rbcl');
   var $pooRadios = $body.find('.poo-radio');
   var $cancelBtns = $body.find('.cancel-btn');
 
@@ -36,63 +37,63 @@ $(document).ready(function() {
   var breastSide;
   var pooSize;
 
-  function localStorageHandling() {
-    var babyInfo = JSON.parse(localStorage.getItem('babyInfo'));
-    var $babyName = $body.find('.baby-name');
-    var $babyAge = $body.find('.baby-age');
-    var birthDate = babyInfo.birth;
-    var ageText = '';
-    var months = {
-      'negative': 'jest jeszcze w brzuszku ;)',
-      'one': 'miesiąc',
-      'two': 'miesiące',
-      'five': 'miesięcy',
-      'years': 'ponad 2 latka'
-    }
-
-    function currentDate() {
-      var d = new Date();
-      var month = d.getMonth()+1;
-      var day = d.getDate();
-      return d.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day;
-    }
-
-    function getPeriod() {
-      //tablice z rozdzielonych dat - rok miesiąc dzień
-      var cDate = currentDate().split('-');
-      var bDate = birthDate.split('-');
-      //przekształcenie tablic w obiekt Date
-      cDate = new Date(cDate[0], cDate[1], cDate[2]);
-      bDate = new Date(bDate[0], bDate[1], bDate[2]);
-      // getTime() daje czas w milisekundach, /1000 przekształca ms na sekundy
-      cDateSec = parseInt(cDate.getTime() / 1000);
-      bDateSec = parseInt(bDate.getTime() / 1000);
-      // różnica czasu w sekundach/minutach/godzinach/dniach/miesiącach (w przybliżeniu)
-      var numOfMonths = Math.floor((cDateSec - bDateSec) / 60 / 60 / 24 / 30);
-      return numOfMonths;
-    }
-
-    if (getPeriod() === 1) {
-      ageText = getPeriod().toString() + ' ' + months.one;
-    } else if (getPeriod() > 1 && getPeriod() <= 4 || getPeriod() > 21 && getPeriod() <= 24) {
-      ageText = getPeriod().toString() + ' ' + months.two;
-    } else if (getPeriod() === 0 || getPeriod() > 4 && getPeriod() <= 21) {
-      ageText = getPeriod().toString() + ' ' + months.five;
-    } else if (getPeriod() < 0) {
-      ageText = months.negative;
-    } else {
-      ageText = months.years;
-    }
-    $babyName.text(babyInfo.name);
-    $babyAge.text(ageText);
-  }
-  function checkIfLocalStorageExists() {
-    if (localStorage.length) {
-      localStorageHandling();
-    }
-  }
-
-  checkIfLocalStorageExists();
+  // function localStorageHandling() {
+  //   var babyInfo = JSON.parse(localStorage.getItem('babyInfo'));
+  //   var $babyName = $body.find('.baby-name');
+  //   var $babyAge = $body.find('.baby-age');
+  //   var birthDate = babyInfo.birth;
+  //   var ageText = '';
+  //   var months = {
+  //     'negative': 'jest jeszcze w brzuszku ;)',
+  //     'one': 'miesiąc',
+  //     'two': 'miesiące',
+  //     'five': 'miesięcy',
+  //     'years': 'ponad 2 latka'
+  //   }
+  //
+  //   function currentDate() {
+  //     var d = new Date();
+  //     var month = d.getMonth()+1;
+  //     var day = d.getDate();
+  //     return d.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day;
+  //   }
+  //
+  //   function getPeriod() {
+  //     //tablice z rozdzielonych dat - rok miesiąc dzień
+  //     var cDate = currentDate().split('-');
+  //     var bDate = birthDate.split('-');
+  //     //przekształcenie tablic w obiekt Date
+  //     cDate = new Date(cDate[0], cDate[1], cDate[2]);
+  //     bDate = new Date(bDate[0], bDate[1], bDate[2]);
+  //     // getTime() daje czas w milisekundach, /1000 przekształca ms na sekundy
+  //     cDateSec = parseInt(cDate.getTime() / 1000);
+  //     bDateSec = parseInt(bDate.getTime() / 1000);
+  //     // różnica czasu w sekundach/minutach/godzinach/dniach/miesiącach (w przybliżeniu)
+  //     var numOfMonths = Math.floor((cDateSec - bDateSec) / 60 / 60 / 24 / 30);
+  //     return numOfMonths;
+  //   }
+  //
+  //   if (getPeriod() === 1) {
+  //     ageText = getPeriod().toString() + ' ' + months.one;
+  //   } else if (getPeriod() > 1 && getPeriod() <= 4 || getPeriod() > 21 && getPeriod() <= 24) {
+  //     ageText = getPeriod().toString() + ' ' + months.two;
+  //   } else if (getPeriod() === 0 || getPeriod() > 4 && getPeriod() <= 21) {
+  //     ageText = getPeriod().toString() + ' ' + months.five;
+  //   } else if (getPeriod() < 0) {
+  //     ageText = months.negative;
+  //   } else {
+  //     ageText = months.years;
+  //   }
+  //   $babyName.text(babyInfo.name);
+  //   $babyAge.text(ageText);
+  // }
+  // function checkIfLocalStorageExists() {
+  //   if (localStorage.length) {
+  //     localStorageHandling();
+  //   }
+  // }
+  //
+  // checkIfLocalStorageExists();
 
   //mobile-menu
   function mobileMenuHendling() {
@@ -279,20 +280,41 @@ $(document).ready(function() {
   //forms end
 
   //obsługa fake radiobuttonów
+  // function breastRadioChecker() {
+  //   $breastRadios.on('click', function() {
+  //     if(!($(this).hasClass('breast-checked'))) {
+  //       $breastRadios.each(function() {
+  //         $(this).removeClass('breast-checked');
+  //         $(this).removeAttr('checked');
+  //       })
+  //       $(this).addClass('breast-checked');
+  //       $(this).attr('checked', 'true');
+  //       breastSide = $(this).data('side');
+  //
+  //     } else {
+  //       $(this).removeClass('breast-checked');
+  //       $(this).removeAttr('checked');
+  //       breastSide = '';
+  //     }
+  //     console.log(breastSide);
+  //   })
+  // }
+  // breastRadioChecker();
+
   function breastRadioChecker() {
-    $breastRadios.on('click', function() {
-      if(!($(this).hasClass('breast-checked'))) {
-        $breastRadios.each(function() {
-          $(this).removeClass('breast-checked');
-        })
-        $(this).addClass('breast-checked');
-        breastSide = $(this).data('side');
-      } else {
-        $(this).removeClass('breast-checked');
-        breastSide = '';
-      }
-    })
+    var selectBreast = null;
+    $('.breast-rb').click(function() {
+      selectBreast = this.id;
+      $('.breast-rb').each(function() {
+        if (this.id == selectBreast) {
+          this.checked = true;
+        } else {
+          this.checked = false;
+        };
+      });
+    });
   }
+
   breastRadioChecker();
 
   function pooRadioChecker() {
