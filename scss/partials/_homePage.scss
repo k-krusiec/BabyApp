@@ -777,6 +777,7 @@ textarea {
 /*fake radiobuttons*/
 .breast-rbcl-text,
 .poo-rbcl-text {
+  display: inline-block;
   position: relative;
   top: 3px;
   left: 7px;
@@ -826,6 +827,37 @@ input[type=radio] {
 .rbcl-text-hide {
   display: none;
 }
+
+.poorbcl2 {
+  position: relative;
+  top: 5px;
+  left: 10px;
+}
+.poo-rbcl:nth-of-type(2) {
+	width: 30px;
+	height: 30px;
+}
+
+.poo-rbcl:nth-of-type(2) label {
+	width: 28px;
+	height: 28px;
+}
+
+.poorbcl3 {
+  position: relative;
+  top: 8px;
+  left: 13px;
+}
+.poo-rbcl:nth-of-type(3) {
+	width: 35px;
+	height: 35px;
+}
+
+.poo-rbcl:nth-of-type(3) label {
+	width: 33px;
+	height: 33px;
+}
+
 
 /*fake radiobuttons*/
 
