@@ -39,6 +39,27 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
+$weightDate = $_POST['weight-date'];
+$grams = $_POST['grams'];
+
+try {
+	if(isset($_POST["weight-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
+
+		$stmt = $db->prepare("INSERT INTO weight (username, weightdate, grams) VALUES (:username, :weightdate, :grams)");
+		$stmt->bindParam(':username', $me);
+		$stmt->bindParam(':weightdate', $weightDate);
+		$stmt->bindParam(':grams', $grams);
+		$stmt->execute();
+
+		unset($_POST);
+		unset($_REQUEST);
+		header('Location: memberpage.php');
+
+	}
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
 //include header template
 require('layout/header.php');
 require('layout/menu.php');
