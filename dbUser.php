@@ -5,19 +5,22 @@
 	//if not logged in redirect to login page
 	if(!$user->is_logged_in()){ header('Location: index.php'); }
 
-	$weightTab = "SELECT * FROM weight ORDER BY weightdate DESC";
+	$me =  $_SESSION['username'];
 
-	$stmt = $db->prepare($weightTab);
+	$userTab = "SELECT name, birth FROM members WHERE username LIKE '%{$me}%'";
+
+	$stmt = $db->prepare($userTab);
 	$stmt->execute();
 
 	$userData = array();
 
 	while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 
-		$userData['Weight'][] = $row;
+		$userData['User'][] = $row;
 
 	}
 
-	echo json_encode($userData);
+	echo json_encode($userData)
+
 
 ?>

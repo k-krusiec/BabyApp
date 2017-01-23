@@ -6,6 +6,7 @@
 
   <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/homePage.js"></script>
+  <script type="text/javascript" src="js/babyInfo.js"></script>
 
   </body>
 </html>

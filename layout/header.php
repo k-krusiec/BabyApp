@@ -16,13 +16,13 @@
     <div class="main-width">
       <nav class="mobile-menu">
         <ul>
-          <li class="mob-home"><a href="homePage.html">Strona główna</a></li>
-          <li class="mob-feed"><a href="feedList.html">Karmienia</a></li>
-          <li class="mob-weight"><a href="weightList.html">Ważenia</a></li>
-          <li class="mob-diaper"><a href="diaperList.html">Zmiany pieluszek</a></li>
-          <li class="mob-bath"><a href="bathList.html">Kąpiele</a></li>
-          <li class="mob-doctor"><a href="doctorList.html">Wizyty lekarskie</a></li>
-          <li class="mob-diary"><a href="diaryList.html">Dziennik</a></li>
+          <li class="mob-home"><a href="memberpage.php">Strona główna</a></li>
+          <li class="mob-feed"><a href="feedList.php">Karmienia</a></li>
+          <li class="mob-weight"><a href="weightList.php">Ważenia</a></li>
+          <li class="mob-diaper"><a href="diaperList.php">Zmiany pieluszek</a></li>
+          <li class="mob-bath"><a href="bathList.php">Kąpiele</a></li>
+          <li class="mob-doctor"><a href="doctorList.php">Wizyty lekarskie</a></li>
+          <li class="mob-diary"><a href="diaryList.php">Dziennik</a></li>
           <li class="mob-set"><a href="logout.php">Wyloguj</a></li>
         </ul>
       </nav>
