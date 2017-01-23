@@ -14,7 +14,7 @@ $feedStopDate = $_POST['feed-stop-date'];
 $feedStopTime = $_POST['feed-stop-time'];
 $breastSide = $_POST['breast-rbcl'];
 $feedMilliliters = $_POST['milliliters'];
-$feedComments = $_POST['comments'];
+$feedComments = $_POST['feed-comments'];
 
 try {
 	if(isset($_POST["feed-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
@@ -51,6 +51,27 @@ try {
 		$stmt->bindParam(':grams', $grams);
 		$stmt->execute();
 
+		unset($_POST);
+		unset($_REQUEST);
+		header('Location: memberpage.php');
+
+	}
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
+$diaryDate = $_POST['diary-date'];
+$diaryComments = $_POST['diary-comments'];
+
+try {
+	if(isset($_POST["diary-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
+
+		$stmt = $db->prepare("INSERT INTO diary (username, diarydate, comment) VALUES (:username, :diarydate, :comment)");
+		$stmt->bindParam(':username', $me);
+		$stmt->bindParam(':diarydate', $diaryDate);
+		$stmt->bindParam(':comment', $diaryComments);
+		$stmt->execute();
+		
 		unset($_POST);
 		unset($_REQUEST);
 		header('Location: memberpage.php');
@@ -129,7 +150,7 @@ require('layout/menu.php');
                   </div>
                   <div class="commentbox">
                     <label for="comments">Uwagi</label>
-                    <textarea class="feed-comment" name="comments"></textarea>
+                    <textarea class="feed-comment" name="feed-comments"></textarea>
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="feed-submit" value="Zapisz">
@@ -264,7 +285,7 @@ require('layout/menu.php');
                   </div>
                   <div class="commentbox">
                     <label for="comments">Uwagi</label>
-                    <textarea class="bath-comment" name="comments"></textarea>
+                    <textarea class="bath-comment" name="bath-comments"></textarea>
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="bath-submit" value="Zapisz">
@@ -313,7 +334,7 @@ require('layout/menu.php');
                   </div>
                   <div class="commentbox">
                     <label for="comments">Uwagi</label>
-                    <textarea class="doctor-comment" name="comments"></textarea>
+                    <textarea class="doctor-comment" name="doctor-comments"></textarea>
                   </div>
                   <div class="submitbox">
                     <input class="submit-btn" type="submit" name="doctor-submit" value="Zapisz">
@@ -335,7 +356,7 @@ require('layout/menu.php');
                   </div>
                   <div class="commentbox diary-ta">
                     <label class="required" for="comments">Opis</label>
-                    <textarea class="diary-comment" name="comments"></textarea>
+                    <textarea class="diary-comment" name="diary-comments"></textarea>
                   </div>
                   <div class="diary-photo">
                     <img class="photo" src="img/photo-t.png" alt="photo" />
@@ -358,32 +379,15 @@ require('layout/menu.php');
         </div>
       </div>
     </main>
+		<footer>
+	    <div class="main-width">
+	      <p class="footText">&copy; 2016 Karol Krusiec</p>
+	    </div>
+	  </footer>
 
+	  <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+	  <script type="text/javascript" src="js/homePage.js"></script>
+	  <script type="text/javascript" src="js/babyInfo.js"></script>
 
-
-
-
-
-
-
-<!--<div class="container">
-
-	<div class="row">
-
-	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-				<h1>to jest strona dostepna po zalogowaniu</h1>
-
-				<h2>Member only page - Welcome <?php echo $_SESSION['username']; ?></h2>
-				<p><a href='logout.php'>Logout</a></p>
-				<hr>
-
-		</div>
-	</div>
-
-
-</div>-->
-
-<?php
-//include header template
-require('layout/footer.php');
-?>
+	  </body>
+	</html>

@@ -37,64 +37,6 @@ $(document).ready(function() {
   var breastSide;
   var pooSize;
 
-  // function localStorageHandling() {
-  //   var babyInfo = JSON.parse(localStorage.getItem('babyInfo'));
-  //   var $babyName = $body.find('.baby-name');
-  //   var $babyAge = $body.find('.baby-age');
-  //   var birthDate = babyInfo.birth;
-  //   var ageText = '';
-  //   var months = {
-  //     'negative': 'jest jeszcze w brzuszku ;)',
-  //     'one': 'miesiąc',
-  //     'two': 'miesiące',
-  //     'five': 'miesięcy',
-  //     'years': 'ponad 2 latka'
-  //   }
-  //
-  //   function currentDate() {
-  //     var d = new Date();
-  //     var month = d.getMonth()+1;
-  //     var day = d.getDate();
-  //     return d.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day;
-  //   }
-  //
-  //   function getPeriod() {
-  //     //tablice z rozdzielonych dat - rok miesiąc dzień
-  //     var cDate = currentDate().split('-');
-  //     var bDate = birthDate.split('-');
-  //     //przekształcenie tablic w obiekt Date
-  //     cDate = new Date(cDate[0], cDate[1], cDate[2]);
-  //     bDate = new Date(bDate[0], bDate[1], bDate[2]);
-  //     // getTime() daje czas w milisekundach, /1000 przekształca ms na sekundy
-  //     cDateSec = parseInt(cDate.getTime() / 1000);
-  //     bDateSec = parseInt(bDate.getTime() / 1000);
-  //     // różnica czasu w sekundach/minutach/godzinach/dniach/miesiącach (w przybliżeniu)
-  //     var numOfMonths = Math.floor((cDateSec - bDateSec) / 60 / 60 / 24 / 30);
-  //     return numOfMonths;
-  //   }
-  //
-  //   if (getPeriod() === 1) {
-  //     ageText = getPeriod().toString() + ' ' + months.one;
-  //   } else if (getPeriod() > 1 && getPeriod() <= 4 || getPeriod() > 21 && getPeriod() <= 24) {
-  //     ageText = getPeriod().toString() + ' ' + months.two;
-  //   } else if (getPeriod() === 0 || getPeriod() > 4 && getPeriod() <= 21) {
-  //     ageText = getPeriod().toString() + ' ' + months.five;
-  //   } else if (getPeriod() < 0) {
-  //     ageText = months.negative;
-  //   } else {
-  //     ageText = months.years;
-  //   }
-  //   $babyName.text(babyInfo.name);
-  //   $babyAge.text(ageText);
-  // }
-  // function checkIfLocalStorageExists() {
-  //   if (localStorage.length) {
-  //     localStorageHandling();
-  //   }
-  // }
-  //
-  // checkIfLocalStorageExists();
-
   //mobile-menu
   function mobileMenuHendling() {
     var $hamMenuBtn = $('.ham-menu');
@@ -524,7 +466,6 @@ $(document).ready(function() {
     }
 
     $form.on('submit', function(e) {
-
       if (dateValid() && gramsValid()) {
         hideForms();
         clearForms();
@@ -532,7 +473,6 @@ $(document).ready(function() {
       } else {
         e.preventDefault();
       }
-
     })
   }
 
@@ -845,13 +785,12 @@ $(document).ready(function() {
     })
 
     $form.on('submit', function(e) {
-      e.preventDefault();
       if (dateValid() && commentValid()) {
         hideForms();
         clearForms();
-
-        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
-        //formularz powinien się zapisać do bazy
+        return true;
+      } else {
+        e.preventDefault();
       }
     })
 
