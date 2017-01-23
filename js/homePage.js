@@ -523,13 +523,12 @@ $(document).ready(function() {
     }
 
     $form.on('submit', function(e) {
-      e.preventDefault();
       if (dateValid() && timeValid()) {
         hideForms();
         clearForms();
-
-        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
-        //formularz powinien się zapisać do bazy
+        return true;
+      } else {
+        e.preventDefault();
       }
     })
   }
@@ -581,13 +580,12 @@ $(document).ready(function() {
     }
 
     $form.on('submit', function(e) {
-      e.preventDefault();
       if (dateValid() && commentValid()) {
         hideForms();
         clearForms();
-
-        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
-        //formularz powinien się zapisać do bazy
+        return true;
+      } else {
+        e.preventDefault();
       }
     })
   }
@@ -700,13 +698,12 @@ $(document).ready(function() {
     }
 
     $form.on('submit', function(e) {
-      e.preventDefault();
       if (dateValid() && timeValid() && nameValid() && locationValid() && commentValid()) {
         hideForms();
         clearForms();
-
-        //tu się powinno wyskoczyć okienko z zadowoloną buzią na chwilę
-        //formularz powinien się zapisać do bazy
+        return true;
+      } else {
+        e.preventDefault();
       }
     })
   }

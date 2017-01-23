@@ -60,6 +60,27 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
+$bathDate = $_POST['bath-date'];
+$bathComments = $_POST['bath-comments'];
+
+try {
+	if(isset($_POST["bath-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
+
+		$stmt = $db->prepare("INSERT INTO bath (username, bathdate, comment) VALUES (:username, :bathdate, :comment)");
+		$stmt->bindParam(':username', $me);
+		$stmt->bindParam(':bathdate', $bathDate);
+		$stmt->bindParam(':comment', $bathComments);
+		$stmt->execute();
+
+		unset($_POST);
+		unset($_REQUEST);
+		header('Location: memberpage.php');
+
+	}
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
 $diaryDate = $_POST['diary-date'];
 $diaryComments = $_POST['diary-comments'];
 
@@ -71,7 +92,7 @@ try {
 		$stmt->bindParam(':diarydate', $diaryDate);
 		$stmt->bindParam(':comment', $diaryComments);
 		$stmt->execute();
-		
+
 		unset($_POST);
 		unset($_REQUEST);
 		header('Location: memberpage.php');
