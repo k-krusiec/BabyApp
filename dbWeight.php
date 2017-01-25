@@ -5,7 +5,9 @@
 	//if not logged in redirect to login page
 	if(!$user->is_logged_in()){ header('Location: index.php'); }
 
-	$weightTab = "SELECT * FROM weight ORDER BY weightdate DESC";
+	$me =  $_SESSION['username'];
+
+	$weightTab = "SELECT * FROM weight WHERE username LIKE '%{$me}%' ORDER BY weightdate DESC";
 
 	$stmt = $db->prepare($weightTab);
 	$stmt->execute();

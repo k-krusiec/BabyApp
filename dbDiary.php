@@ -5,7 +5,9 @@
 	//if not logged in redirect to login page
 	if(!$user->is_logged_in()){ header('Location: index.php'); }
 
-	$diaryTab = "SELECT * FROM diary ORDER BY diarydate DESC";
+	$me =  $_SESSION['username'];
+
+	$diaryTab = "SELECT * FROM diary WHERE username LIKE '%{$me}%' ORDER BY diarydate DESC";
 
 	$stmt = $db->prepare($diaryTab);
 	$stmt->execute();

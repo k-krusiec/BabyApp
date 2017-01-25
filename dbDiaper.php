@@ -5,7 +5,9 @@
 	//if not logged in redirect to login page
 	if(!$user->is_logged_in()){ header('Location: index.php'); }
 
-	$diaperTab = "SELECT * FROM diaper ORDER BY diaperdate DESC, diapertime DESC";
+	$me =  $_SESSION['username'];
+
+	$diaperTab = "SELECT * FROM diaper WHERE username LIKE '%{$me}%' ORDER BY diaperdate DESC, diapertime DESC";
 
 	$stmt = $db->prepare($diaperTab);
 	$stmt->execute();

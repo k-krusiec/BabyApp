@@ -5,7 +5,9 @@
 	//if not logged in redirect to login page
 	if(!$user->is_logged_in()){ header('Location: index.php'); }
 
-	$doctorTab = "SELECT * FROM doctor ORDER BY doctordate DESC, doctortime DESC";
+	$me =  $_SESSION['username'];
+
+	$doctorTab = "SELECT * FROM doctor WHERE username LIKE '%{$me}%' ORDER BY doctordate DESC, doctortime DESC";
 
 	$stmt = $db->prepare($doctorTab);
 	$stmt->execute();

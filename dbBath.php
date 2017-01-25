@@ -5,7 +5,9 @@
 	//if not logged in redirect to login page
 	if(!$user->is_logged_in()){ header('Location: index.php'); }
 
-	$bathTab = "SELECT * FROM bath ORDER BY bathdate DESC";
+	$me =  $_SESSION['username'];
+
+	$bathTab = "SELECT * FROM bath WHERE username LIKE '%{$me}%' ORDER BY bathdate DESC";
 
 	$stmt = $db->prepare($bathTab);
 	$stmt->execute();
