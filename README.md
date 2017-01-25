@@ -55,6 +55,7 @@ Po tym uruchomi się przeglądarka z uruchomionym adresem localhost:3000 z proje
 * Ogarnięcie wysokości viewportu (nie przewidziałem rozdzielczości mniejszych niż hd)
 * Dorobienie modala z info o zapisaniu danych
 * Dorobienie usuwania wizyty lekarskiej
+* Back-end z prawdziwego zdarzenia (ograniczenie liczby plików, byćmoże RESTowe API)
 
 ## Technologie
 * HTML5
