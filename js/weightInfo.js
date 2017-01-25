@@ -33,7 +33,7 @@ $(function() {
 
   function loadWeight() {
         $.ajax({
-            	url: '../dbWeight.php'
+            	url: './dbWeight.php'
         }).done(function(response){
           var data = jQuery.parseJSON(response);
           weightInfo(data.Weight);

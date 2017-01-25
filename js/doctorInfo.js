@@ -60,7 +60,7 @@ $(function() {
 
   function loadDoctor() {
         $.ajax({
-            	url: '../dbDoctor.php'
+            	url: './dbDoctor.php'
         }).done(function(response){
           var data = jQuery.parseJSON(response);
           doctorInfo(data.Doctor);

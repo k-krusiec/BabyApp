@@ -14,7 +14,7 @@ $(function() {
 
   function loadBath() {
         $.ajax({
-            	url: '../dbBath.php'
+            	url: './dbBath.php'
         }).done(function(response){
           var data = jQuery.parseJSON(response);
           bathInfo(data.Bath);

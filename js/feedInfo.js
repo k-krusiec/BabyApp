@@ -64,7 +64,7 @@ $(function() {
 
   function loadFeed() {
         $.ajax({
-            	url: '../dbFeed.php'
+            	url: './dbFeed.php'
         }).done(function(response){
           var data = jQuery.parseJSON(response);
           feedInfo(data.Feed);

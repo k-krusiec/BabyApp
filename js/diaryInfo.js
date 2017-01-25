@@ -14,7 +14,7 @@ $(function() {
 
   function loadDiary() {
         $.ajax({
-            	url: '../dbDiary.php'
+            	url: './dbDiary.php'
         }).done(function(response){
           var data = jQuery.parseJSON(response);
           diaryInfo(data.Diary);

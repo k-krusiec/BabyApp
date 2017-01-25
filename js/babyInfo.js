@@ -57,7 +57,7 @@ $(function() {
 
   function loadData() {
         $.ajax({
-            	url: '../dbUser.php'
+            	url: './dbUser.php'
         }).done(function(response){
           var data = jQuery.parseJSON(response);
           babyInfo(data.User);

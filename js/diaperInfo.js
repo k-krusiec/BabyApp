@@ -44,7 +44,7 @@ $(function() {
 
   function loadDiaper() {
         $.ajax({
-            	url: '../dbDiaper.php'
+            	url: './dbDiaper.php'
         }).done(function(response){
           var data = jQuery.parseJSON(response);
           diaperInfo(data.Diaper);
