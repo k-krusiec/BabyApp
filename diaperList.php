@@ -17,9 +17,10 @@ require('layout/menu.php');
                 <p class="list-title">Zmiany pieluszek - lista</p>
 
                 <!-- tabela z nagłówkiem -->
-                  <p class="list-date">26.12.2016</p>
+                <!-- generowane z js -->
+                  <!-- <p class="list-date">26.12.2016</p> -->
                   <!-- tabela tylko z danymi -->
-                  <div class="list-table">
+                  <!-- <div class="list-table">
                     <div class="list-row">
                       <div class="diaper-hourbox">
                         <img class="clock clock-list" src="img/time-b.png" alt="clock" />
@@ -35,25 +36,8 @@ require('layout/menu.php');
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- tabela tylko z danymi -->
-
-                  <!-- tabela tylko z danymi -->
-                  <div class="list-table">
-                    <div class="list-row">
-                      <div class="diaper-hourbox">
-                        <img class="clock clock-list" src="img/time-b.png" alt="clock" />
-                        <span>11:00</span>
-                      </div>
-                      <div class="diaper-peebox">
-                        <span>Siusiu</span>
-                      </div>
-                      <div class="diaper-poobox">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- tabela tylko z danymi -->
-
                   <!-- tabela z nagłówkiem -->
 
               </div>

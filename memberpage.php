@@ -104,6 +104,33 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
+$doctorDate = $_POST['doctor-date'];
+$doctorTime = $_POST['doctor-time'];
+$doctorName = $_POST['doctor-name'];
+$doctorLocation = $_POST['doctor-location'];
+$doctorComments = $_POST['doctor-comments'];
+
+try {
+	if(isset($_POST["doctor-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
+
+		$stmt = $db->prepare("INSERT INTO doctor (username, doctordate, doctortime, doctorname, doctorlocation, comment) VALUES (:username, :doctordate, :doctortime, :doctorname, :doctorlocation, :comment)");
+		$stmt->bindParam(':username', $me);
+		$stmt->bindParam(':doctordate', $doctorDate);
+		$stmt->bindParam(':doctortime', $doctorTime);
+		$stmt->bindParam(':doctorname', $doctorName);
+		$stmt->bindParam(':doctorlocation', $doctorLocation);
+		$stmt->bindParam(':comment', $doctorComments);
+		$stmt->execute();
+
+		unset($_POST);
+		unset($_REQUEST);
+		header('Location: memberpage.php');
+
+	}
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
 $diaryDate = $_POST['diary-date'];
 $diaryComments = $_POST['diary-comments'];
 
