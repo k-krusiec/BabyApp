@@ -17,19 +17,31 @@ BabyApp to aplikacja dla rodziców, którzy chcą monitorować rozwój swojego n
 Aplikację można obejrzeć pod adresem: <http://dev.krusiec.com/kruchypf/babyapp>
 
 Można utworzyć własne konto, lub skorzystać z konta demo:
-* Login: demo
-* Hasło: demo
+* Login: TestUser
+* Hasło: test
 
-## Instalacja (do zmiany w nowej wersji)
+## Instalacja
 Projekt powstał w oparciu o:
-* Scotchbox <https://box.scotch.io/>
-* System logowania i rejestracji Davida Carr’a: <https://daveismyname.blog/blog/login-and-registration-system-with-php>
+Scotchbox <https://box.scotch.io/>
+System logowania i rejestracji Davida Carr’a: <https://daveismyname.blog/blog/login-and-registration-system-with-php>
 
 Projekt można uruchomić na lokalnym serwerze obsługującym PHP i MySQL (np. [Vagrant](https://www.vagrantup.com)). Bazę danych można obsługiwać za pomocą klienta MySQL (np. [HeidiSQL](http://www.heidisql.com) dla Windows / [SequelPro](http://www.sequelpro.com) dla Mac OS). instrukcję konfiguracji można znaleźć na stronie [Scotchbox](https://box.scotch.io) i [Vagrant](https://www.vagrantup.com).
 
+Do projektu zostały przygotowane pliki package.json i gulpfile.js.
+Aby postawić stronę lokalnie należy
+* ściągnąć node_modules:
+```
+nmp install
+```
+* skompilować SASS:
+```
+gulp
+```
+Po tym uruchomi się przeglądarka z uruchomionym adresem localhost:3000 z projektem BabyApp (browserSync nie działa przy serwerze na Vagrancie :( )
+
 ## Wersja
 #### 1.0.1
-* Moduł logowania / rejestracji PHP+MySQL (ze strony [Davida Carr’a](https://daveismyname.blog/blog/login-and-registration-system-with-php))
+* Moduł logowania / rejestracji PHP+MySQL (ze strony Davida Carr’a)
 * Zapisywanie danych z formularzy do bazy danych poprzez PHP
 * Wyświetlanie danych zapisanych w bazie danych poprzez PHP, JSON i AJAX
 
@@ -43,7 +55,6 @@ Projekt można uruchomić na lokalnym serwerze obsługującym PHP i MySQL (np. [
 * Ogarnięcie wysokości viewportu (nie przewidziałem rozdzielczości mniejszych niż hd)
 * Dorobienie modala z info o zapisaniu danych
 * Dorobienie usuwania wizyty lekarskiej
-* Back-end z prawdziwego zdarzenia (zmniejszenie ilości plików, byćmoże RESTowe API)
 
 ## Technologie
 * HTML5
