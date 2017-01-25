@@ -61,17 +61,17 @@ main {
   }
 }
 
-/* settings widoczne tylko na desktopie*/
-.settings {
+/* logout widoczne tylko na desktopie*/
+.logout {
   margin-left: auto;
   padding: 10px 50px 10px 40px;
-  background: url("../img/logout1-dg.png") no-repeat left center transparent;
+  background: url("../img/logout2-dg.png") no-repeat left center transparent;
   background-size: 32px;
   text-decoration: none;
   text-transform: uppercase;
   color: $gray;
   &:hover {
-    background: url("../img/logout1-b.png") no-repeat left center transparent;
+    background: url("../img/logout2-b.png") no-repeat left center transparent;
     background-size: 32px;
     color: $black;
   }
@@ -106,7 +106,7 @@ main {
 }
 
 @media #{$tablet} {
-  .settings {
+  .logout {
     display: none;
   }
 
@@ -116,7 +116,7 @@ main {
 }
 
 @media #{$phone} {
-  .settings {
+  .logout {
     display: none;
   }
 

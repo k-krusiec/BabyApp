@@ -6,8 +6,6 @@
   <meta name="keywords" content="happiness, useful, easy, parenting, baby, clear" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php if(isset($title)){ echo $title; }?></title>
-    <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--<link rel="stylesheet" href="style/main.css">-->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -27,7 +25,7 @@
         </ul>
       </nav>
       <div class="main-header">
-        <a href="#">
+        <a href="memberpage.php">
           <img class="hp-logo" src="img/babyapp-logo-180x80.png" alt="BabyApp logo" />
         </a>
         <img class="foto" src="img/fake-baby-78x78.png" alt="baby" />
@@ -35,7 +33,7 @@
           <p class="baby-name">Imię</p>
           <p class="baby-age">Wiek</p>
         </div>
-        <a class="settings" href="logout.php">
+        <a class="logout" href="logout.php">
           Wyloguj
         </a>
         <div class="ham-menu ham-icon">
@@ -45,7 +43,7 @@
     </div>
     <section class="breadcrumbs">
       <div class="main-width">
-        <span class="home-page-bc"><a href="homePage.html">BabyApp</a></span>
+        <span class="home-page-bc"><a href="memberpage.php">BabyApp</a></span>
         <img class="right-arrow" src="img/rarrow-dg.png" alt="right arrow" />
         <span><?php if(isset($breadcrumbs)){ echo $breadcrumbs; }?></span>
       </div>
