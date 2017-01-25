@@ -16,6 +16,25 @@ $breastSide = $_POST['breast-rbcl'];
 $feedMilliliters = $_POST['milliliters'];
 $feedComments = $_POST['feed-comments'];
 
+$weightDate = $_POST['weight-date'];
+$grams = $_POST['grams'];
+
+$diaperDate = $_POST['diaper-date'];
+$diaperTime = $_POST['diaper-time'];
+$pooSize = $_POST['poo-rbcl'];
+
+$bathDate = $_POST['bath-date'];
+$bathComments = $_POST['bath-comments'];
+
+$doctorDate = $_POST['doctor-date'];
+$doctorTime = $_POST['doctor-time'];
+$doctorName = $_POST['doctor-name'];
+$doctorLocation = $_POST['doctor-location'];
+$doctorComments = $_POST['doctor-comments'];
+
+$diaryDate = $_POST['diary-date'];
+$diaryComments = $_POST['diary-comments'];
+
 try {
 	if(isset($_POST["feed-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
 
@@ -39,9 +58,6 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
-$weightDate = $_POST['weight-date'];
-$grams = $_POST['grams'];
-
 try {
 	if(isset($_POST["weight-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
 
@@ -59,10 +75,6 @@ try {
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
-
-$diaperDate = $_POST['diaper-date'];
-$diaperTime = $_POST['diaper-time'];
-$pooSize = $_POST['poo-rbcl'];
 
 try {
 	if(isset($_POST["diaper-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
@@ -83,9 +95,6 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
-$bathDate = $_POST['bath-date'];
-$bathComments = $_POST['bath-comments'];
-
 try {
 	if(isset($_POST["bath-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
 
@@ -103,12 +112,6 @@ try {
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
-
-$doctorDate = $_POST['doctor-date'];
-$doctorTime = $_POST['doctor-time'];
-$doctorName = $_POST['doctor-name'];
-$doctorLocation = $_POST['doctor-location'];
-$doctorComments = $_POST['doctor-comments'];
 
 try {
 	if(isset($_POST["doctor-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
@@ -130,9 +133,6 @@ try {
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
-
-$diaryDate = $_POST['diary-date'];
-$diaryComments = $_POST['diary-comments'];
 
 try {
 	if(isset($_POST["diary-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
