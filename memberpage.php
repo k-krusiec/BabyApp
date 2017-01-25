@@ -60,6 +60,29 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
+$diaperDate = $_POST['diaper-date'];
+$diaperTime = $_POST['diaper-time'];
+$pooSize = $_POST['poo-rbcl'];
+
+try {
+	if(isset($_POST["diaper-submit"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
+
+		$stmt = $db->prepare("INSERT INTO diaper (username, diaperdate, diapertime, poosize) VALUES (:username, :diaperdate, :diapertime, :poosize)");
+		$stmt->bindParam(':username', $me);
+		$stmt->bindParam(':diaperdate', $diaperDate);
+		$stmt->bindParam(':diapertime', $diaperTime);
+		$stmt->bindParam(':poosize', $pooSize);
+		$stmt->execute();
+
+		unset($_POST);
+		unset($_REQUEST);
+		header('Location: memberpage.php');
+
+	}
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
 $bathDate = $_POST['bath-date'];
 $bathComments = $_POST['bath-comments'];
 
