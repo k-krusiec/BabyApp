@@ -7,7 +7,7 @@
 
 	$me =  $_SESSION['username'];
 
-	$weightTab = "SELECT * FROM weight WHERE username LIKE '%{$me}%' ORDER BY weightdate DESC";
+	$weightTab = "SELECT * FROM weight WHERE username LIKE '%{$me}%' ORDER BY weightdate DESC, id DESC";
 
 	$stmt = $db->prepare($weightTab);
 	$stmt->execute();

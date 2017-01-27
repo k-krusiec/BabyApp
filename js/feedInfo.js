@@ -30,7 +30,7 @@ $(function() {
       var time = '';
       $listDate = $('<p class="list-date">' + feedTitleArr[i] + '</p>');
       $listbox.append($listDate);
-      for (var j = 0; j <= feedArr.length; j++) {
+      for (var j = 0; j <= feedArr[i].length; j++) {
         if (feedArr[3][j] !== '') {
           var diff = ( new Date("1970-1-1 " + feedArr[3][j]) - new Date("1970-1-1 " + feedArr[1][j]) ) / 1000 / 60;
           if (diff < 0) {
@@ -48,14 +48,26 @@ $(function() {
           time = '';
         }
         if (feedArr[0][j] === feedTitleArr[i]) {
+          var breast;
+          var milk;
           var commentInSpan;
+          if (feedArr[4][j] !== null) {
+            breast = '<div class="feed-breast-icon">' + feedArr[4][j] + '</div>';
+          } else {
+            breast = '';
+          }
+          if (feedArr[5][j] !== '') {
+            milk = '<span>' + feedArr[5][j] + 'ml</span>';
+          } else {
+            milk = '';
+          }
           if (feedArr[6][j] !== '') {
             commentInSpan = '<div class="feed-commentbox"><span>' + feedArr[6][j] + '</span></div>';
           } else {
             commentInSpan = '<div class="feed-commentbox"></div>';
           }
 
-          $rowOrient = $('<div class="list-table"><div class="list-row"><div class="feed-hourbox"><img class="clock clock-list" src="img/time-b.png" alt="clock" /><span>' + feedArr[1][j] + '</span></div><div class="feed-timebox"><span>' + time + '</span></div><div class="feed-breastbox"><div class="feed-breast-icon">' + feedArr[4][j] + '</div></div><div class="feed-bottlebox"><span>' + feedArr[5][j] + 'ml</span></div></div>' + commentInSpan + '</div>');
+          $rowOrient = $('<div class="list-table"><div class="list-row"><div class="feed-hourbox"><img class="clock clock-list" src="img/time-b.png" alt="clock" /><span>' + feedArr[1][j] + '</span></div><div class="feed-timebox"><span>' + time + '</span></div><div class="feed-breastbox">' + breast + '</div><div class="feed-bottlebox">' + milk + '</div></div>' + commentInSpan + '</div>');
           $listbox.append($rowOrient);
         }
       }

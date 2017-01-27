@@ -7,7 +7,7 @@
 
 	$me =  $_SESSION['username'];
 
-	$bathTab = "SELECT * FROM bath WHERE username LIKE '%{$me}%' ORDER BY bathdate DESC";
+	$bathTab = "SELECT * FROM bath WHERE username LIKE '%{$me}%' ORDER BY bathdate DESC, id DESC";
 
 	$stmt = $db->prepare($bathTab);
 	$stmt->execute();
