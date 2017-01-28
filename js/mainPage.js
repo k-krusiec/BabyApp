@@ -400,7 +400,7 @@ $(document).ready(function() {
       return valid;
     }
 
-    $form.on('submit', function() {
+    $form.on('submit', function(e) {
       if (dateValid() && timeValid() && mililitresValid() && commentValid()) {
         hideForms();
         clearForms();
