@@ -40,7 +40,7 @@ require('layout/menu.php');
     </main>
     <footer>
       <div class="main-width">
-        <p class="footText">&copy; 2016 Karol Krusiec</p>
+        <p class="footText">&copy; 2016-2017 Karol Krusiec</p>
       </div>
     </footer>
 
