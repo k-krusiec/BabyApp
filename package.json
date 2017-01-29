@@ -1,6 +1,6 @@
 {
   "name": "BabyApp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BabyApp",
   "main": "gulpfile.js",
   "dependencies": {

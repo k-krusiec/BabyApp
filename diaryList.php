@@ -47,6 +47,7 @@ require('layout/menu.php');
     </footer>
 
     <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/mobileMenu.js"></script>
     <script type="text/javascript" src="js/babyInfo.js"></script>
     <script type="text/javascript" src="js/diaryInfo.js"></script>
 
