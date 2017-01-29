@@ -14,7 +14,7 @@ BabyApp to aplikacja dla rodziców, którzy chcą monitorować rozwój swojego n
 * Przegląd zapisanych danych
 
 ## Demo
-Aplikację można obejrzeć pod adresem: <http://dev.krusiec.com/kruchypf/babyapp>
+Aplikację można obejrzeć [tutaj](http://karol.krusiec.com/babyapp)
 
 Można utworzyć własne konto lub skorzystać z konta demo:
 * Login: demo
